@@ -22,7 +22,6 @@ const Box = (props: ThreeElements['mesh']) => {
       <boxGeometry args={[1, 1, 1]} />
 
       <meshStandardMaterial
-        roughness={0.5}
         color={'#8F90A6'}
         depthWrite={true}
       />

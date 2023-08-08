@@ -34,35 +34,37 @@ const Navbar = () => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto w-full flex justify-between items-center py-2 px-2 sm:px-0">
-      <div className="flex gap-5 items-center">
-        <Link href="/">
-          <Image
-            priority
-            src="/assets/logo.svg"
-            alt="Logo"
-            width={50}
-            height={50}
-            className={`${theme === "dark" ? "filter invert" : ""} cursor-pointer hover:opacity-80 ease-out`}
-          />
-        </Link>
-        <ul className="flex gap-5">
-          {NavMenu.map((item, index) => (
-            <li key={index} className="opacity-80 hover:opacity-100 ease-out">
-              <Link href={item.link}>{item.name}</Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="hover:opacity-80 ease-out">
-        {theme === "dark" ? (
-          <Sun size={25} cursor="pointer" onClick={() => setTheme("light")} />
-        ) : (
-          <Moon size={25} cursor="pointer" onClick={() => setTheme("dark")} />
-        )}
+    <div className="max-w-4xl mx-auto sticky top-0 z-10 p-2 md:px-0 backdrop-blur-sm border-b border-opacity-20 border-gray-700">
+      <div className="flex justify-between items-center">
+        <div className="flex items-center gap-5">
+          <Link href="/">
+            <Image
+              priority
+              src="/assets/logo.svg"
+              alt="Logo"
+              width={50}
+              height={50}
+              className={`${theme === "dark" ? "filter invert" : ""} cursor-pointer hover:opacity-80 ease-out`}
+            />
+          </Link>
+          <ul className="flex gap-5">
+            {NavMenu.map((item, index) => (
+              <li key={index} className="opacity-80 hover:opacity-100 ease-out">
+                <Link href={item.link}>{item.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="hover:opacity-80 ease-out">
+          {theme === "dark" ? (
+            <Sun size={25} cursor="pointer" onClick={() => setTheme("light")} />
+          ) : (
+            <Moon size={25} cursor="pointer" onClick={() => setTheme("dark")} />
+          )}
+        </div>
       </div>
     </div>
+
   )
 }
 
