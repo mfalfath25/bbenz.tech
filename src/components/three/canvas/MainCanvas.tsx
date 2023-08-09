@@ -1,10 +1,11 @@
 'use client'
 
 import { Canvas } from '@react-three/fiber'
-import { AsciiRenderer, Html, OrbitControls, PerspectiveCamera, Text } from "@react-three/drei"
-import Stars from '../mesh/Stars'
-import Box from '../mesh/Box'
+import { AsciiRenderer, OrbitControls, PerspectiveCamera } from "@react-three/drei"
+import { Stars } from '../mesh/Stars'
+import { Icosahedron } from '../mesh/Icosahedron'
 import { useTheme } from 'next-themes'
+import { Bloom, EffectComposer } from '@react-three/postprocessing'
 
 export const MainCanvas = () => {
   const { theme } = useTheme()
@@ -12,18 +13,13 @@ export const MainCanvas = () => {
   return (
     <div className='h-[calc(100vh-66px)] hidden md:block'>
       <Canvas shadows dpr={[1, 2]} color='transparent'>
-        <OrbitControls enableRotate={false} enableZoom={false} />
+        <OrbitControls enableRotate={false} enableZoom={false}
+          enablePan={true} panSpeed={0.5} mouseButtons={{ LEFT: 2, MIDDLE: 0, RIGHT: 0 }}
+        />
         <PerspectiveCamera makeDefault position={[0, 0, 5]} />
-        <ambientLight intensity={0.5} />
-        <pointLight position={[0, 0, 2]} intensity={3} color={'#ffffff'} castShadow />
-
-        {/* <Text fontSize={0.5} position={[-0.25, 1.25, 0]} color={'#ffffff'}>
-        <Html>
-          <h2 id="phrases" className="dark:text-white text-slate-900">
-            _benzworld
-          </h2>
-        </Html>
-      </Text> */}
+        <ambientLight intensity={0.25} />
+        <pointLight position={[1, 1, 0]} intensity={10} color={'white'} castShadow />
+        <pointLight position={[-1, -1, 0]} intensity={10} color={'white'} castShadow />
 
         {
           theme === "dark" ? (
@@ -33,14 +29,17 @@ export const MainCanvas = () => {
             </>
           ) : (
             <>
-              {/* <AsciiRenderer fgColor="blue" bgColor="transparent" /> */}
-              {/* <color attach="background" args={["transparent"]} /> */}
+              {null}
             </>
           )
         }
 
         <Stars position={[0, 0, 3]} />
-        <Box castShadow position={[0, 0, 0]} />
+        <Icosahedron castShadow position={[0, 0, -1]} />
+
+        <EffectComposer>
+          <Bloom mipmapBlur luminanceThreshold={1} dithering />
+        </EffectComposer>
       </Canvas>
     </div>
   )

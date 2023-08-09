@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import { siteConfig } from '@/config/site'
 import { Providers } from './providers'
 import Navbar from '@/components/ui/Navbar'
+import { Footer } from '@/components/ui/Footer'
 
 const inter = Inter({ subsets: ['latin', 'cyrillic'] })
 
@@ -29,6 +30,7 @@ export default function RootLayout({
           <div className="max-w-4xl mx-auto">
             {children}
           </div>
+          <Footer />
         </Providers>
         {/* <div className='absolute left-0 bg-repeat w-full h-full z-0 heropattern-fourpointstars-slate-500'>
         <div className='flex flex-row'>

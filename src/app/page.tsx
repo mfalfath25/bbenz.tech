@@ -14,7 +14,7 @@ export default function Page() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto w-full h-[calc(100vh-67px)] overflow-clip">
+    <div className="w-full h-[calc(100vh-134px)]">
       <div className="relative">
         <div className="md:absolute z-10 grid h-[calc(100vh-67px)] place-items-center md:place-items-start">
           <Intro />
@@ -23,11 +23,11 @@ export default function Page() {
       <Suspense fallback={<SuspenseFallback />}>
         <MainCanvas />
       </Suspense>
-      <div className="relative">
-        <div className="absolute bottom-0 left-0 max-w-4xl mx-auto w-full">
+      {/* <div className="relative">
+        <div className="absolute bottom-0 left-0 w-full">
           <Footer />
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

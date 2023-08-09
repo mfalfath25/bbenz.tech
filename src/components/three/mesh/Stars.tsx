@@ -10,7 +10,7 @@ import { Mesh, Quaternion, Vector3, Points as Pts } from 'three'
 const rotationAxis = new Vector3(0, 1, 0).normalize()
 const q = new Quaternion()
 
-const Stars = (props: any) => {
+export const Stars = (props: any) => {
   const { theme } = useTheme()
   const starsRef = useRef<Pts>(null!)
   const [spheres] = useState(() => random.inSphere(new Float32Array(1002), { radius: 1.5 }))
@@ -67,7 +67,6 @@ const Stars = (props: any) => {
     <group rotation={[0, 0, Math.PI / 4]}>
       <Points positions={spheres} stride={3} ref={starsRef} {...props}>
         <pointsMaterial
-          transparent
           size={0.01}
           sizeAttenuation={true}
           color={theme === "dark" ? "#ffffff" : `#000000`}
@@ -76,5 +75,3 @@ const Stars = (props: any) => {
     </group>
   )
 }
-
-export default Stars
