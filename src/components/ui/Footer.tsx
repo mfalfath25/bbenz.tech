@@ -48,8 +48,8 @@ export const Footer = () => {
           priority
           src="/assets/signature.svg"
           alt="Signature"
-          width={120}
-          height={50}
+          width={0}
+          height={0}
           className={`${theme === "dark" ? "filter invert" : ""} h-[50px] mx-auto w-full`}
         />
       </div>

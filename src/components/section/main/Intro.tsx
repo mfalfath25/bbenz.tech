@@ -1,4 +1,3 @@
-import { MousePointerClick } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -13,8 +12,8 @@ export const Intro = () => {
       </div> */}
 
       <div className="grid pt-0 md:pt-2 gap-5 text-center md:text-left">
-        <div className="block md:hidden w-1/2 rounded-full border-2 border-gray-700 overflow-hidden mx-auto">
-          <Image src="/assets/photo.png" alt="Photo" width={460} height={460} />
+        <div className="block md:hidden w-1/2 rounded-full border-2 border-gray-700 overflow-hidden mx-auto ring-2 ring-accent-light dark:ring-accent-dark">
+          <Image src="/assets/photo.png" alt="Photo" priority width={460} height={460} />
         </div>
 
         <Link

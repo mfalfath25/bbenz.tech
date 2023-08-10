@@ -5,7 +5,6 @@ import { AsciiRenderer, OrbitControls, PerspectiveCamera } from "@react-three/dr
 import { Stars } from '../mesh/Stars'
 import { Icosahedron } from '../mesh/Icosahedron'
 import { useTheme } from 'next-themes'
-import { Bloom, EffectComposer } from '@react-three/postprocessing'
 
 export const MainCanvas = () => {
   const { theme } = useTheme()
@@ -36,10 +35,6 @@ export const MainCanvas = () => {
 
         <Stars position={[0, 0, 3]} />
         <Icosahedron castShadow position={[0, 0, -1]} />
-
-        <EffectComposer>
-          <Bloom mipmapBlur luminanceThreshold={1} dithering />
-        </EffectComposer>
       </Canvas>
     </div>
   )

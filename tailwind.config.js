@@ -9,6 +9,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'accent-light': '#5834E8',
+        'accent-dark': '#A7CB17',
+      },
       heroPatterns: {
         fourpointstars: heropatterns.fourpointstars,
         topography: heropatterns.topography,

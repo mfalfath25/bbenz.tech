@@ -30,7 +30,7 @@ export default function RootLayout({
           <div className="max-w-4xl mx-auto">
             {children}
           </div>
-          <Footer />
+          {/* <Footer /> */}
         </Providers>
         {/* <div className='absolute left-0 bg-repeat w-full h-full z-0 heropattern-fourpointstars-slate-500'>
         <div className='flex flex-row'>
