@@ -33,4 +33,5 @@ module.exports = {
     require('tailwindcss-gradients'),
     require('tailwindcss-hero-patterns'),
   ],
+  mode: process.env.NODE_ENV ? 'jit' : undefined,
 }

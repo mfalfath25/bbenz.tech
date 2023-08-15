@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={`${inter.className}`}>
         <Providers>
           <Navbar />
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto w-full h-[calc(100vh-134px)]">
             {children}
           </div>
           {/* <Footer /> */}

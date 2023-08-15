@@ -1,7 +1,7 @@
 export default function ExperimentPage() {
   return (
     <>
-      experiment
+      <div className='w-[100px]'>Experiment page</div>
     </>
   )
 }

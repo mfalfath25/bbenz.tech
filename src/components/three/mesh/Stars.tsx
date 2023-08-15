@@ -1,10 +1,10 @@
 'use client'
 
-import { useRef, useState } from "react"
-import { useTheme } from "next-themes"
-import { Points, PointMaterial, Point } from "@react-three/drei"
-import { useFrame } from "@react-three/fiber"
-import { random, misc, buffer } from "maath"
+import { useRef, useState } from 'react'
+import { useTheme } from 'next-themes'
+import { Points, PointMaterial, Point } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
+import { random, misc, buffer } from 'maath'
 import { Mesh, Quaternion, Vector3, Points as Pts } from 'three'
 
 const rotationAxis = new Vector3(0, 1, 0).normalize()
@@ -13,7 +13,9 @@ const q = new Quaternion()
 export const Stars = (props: any) => {
   const { theme } = useTheme()
   const starsRef = useRef<Pts>(null!)
-  const [spheres] = useState(() => random.inSphere(new Float32Array(1002), { radius: 1.5 }))
+  const [spheres] = useState(() =>
+    random.inSphere(new Float32Array(1002), { radius: 1.5 })
+  )
 
   // const [{ box, sphere, final }] = useState(() => {
   //   const box = random.inBox(new Float32Array(10_000), { sides: [1, 2, 1] })
@@ -44,8 +46,8 @@ export const Stars = (props: any) => {
 
   useFrame((state, delta) => {
     if (starsRef.current) {
-      starsRef.current.rotation.x -= delta / 5
-      starsRef.current.rotation.y -= delta / 10
+      starsRef.current.rotation.x += delta / 5
+      starsRef.current.rotation.y += delta / 10
     }
 
     // for (let i = 0; i < spheres.length; i++) {
@@ -60,16 +62,21 @@ export const Stars = (props: any) => {
     // }
 
     // // Update the buffer attribute with new positions
-    // starsRef.current.geometry.attributes.position.needsUpdate = true
+    starsRef.current.geometry.attributes.position.needsUpdate = true
   })
 
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
-      <Points positions={spheres} stride={3} ref={starsRef} {...props}>
+      <Points
+        positions={spheres}
+        stride={3}
+        ref={starsRef}
+        {...props}
+      >
         <pointsMaterial
           size={0.01}
           sizeAttenuation={true}
-          color={theme === "dark" ? "#ffffff" : `#000000`}
+          color={theme === 'dark' ? '#ffffff' : `#000000`}
         />
       </Points>
     </group>

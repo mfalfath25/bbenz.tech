@@ -35,7 +35,7 @@ const ShuffleTextAnimation: React.FC<ShuffleTextProps> = ({ text, shuffleIterati
         const shuffled = shuffleText(text)
         setShuffledText(shuffled)
         setShuffleCount(count => count + 1)
-      }, 20) // 10ms delay for each shuffle
+      }, 50) // 10ms delay for each shuffle
     } else if (shuffleCount >= shuffleIterations) {
       // Revert back to the original text after completing shuffling iterations
       setShuffledText(text)

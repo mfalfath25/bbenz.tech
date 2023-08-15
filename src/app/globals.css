@@ -15,3 +15,29 @@
     --background-end-rgb: 0, 0, 0;
   }
 } */
+
+/* .outline-title {
+  font-family: sans-serif;
+  text-shadow:
+    1px 1px 0 var(--shadow-color),
+    -1px -1px 0 var(--shadow-color),
+    1px -1px 0 var(--shadow-color),
+    -1px 1px 0 var(--shadow-color),
+    1px 1px 0 var(--shadow-color);
+}
+
+@media (prefers-color-scheme: light) {
+  .outline-title {
+    color: white;
+    --title-color: white;
+    --shadow-color: black;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .outline-title {
+    color: black;
+    --title-color: black;
+    --shadow-color: white;
+  }
+} */

@@ -1,40 +1,60 @@
-"use client"
+'use client'
 
-import { useState, useEffect } from "react"
-import { useTheme } from "next-themes"
-// import { usePathname } from 'next/navigation'
+import { useState, useEffect, useRef } from 'react'
+import { useTheme } from 'next-themes'
+import { usePathname } from 'next/navigation'
 
-import Link from "next/link"
+import Link from 'next/link'
 
-import { Menu, Moon, Sun } from "lucide-react"
-import Image from "next/image"
-import ShuffleTextAnimation from "@/lib/animations/ShuffleTextAnimation"
+import { Menu, Moon, Sun, X } from 'lucide-react'
+import Image from 'next/image'
+import ShuffleTextAnimation from '@/lib/animations/ShuffleTextAnimation'
 
 const NavMenu = [
   {
-    name: "About",
-    link: "/about",
+    name: 'About',
+    link: '/about',
   },
   {
-    name: "Blog",
-    link: "/blog",
+    name: 'Blog',
+    link: '/blog',
   },
   {
-    name: "Project",
-    link: "/project",
+    name: 'Project',
+    link: '/project',
   },
   {
-    name: "Experiment",
-    link: "/experiment",
+    name: 'Experiment',
+    link: '/experiment',
   },
 ]
 
 const Navbar = () => {
   const [mounted, setMounted] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const navMenuRef = useRef<HTMLDivElement | null>(null)
   const { theme, setTheme } = useTheme()
-  // const pathname = usePathname()
+  const pathname = usePathname()
 
+  const handleNavMenuClick = (event: MouseEvent) => {
+    const target = event.target as Node
+
+    if (navMenuRef.current && !navMenuRef.current.contains(target)) {
+      setMenuOpen(false)
+    }
+  }
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.addEventListener('click', handleNavMenuClick)
+    } else {
+      document.removeEventListener('click', handleNavMenuClick)
+    }
+
+    return () => {
+      document.removeEventListener('click', handleNavMenuClick)
+    }
+  }, [menuOpen])
 
   useEffect(() => {
     setMounted(true)
@@ -47,56 +67,107 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="max-w-4xl mx-auto sticky top-0 z-10 p-2 py-4 backdrop-blur-sm border-b border-opacity-20 border-gray-700">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center gap-0 md:gap-5">
-            <Link href="/">
+      <div className='sticky top-0 z-20 mx-auto max-w-4xl border-b border-gray-700 border-opacity-20 p-2 py-4 backdrop-blur-lg'>
+        <div className='flex items-center justify-between'>
+          <div className='flex items-center gap-0 md:gap-5'>
+            <Link href='/'>
               <Image
                 priority
-                src="/assets/logo.svg"
-                alt="Logo"
+                src='/assets/logo.svg'
+                alt='Logo'
                 width={0}
                 height={0}
-                className={`${theme === "dark" ? "filter invert" : ""} cursor-pointer h-[34px] w-full hover:opacity-80 ease-out hidden md:block`}
+                className={`${
+                  theme === 'dark' ? 'invert filter' : ''
+                } hidden h-[34px] w-full cursor-pointer ease-out hover:opacity-80 md:block`}
               />
             </Link>
-            <div className="md:hidden cursor-pointer opacity-80 hover:opacity-100">
-              <Menu size={25} onClick={() => setMenuOpen(!menuOpen)} />
+            <div className='cursor-pointer opacity-80 hover:opacity-100 md:hidden'>
+              {menuOpen ? (
+                <X
+                  size={25}
+                  onClick={() => setMenuOpen(!menuOpen)}
+                />
+              ) : (
+                <Menu
+                  size={25}
+                  onClick={() => setMenuOpen(!menuOpen)}
+                />
+              )}
             </div>
-            <ul className={`gap-5 hidden md:flex`}>
+            <ul className={`hidden gap-5 md:flex`}>
               {NavMenu.map((item, index) => (
-                <li key={index} className="opacity-80 hover:opacity-100 ease-out hover:animate-shuffle-text">
-                  <Link href={item.link}><ShuffleTextAnimation text={item.name} shuffleIterations={5} /></Link>
+                <li
+                  key={index}
+                  className={`hover:opacity-100 ${
+                    pathname.includes(item.link)
+                      ? 'font-medium opacity-100'
+                      : 'opacity-80'
+                  } hover:animate-shuffle-text ease-out`}
+                >
+                  <Link href={item.link}>
+                    <ShuffleTextAnimation
+                      text={item.name}
+                      shuffleIterations={5}
+                    />
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          <Link href="/">
+          <Link href='/'>
             <Image
               priority
-              src="/assets/logo.svg"
-              alt="Logo"
+              src='/assets/logo.svg'
+              alt='Logo'
               width={0}
               height={0}
-              className={`${theme === "dark" ? "filter invert" : ""} cursor-pointer h-[34px] w-full hover:opacity-80 ease-out block md:hidden`}
+              className={`${
+                theme === 'dark' ? 'invert filter' : ''
+              } block h-[34px] w-full cursor-pointer ease-out hover:opacity-80 md:hidden`}
             />
           </Link>
 
-          <div className="opacity-80 hover:opacity-100 ease-out order-2">
-            {theme === "dark" ? (
-              <Sun size={25} cursor="pointer" onClick={() => setTheme("light")} />
+          <div className='order-2 opacity-60 ease-out hover:opacity-100'>
+            {theme === 'dark' ? (
+              <Sun
+                size={24}
+                cursor='pointer'
+                onClick={() => setTheme('light')}
+              />
             ) : (
-              <Moon size={25} cursor="pointer" onClick={() => setTheme("dark")} />
+              <Moon
+                size={24}
+                cursor='pointer'
+                onClick={() => setTheme('dark')}
+              />
             )}
           </div>
         </div>
+      </div>
 
-        <div className="md:hidden">
-          <ul className={`${menuOpen ? 'flex flex-col gap-1 pt-2' : 'hidden'}`}>
+      {/* NavMenu When Mobile */}
+      <div className='relative md:hidden'>
+        <div
+          ref={navMenuRef}
+          className={`transition-max-height absolute left-0 z-20 h-[calc(100vh-67px)] w-full overflow-hidden backdrop-blur-lg duration-300 ease-in-out ${
+            menuOpen ? '' : 'hidden'
+          }`}
+        >
+          <ul className='flex flex-col'>
             {NavMenu.map((item, index) => (
-              <li key={index} className="opacity-80 hover:opacity-100 ease-out backdrop-blur-sm border-t border-opacity-20 border-gray-700">
-                <Link href={item.link}>{item.name}</Link>
+              <li
+                key={index}
+                className='border-b border-gray-700 border-opacity-20 text-center opacity-80 transition-opacity ease-out hover:font-bold hover:opacity-100'
+              >
+                <Link
+                  href={item.link}
+                  onClick={() => setMenuOpen(false)}
+                  className='block px-4 py-2'
+                >
+                  {item.name}
+                </Link>
               </li>
             ))}
           </ul>
