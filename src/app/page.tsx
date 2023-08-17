@@ -3,7 +3,6 @@
 import { Suspense } from 'react'
 import { Intro } from '@/components/section/main/Intro'
 import { MainCanvas } from '@/components/three/canvas/MainCanvas'
-import { Footer } from '@/components/ui/Footer'
 import { Loader } from 'lucide-react'
 import { motion } from 'framer-motion'
 
@@ -24,7 +23,7 @@ export default function Page() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className='relative h-[calc(100vh-67px)] w-full'
+        className='relative h-[calc(100vh-134px)] w-full'
       >
         <Suspense fallback={<SuspenseFallback />}>
           <MainCanvas />

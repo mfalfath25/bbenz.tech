@@ -67,8 +67,8 @@ const Navbar = () => {
 
   return (
     <>
-      <header className='sticky top-0 z-20 mx-auto max-w-4xl border-b border-gray-700/30 p-2 py-4 backdrop-blur-sm dark:border-white/30'>
-        <div className='flex items-center justify-between'>
+      <header className='sticky top-0 z-20 border-b border-gray-700/30 backdrop-blur-sm dark:border-white/30'>
+        <div className='mx-auto flex max-w-4xl items-center justify-between p-2 py-4'>
           <div className='flex items-center gap-0 md:gap-5'>
             <Link href='/'>
               <Image

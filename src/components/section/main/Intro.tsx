@@ -11,7 +11,7 @@ export const Intro = () => {
         initial={{ opacity: 0, scale: 1 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        className='absolute top-0 z-10 grid h-[calc(100vh-67px)] w-full place-items-center md:absolute md:place-items-start'
+        className='absolute top-0 z-10 grid h-[calc(100vh-134px)] w-full place-items-center md:absolute md:place-items-start'
       >
         <div className='grid gap-5 pt-0 text-center md:pt-2 md:text-left'>
           <Image

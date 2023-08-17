@@ -31,27 +31,29 @@ export const Footer = () => {
 
   const { theme } = useTheme()
   return (
-    <footer className='fixed bottom-0 mx-auto flex w-full max-w-4xl flex-row items-center justify-between border-t border-gray-700/30 dark:border-white/30 p-2 backdrop-blur-sm md:relative'>
-      {/* <p className='border-1 hidden items-center rounded-md border-gray-300 text-sm opacity-50 md:flex'>
+    <footer className='sticky bottom-0 border-t border-gray-700/30 bg-transparent backdrop-blur-sm dark:border-white/30'>
+      <div className='mx-auto flex w-full max-w-4xl flex-row items-center justify-between p-2'>
+        {/* <p className='border-1 hidden items-center rounded-md border-gray-300 text-sm opacity-50 md:flex'>
         <span className='mr-2'>
           <Mouse size={24} />
         </span>
         Hold left click to pan
       </p> */}
-      <div className='flex gap-4'>
-        {icons.map((item, index) => (
-          <a
-            key={item.name}
-            href={item.link}
-            className='cursor-pointer opacity-80 ease-out hover:opacity-100'
-          >
-            {item.icon}
-          </a>
-        ))}
-      </div>
-      <div className='relative order-2 mb-3 md:order-3 md:mb-0'>
-        <div className={`${theme === 'dark' ? 'invert filter' : ''}`}>
-          <Signature />
+        <div className='flex gap-4'>
+          {icons.map((item, index) => (
+            <a
+              key={item.name}
+              href={item.link}
+              className='cursor-pointer opacity-80 ease-out hover:opacity-100'
+            >
+              {item.icon}
+            </a>
+          ))}
+        </div>
+        <div className='relative order-2 md:order-3'>
+          <div className={`${theme === 'dark' ? 'invert filter' : ''}`}>
+            <Signature />
+          </div>
         </div>
       </div>
     </footer>

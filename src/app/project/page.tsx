@@ -1,10 +1,9 @@
-import { Project } from "@/components/section/project/Project"
+import { Project } from '@/components/section/project/Project'
 
 export default function ProjectPage() {
-
   return (
     <>
-      <div className="p-2 rounded-lg h-[calc(100vh-67px)]">
+      <div className='px-2 py-4'>
         <Project />
       </div>
     </>

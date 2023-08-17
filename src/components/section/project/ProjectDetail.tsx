@@ -10,14 +10,15 @@ export const ProjectDetail = () => {
     (project) => project.thumbId === pathname.split('/').pop()
   )
 
-  console.log(currentProject)
   return (
     <>
-      <Header
-        title={currentProject?.title}
-        enableBackButton
-      />
-      <div>{currentProject?.desc}</div>
+      <div className='grid gap-8'>
+        <Header
+          title={currentProject?.title}
+          enableBackButton
+        />
+        <div>{currentProject?.desc}</div>
+      </div>
     </>
   )
 }

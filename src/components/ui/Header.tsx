@@ -1,7 +1,7 @@
 'use client'
 
-import { motion } from "framer-motion"
-import BackButton from "./BackButton"
+import { motion } from 'framer-motion'
+import BackButton from './BackButton'
 
 interface HeaderProps {
   title?: string
@@ -10,20 +10,21 @@ interface HeaderProps {
 
 export const Header = ({ title, enableBackButton }: HeaderProps) => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1, x: 2 }}
-      transition={{ duration: 0.75 }}
-    // transition={{ type: "inertia", velocity: 20 }}
-    >
-      {
-        enableBackButton ?
-          <div className="absolute top-0">
+    <>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        {enableBackButton ? (
+          <div className='relative mx-auto max-w-4xl'>
             <BackButton />
           </div>
-          : null
-      }
-      <h2 className="text-2xl text-center font-extrabold tracking-tight">{title}</h2>
-    </motion.div>
+        ) : null}
+        <h1 className='text-center text-2xl font-extrabold tracking-tight'>
+          {title}
+        </h1>
+      </motion.div>
+    </>
   )
 }
