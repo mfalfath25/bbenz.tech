@@ -67,7 +67,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className='sticky top-0 z-20 mx-auto max-w-4xl border-b border-gray-700 border-opacity-20 p-2 py-4 backdrop-blur-lg'>
+      <header className='sticky top-0 z-20 mx-auto max-w-4xl border-b border-gray-700/30 p-2 py-4 backdrop-blur-sm dark:border-white/30'>
         <div className='flex items-center justify-between'>
           <div className='flex items-center gap-0 md:gap-5'>
             <Link href='/'>
@@ -101,7 +101,7 @@ const Navbar = () => {
                   key={index}
                   className={`hover:opacity-100 ${
                     pathname.includes(item.link)
-                      ? 'font-medium opacity-100'
+                      ? 'font-bold opacity-100'
                       : 'opacity-80'
                   } hover:animate-shuffle-text ease-out`}
                 >
@@ -145,7 +145,7 @@ const Navbar = () => {
             )}
           </div>
         </div>
-      </div>
+      </header>
 
       {/* NavMenu When Mobile */}
       <div className='relative md:hidden'>

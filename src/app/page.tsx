@@ -20,27 +20,17 @@ export default function Page() {
 
   return (
     <>
-      <div className=''>
-        <div className='relative'>
-          <div className='z-10 grid h-[calc(100vh-67px)] place-items-center md:absolute md:place-items-start'>
-            <Intro />
-          </div>
-        </div>
-        <motion.div
-          className='hidden h-[calc(100vh-67px)] w-full md:block'
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2 }}
-        >
-          <Suspense fallback={<SuspenseFallback />}>
-            <MainCanvas />
-          </Suspense>
-        </motion.div>
-
-        <div className='absolute bottom-0 left-0 z-20 w-full'>
-          <Footer />
-        </div>
-      </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className='relative h-[calc(100vh-67px)] w-full'
+      >
+        <Suspense fallback={<SuspenseFallback />}>
+          <MainCanvas />
+        </Suspense>
+        <Intro />
+      </motion.div>
     </>
   )
 }

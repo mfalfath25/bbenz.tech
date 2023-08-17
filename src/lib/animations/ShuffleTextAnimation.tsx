@@ -7,7 +7,10 @@ interface ShuffleTextProps {
   shuffleIterations: number
 }
 
-const ShuffleTextAnimation: React.FC<ShuffleTextProps> = ({ text, shuffleIterations }) => {
+const ShuffleTextAnimation: React.FC<ShuffleTextProps> = ({
+  text,
+  shuffleIterations,
+}) => {
   const [shuffledText, setShuffledText] = useState(text)
   const [isHovered, setIsHovered] = useState(false)
   const [shuffleCount, setShuffleCount] = useState(0)
@@ -18,8 +21,8 @@ const ShuffleTextAnimation: React.FC<ShuffleTextProps> = ({ text, shuffleIterati
     const textArray = shuffledText.split('')
 
     for (let i = textArray.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [textArray[i], textArray[j]] = [textArray[j], textArray[i]]
+      const j = Math.floor(Math.random() * (i + 1))
+      ;[textArray[i], textArray[j]] = [textArray[j], textArray[i]]
     }
 
     shuffledText = textArray.join('')
@@ -34,7 +37,7 @@ const ShuffleTextAnimation: React.FC<ShuffleTextProps> = ({ text, shuffleIterati
       interval = setInterval(() => {
         const shuffled = shuffleText(text)
         setShuffledText(shuffled)
-        setShuffleCount(count => count + 1)
+        setShuffleCount((count) => count + 1)
       }, 50) // 10ms delay for each shuffle
     } else if (shuffleCount >= shuffleIterations) {
       // Revert back to the original text after completing shuffling iterations
@@ -62,7 +65,7 @@ const ShuffleTextAnimation: React.FC<ShuffleTextProps> = ({ text, shuffleIterati
 
   return (
     <span
-      className="shuffle-text"
+      className='shuffle-text'
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -71,6 +74,4 @@ const ShuffleTextAnimation: React.FC<ShuffleTextProps> = ({ text, shuffleIterati
   )
 }
 
-export default ShuffleTextAnimation;
-
-
+export default ShuffleTextAnimation

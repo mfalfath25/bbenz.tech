@@ -17,6 +17,7 @@ module.exports = {
         fourpointstars: heropatterns.fourpointstars,
         topography: heropatterns.topography,
         texture: heropatterns.texture,
+        hideout: heropatterns.hideout,
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

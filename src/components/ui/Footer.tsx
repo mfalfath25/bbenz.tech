@@ -31,7 +31,7 @@ export const Footer = () => {
 
   const { theme } = useTheme()
   return (
-    <div className='fixed bottom-0 mx-auto flex w-full max-w-4xl flex-row items-center justify-between border-t border-gray-700 border-opacity-20 p-2 backdrop-blur-sm md:relative'>
+    <footer className='fixed bottom-0 mx-auto flex w-full max-w-4xl flex-row items-center justify-between border-t border-gray-700/30 dark:border-white/30 p-2 backdrop-blur-sm md:relative'>
       {/* <p className='border-1 hidden items-center rounded-md border-gray-300 text-sm opacity-50 md:flex'>
         <span className='mr-2'>
           <Mouse size={24} />
@@ -54,6 +54,6 @@ export const Footer = () => {
           <Signature />
         </div>
       </div>
-    </div>
+    </footer>
   )
 }
