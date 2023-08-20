@@ -2,24 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Respira';
+  src: url('../../public/assets/fonts/Respira.ttf');
+}
+
+/* Dotted blur effect */
+/* Light mode */
+.effect-dotted {
+  background-image: radial-gradient(rgba(0, 0, 0, 0) 1px, #ffffff 1px);
+  background-size: 4px 4px;
+  backdrop-filter: blur(3px);
+}
+
+/* Dark mode */
+.effect-dotted-dark {
+  background-image: radial-gradient(rgba(0, 0, 0, 0) 1px, #121212 1px);
+  background-size: 4px 4px;
+  backdrop-filter: blur(3px);
+}
+
 /* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: #ff4242 #000000;
-  }
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #5834e8 #000000;
+}
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 4px;
-  }
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 4px;
+}
 
-  *::-webkit-scrollbar-track {
-    background: #000000;
-  }
+*::-webkit-scrollbar-track {
+  background: #000000;
+}
 
-  *::-webkit-scrollbar-thumb {
-    background-color: #ff4242;
-    border-radius: 0px;
-    border: 0px none #ffffff;
-  }
+*::-webkit-scrollbar-thumb {
+  background-color: #5834e8;
+  border-radius: 0px;
+  border: 0px none #ffffff;
+}

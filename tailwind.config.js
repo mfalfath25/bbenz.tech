@@ -11,6 +11,12 @@ module.exports = {
         'accent-light': '#5834E8',
         'accent-dark': '#A7CB17',
       },
+      fontFamily: {
+        'respira': ['Respira', 'sans-serif'],
+      },
+      backgroundImage: {
+        'textured': "url('/assets/texture.png')"
+      }
     },
   },
   darkMode: "class",

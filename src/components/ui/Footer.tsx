@@ -3,7 +3,8 @@
 import { useTheme } from 'next-themes'
 import { Github, Instagram, Linkedin, Mails, Mouse } from 'lucide-react'
 import Image from 'next/image'
-import { Signature } from './Signature'
+import { Signature } from '../animations/Signature'
+import Link from 'next/link'
 
 export const Footer = () => {
   const icons = [
@@ -31,26 +32,32 @@ export const Footer = () => {
 
   const { theme } = useTheme()
   return (
-    <footer className='sticky bottom-0 border-t border-gray-700/30 bg-transparent backdrop-blur-sm dark:border-white/30'>
-      <div className='mx-auto flex w-full max-w-4xl flex-row items-center justify-between p-2'>
-        {/* <p className='border-1 hidden items-center rounded-md border-gray-300 text-sm opacity-50 md:flex'>
-        <span className='mr-2'>
-          <Mouse size={24} />
-        </span>
-        Hold left click to pan
-      </p> */}
-        <div className='flex gap-4'>
+    <footer
+      className={`${
+        theme === 'dark' ? 'effect-dotted-dark' : 'effect-dotted'
+      } sticky bottom-0 border-t border-gray-700/30 dark:border-white/30`}
+    >
+      <div className='mx-auto grid h-[66px] min-h-max max-w-4xl grid-cols-2 items-center px-2 sm:grid-cols-3'>
+        <div className='hidden flex-col sm:flex'>
+          <Link href='https://creativecommons.org/licenses/by-nc-sa/4.0/'>
+            <p className='text-sm underline opacity-60 ease-out hover:opacity-100'>
+              CC BY-NC-SA 4.0
+            </p>
+          </Link>
+          <p className='text-sm opacity-60'>2023-Present © Fajar Alfath</p>
+        </div>
+        <div className='flex flex-grow items-center justify-start gap-4 sm:justify-self-center'>
           {icons.map((item, index) => (
             <a
               key={item.name}
               href={item.link}
-              className='cursor-pointer opacity-80 ease-out hover:opacity-100'
+              className='cursor-pointer opacity-60 ease-out hover:text-accent-light hover:opacity-100 hover:dark:text-accent-dark'
             >
               {item.icon}
             </a>
           ))}
         </div>
-        <div className='relative order-2 md:order-3'>
+        <div className='relative flex justify-end'>
           <div className={`${theme === 'dark' ? 'invert filter' : ''}`}>
             <Signature />
           </div>

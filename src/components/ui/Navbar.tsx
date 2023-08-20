@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 import { Menu, Moon, Sun, X } from 'lucide-react'
 import Image from 'next/image'
-import ShuffleTextAnimation from '@/lib/animations/ShuffleTextAnimation'
+import ShuffleTextAnimation from '@/components/animations/ShuffleTextAnimation'
 
 const NavMenu = [
   {
@@ -67,7 +67,11 @@ const Navbar = () => {
 
   return (
     <>
-      <header className='sticky top-0 z-20 border-b border-gray-700/30 backdrop-blur-sm dark:border-white/30'>
+      <header
+        className={`${
+          theme === 'dark' ? 'effect-dotted-dark' : 'effect-dotted'
+        } sticky top-0 z-20 border-b border-gray-700/30 backdrop-blur-sm dark:border-white/30`}
+      >
         <div className='mx-auto flex max-w-4xl items-center justify-between p-2 py-4'>
           <div className='flex items-center gap-0 md:gap-5'>
             <Link href='/'>
@@ -79,10 +83,10 @@ const Navbar = () => {
                 height={0}
                 className={`${
                   theme === 'dark' ? 'invert filter' : ''
-                } hidden h-[34px] w-full cursor-pointer ease-out hover:opacity-80 md:block`}
+                } hidden h-[34px] w-full cursor-pointer ease-out hover:opacity-80 sm:block`}
               />
             </Link>
-            <div className='cursor-pointer opacity-80 hover:opacity-100 md:hidden'>
+            <div className='cursor-pointer opacity-80 hover:opacity-100 sm:hidden'>
               {menuOpen ? (
                 <X
                   size={25}
@@ -95,7 +99,7 @@ const Navbar = () => {
                 />
               )}
             </div>
-            <ul className={`hidden gap-5 md:flex`}>
+            <ul className={`hidden gap-5 sm:flex`}>
               {NavMenu.map((item, index) => (
                 <li
                   key={index}
@@ -125,7 +129,7 @@ const Navbar = () => {
               height={0}
               className={`${
                 theme === 'dark' ? 'invert filter' : ''
-              } block h-[34px] w-full cursor-pointer ease-out hover:opacity-80 md:hidden`}
+              } block h-[34px] w-full cursor-pointer ease-out hover:opacity-80 sm:hidden`}
             />
           </Link>
 
@@ -148,7 +152,7 @@ const Navbar = () => {
       </header>
 
       {/* NavMenu When Mobile */}
-      <div className='relative md:hidden'>
+      <div className='relative sm:hidden'>
         <div
           ref={navMenuRef}
           className={`transition-max-height absolute left-0 z-20 h-[calc(100vh-67px)] w-full overflow-hidden backdrop-blur-lg duration-300 ease-in-out ${

@@ -28,7 +28,7 @@ export const ProjectCard = ({ projects }: ProjectCardProps) => {
             alt={`${projects.thumbId}`}
             width={60}
             height={60}
-            className={`my-auto h-fit rounded-md border-neutral-300 dark:border-transparent`}
+            className={`my-auto h-fit rounded-md border-[1px] border-slate-300 dark:border-transparent`}
           />
           <div className='col-span-3 my-auto'>
             <h2 className='text-left text-2xl font-semibold'>

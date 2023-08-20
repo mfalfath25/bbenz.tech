@@ -21,7 +21,7 @@ export const Header = ({ title, enableBackButton }: HeaderProps) => {
             <BackButton />
           </div>
         ) : null}
-        <h1 className='text-center text-2xl font-extrabold tracking-tight'>
+        <h1 className='text-center font-respira text-3xl font-extrabold tracking-tight sm:text-4xl'>
           {title}
         </h1>
       </motion.div>
