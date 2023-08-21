@@ -10,6 +10,8 @@ module.exports = {
       colors: {
         'accent-light': '#5834E8',
         'accent-dark': '#A7CB17',
+        'base-light': '#FFFFFF',
+        'base-dark': '#121212',
       },
       fontFamily: {
         'respira': ['Respira', 'sans-serif'],

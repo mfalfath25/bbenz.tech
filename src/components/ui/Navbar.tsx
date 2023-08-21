@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useTheme } from 'next-themes'
 import { usePathname } from 'next/navigation'
+import { motion } from 'framer-motion'
 
 import Link from 'next/link'
 
@@ -29,6 +30,53 @@ const NavMenu = [
   },
 ]
 
+const MobileMenu: React.FC<{
+  navMenuRef: React.RefObject<HTMLDivElement>
+  menuOpen: boolean
+  closeMenu: () => void
+}> = ({ navMenuRef, menuOpen, closeMenu }) => {
+  const initialAnimation = { x: -10, opacity: 0 }
+  const animateAnimation = {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.25, ease: 'easeIn' },
+  }
+  const closeAnimation = {
+    x: -10,
+    opacity: 0,
+    transition: { duration: 0.25, ease: 'easeOut' },
+  }
+
+  return (
+    <div className={`top-17 fixed left-0 z-20 w-full sm:hidden`}>
+      <motion.div
+        initial={initialAnimation}
+        animate={menuOpen ? animateAnimation : closeAnimation}
+        ref={navMenuRef}
+        className={`absolute top-0 z-20 h-screen w-[200px] border-r-[1px] border-gray-700/30 backdrop-blur-md dark:border-white/30`}
+      >
+        <ul className='flex flex-col'>
+          {NavMenu.map((item, index) => (
+            <li
+              key={index}
+              className='border-b-[1px] border-gray-700/30 text-start opacity-80 backdrop-blur-sm transition-opacity ease-out hover:font-bold hover:opacity-100 dark:border-white/30'
+            >
+              <Link
+                href={item.link}
+                onClick={closeMenu}
+                className='flex w-full justify-between px-4 py-2'
+              >
+                <span>{item.name}</span>
+                <span>-&gt;</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </motion.div>
+    </div>
+  )
+}
+
 const Navbar = () => {
   const [mounted, setMounted] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -42,6 +90,10 @@ const Navbar = () => {
     if (navMenuRef.current && !navMenuRef.current.contains(target)) {
       setMenuOpen(false)
     }
+  }
+
+  const closeMenu = () => {
+    setMenuOpen(false)
   }
 
   useEffect(() => {
@@ -89,12 +141,12 @@ const Navbar = () => {
             <div className='cursor-pointer opacity-80 hover:opacity-100 sm:hidden'>
               {menuOpen ? (
                 <X
-                  size={25}
+                  size={24}
                   onClick={() => setMenuOpen(!menuOpen)}
                 />
               ) : (
                 <Menu
-                  size={25}
+                  size={24}
                   onClick={() => setMenuOpen(!menuOpen)}
                 />
               )}
@@ -151,32 +203,11 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* NavMenu When Mobile */}
-      <div className='relative sm:hidden'>
-        <div
-          ref={navMenuRef}
-          className={`transition-max-height absolute left-0 z-20 h-[calc(100vh-67px)] w-full overflow-hidden backdrop-blur-lg duration-300 ease-in-out ${
-            menuOpen ? '' : 'hidden'
-          }`}
-        >
-          <ul className='flex flex-col'>
-            {NavMenu.map((item, index) => (
-              <li
-                key={index}
-                className='border-b border-gray-700 border-opacity-20 text-center opacity-80 transition-opacity ease-out hover:font-bold hover:opacity-100'
-              >
-                <Link
-                  href={item.link}
-                  onClick={() => setMenuOpen(false)}
-                  className='block px-4 py-2'
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      <MobileMenu
+        navMenuRef={navMenuRef}
+        menuOpen={menuOpen}
+        closeMenu={closeMenu}
+      />
     </>
   )
 }

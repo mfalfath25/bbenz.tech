@@ -18,7 +18,7 @@ export default function ExperimentPage() {
     <>
       <div className='px-2 py-4'>
         <MarqueeText text='Welcome - Willkommen - 환영하다 - ようこそ - Selamat datang - 欢迎 - Bienvenidos - ' />
-        {renderDivs(divs)}
+        {/* {renderDivs(divs)} */}
         {/* <iframe
           className='scale-50 border-2 border-black'
           width='400px'

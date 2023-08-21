@@ -25,9 +25,9 @@ export default function Page() {
         transition={{ duration: 1 }}
         className='relative h-[calc(100vh-134px)] w-full'
       >
-        <Suspense fallback={<SuspenseFallback />}>
+        {/* <Suspense fallback={<SuspenseFallback />}>
           <MainCanvas />
-        </Suspense>
+        </Suspense> */}
         <Intro />
       </motion.div>
     </>

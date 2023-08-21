@@ -24,14 +24,14 @@ export const ProjectDetail = () => {
         />
 
         <div className='relative'>
-          <p className='absolute top-0 text-4xl opacity-10'>
+          <span className='absolute top-0 text-4xl opacity-10'>
             {[1, 2, 3].map((index) => (
               <LetterReveal
                 key={index}
                 text={project?.title}
               />
             ))}
-          </p>
+          </span>
         </div>
 
         <div>
@@ -49,6 +49,7 @@ export const ProjectDetail = () => {
             transition={{ delay: 0.5, duration: 1 }}
           >
             <Image
+              priority
               src={`/assets/projects/medias/media_${project?.thumbId}.jpg`}
               alt={`${project?.thumbId}`}
               width={500}
