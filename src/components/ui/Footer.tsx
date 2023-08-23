@@ -35,7 +35,7 @@ export const Footer = () => {
     <footer
       className={`${
         theme === 'dark' ? 'effect-dotted-dark' : 'effect-dotted'
-      } sticky bottom-0 border-t border-gray-700/30 dark:border-white/30`}
+      } sticky bottom-0 z-20 border-t border-gray-700/30 dark:border-white/30`}
     >
       <div className='mx-auto grid h-[66px] min-h-max max-w-4xl grid-cols-2 items-center px-2 sm:grid-cols-3'>
         <div className='hidden flex-col sm:flex'>

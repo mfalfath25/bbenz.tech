@@ -17,7 +17,7 @@ module.exports = {
         'respira': ['Respira', 'sans-serif'],
       },
       backgroundImage: {
-        'textured': "url('/assets/texture.png')"
+        'graphy': "url('/assets/graphy.png')"
       }
     },
   },

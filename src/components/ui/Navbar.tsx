@@ -53,7 +53,7 @@ const MobileMenu: React.FC<{
         initial={initialAnimation}
         animate={menuOpen ? animateAnimation : closeAnimation}
         ref={navMenuRef}
-        className={`bg-base-light dark:bg-base-dark absolute top-0 z-20 h-screen w-[200px] border-r-[1px] border-gray-700/30 backdrop-blur-lg dark:border-white/30`}
+        className={`absolute top-0 z-20 h-screen w-[200px] border-r-[1px] border-gray-700/30 bg-base-light backdrop-blur-lg dark:border-white/30 dark:bg-base-dark`}
       >
         <ul className='flex flex-col'>
           {NavMenu.map((item, index) => (
@@ -125,7 +125,7 @@ const Navbar = () => {
         } sticky top-0 z-20 border-b border-gray-700/30 backdrop-blur-sm dark:border-white/30`}
       >
         <div className='mx-auto flex max-w-4xl items-center justify-between p-2 py-4'>
-          <div className='flex items-center gap-0 md:gap-5'>
+          <div className='flex items-center gap-0 sm:gap-5'>
             <Link href='/'>
               <Image
                 priority

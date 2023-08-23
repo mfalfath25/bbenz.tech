@@ -25,7 +25,7 @@ export const LetterReveal = ({ text = 'sample' }: LetterRevealProps) => {
 
   return (
     <motion.h1
-      className='font-respira text-5xl'
+      className='font-respira'
       variants={letterVariants}
       initial='initial'
       animate='animate'

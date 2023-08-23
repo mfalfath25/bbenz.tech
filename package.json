@@ -26,6 +26,7 @@
     "framer-motion": "^10.15.1",
     "front-matter": "^4.0.2",
     "frontmatter": "^0.0.3",
+    "glitched-writer": "^2.0.29",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.264.0",
     "maath": "^0.7.0",

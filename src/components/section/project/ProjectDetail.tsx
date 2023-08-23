@@ -34,30 +34,28 @@ export const ProjectDetail = () => {
           </span>
         </div>
 
-        <>
-          <motion.div
-            initial={{ opacity: 0, clipPath: 'circle(0% at 50% 50%)' }}
-            animate={{ opacity: 1, clipPath: 'circle(100%)' }}
-            transition={{ delay: 0.5, duration: 1.25 }}
-          >
-            <Image
-              priority
-              src={`/assets/projects/medias/media_${project?.thumbId}.jpg`}
-              alt={`${project?.thumbId}`}
-              width={500}
-              height={500}
-              className={`mx-auto rounded-xl border-[1px] border-slate-300/50 shadow-2xl shadow-accent-light/50 dark:shadow-accent-dark/50 `}
-            />
-          </motion.div>
-        </>
+        <motion.div
+          initial={{ opacity: 0, clipPath: 'circle(0% at 50% 50%)' }}
+          animate={{ opacity: 1, clipPath: 'circle(100%)' }}
+          transition={{ delay: 0.5, duration: 1.25 }}
+        >
+          <Image
+            priority
+            src={`/assets/projects/medias/media_${project?.thumbId}.jpg`}
+            alt={`${project?.thumbId}`}
+            width={450}
+            height={450}
+            className={`mx-auto rounded-xl border-[1px] border-slate-300/50 shadow-2xl shadow-accent-light/50 dark:shadow-accent-dark/50 `}
+          />
+        </motion.div>
 
         <div className='grid grid-cols-3 gap-5 overflow-hidden sm:grid-cols-4'>
           <div className='grid grid-flow-row grid-cols-1 gap-5 md:mx-auto'>
             <motion.div
               className=''
-              initial={{ x: '10', opacity: 0 }} // Start from the right and fully transparent
-              animate={{ x: 0, opacity: 1 }} // Move to the left and fully opaque
-              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.2 }} // Use the easeInOut easing function
+              initial={{ x: '10', opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.2 }}
             >
               <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 DATE
@@ -66,9 +64,9 @@ export const ProjectDetail = () => {
             </motion.div>
             <motion.div
               className=''
-              initial={{ x: '10', opacity: 0 }} // Start from the right and fully transparent
-              animate={{ x: 0, opacity: 1 }} // Move to the left and fully opaque
-              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.2 }} // Use the easeInOut easing function
+              initial={{ x: '10', opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.2 }}
             >
               <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 CLIENT/ORG
@@ -79,9 +77,9 @@ export const ProjectDetail = () => {
             </motion.div>
             <motion.div
               className=''
-              initial={{ x: '10', opacity: 0 }} // Start from the right and fully transparent
-              animate={{ x: 0, opacity: 1 }} // Move to the left and fully opaque
-              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.2 }} // Use the easeInOut easing function
+              initial={{ x: '10', opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.2 }}
             >
               <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 TYPE
@@ -92,9 +90,9 @@ export const ProjectDetail = () => {
           <div className='col-span-2 grid grid-flow-row grid-cols-1 gap-5'>
             <motion.div
               className=''
-              initial={{ x: '10', opacity: 0 }} // Start from the right and fully transparent
-              animate={{ x: 0, opacity: 1 }} // Move to the left and fully opaque
-              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.4 }} // Use the easeInOut easing function
+              initial={{ x: '10', opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.4 }}
             >
               <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 DESCRIPTION
@@ -105,14 +103,14 @@ export const ProjectDetail = () => {
             </motion.div>
             <motion.div
               className=''
-              initial={{ x: '10', opacity: 0 }} // Start from the right and fully transparent
-              animate={{ x: 0, opacity: 1 }} // Move to the left and fully opaque
-              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.4 }} // Use the easeInOut easing function
+              initial={{ x: '10', opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.4 }}
             >
               <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 STACKS
               </h2>
-              <div className='flex flex-row flex-wrap gap-1'>
+              <div className='flex flex-row flex-wrap gap-1 pt-1'>
                 {project?.stacks.map((element, idx) => (
                   <div
                     key={idx}
@@ -128,9 +126,9 @@ export const ProjectDetail = () => {
           <div className='grid grid-flow-row grid-cols-1 gap-5 md:mx-auto'>
             <motion.div
               className=''
-              initial={{ x: '10', opacity: 0 }} // Start from the right and fully transparent
-              animate={{ x: 0, opacity: 1 }} // Move to the left and fully opaque
-              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.6 }} // Use the easeInOut easing function
+              initial={{ x: '10', opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.6 }}
             >
               <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 EXTERNAL

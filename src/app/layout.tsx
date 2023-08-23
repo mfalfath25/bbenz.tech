@@ -25,7 +25,7 @@ export default function RootLayout({
     <html suppressHydrationWarning>
       <body className={`${inter.className} mx-auto flex h-screen flex-col`}>
         <Providers>
-          <div className='flex-1'>
+          <div className='bg-graphy flex-1'>
             <Navbar />
             <main className='mx-auto min-h-[calc(100vh-134px)] max-w-4xl overflow-auto'>
               {children}
