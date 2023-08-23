@@ -14,18 +14,18 @@ export const Intro = () => {
         className='absolute top-0 z-10 grid h-[calc(100vh-134px)] w-full place-items-center md:absolute md:place-items-start'
       >
         <div className='grid gap-5 pt-0 text-center md:pt-2 md:text-left'>
-          <Image
+          {/* <Image
             src='/assets/photo.png'
             alt='Photo'
             priority
             width={460}
             height={460}
             className='mx-auto block w-1/2 overflow-hidden rounded-full border-2 border-gray-700 ring-2 ring-accent-light backdrop-blur-sm dark:ring-accent-dark md:hidden'
-          />
+          /> */}
 
           <Link
             href='/about'
-            className='group rounded-lg border-[1px] py-4 backdrop-blur-sm transition-colors hover:border-neutral-300 hover:bg-neutral-100 dark:border-neutral-500 hover:dark:border-neutral-100 hover:dark:bg-neutral-800/50 md:px-5'
+            className='group rounded-lg border-[1px] px-2 py-4 backdrop-blur-sm transition-colors hover:border-neutral-300 hover:bg-neutral-100 dark:border-neutral-500 hover:dark:border-neutral-100 hover:dark:bg-neutral-800/50 md:px-4'
           >
             <h2 className='mb-3 text-2xl font-semibold'>
               Hi, I&apos;m Fajar Alfath{' '}

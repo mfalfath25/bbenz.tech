@@ -1,6 +1,6 @@
 import { ProjectDetail } from '@/components/section/project/ProjectDetail'
 
-export default function ProjectDetailPage() {
+export default function Page() {
   return (
     <>
       <div className='px-2 py-4'>

@@ -5,8 +5,8 @@ import { usePathname } from 'next/navigation'
 import { Header } from '@/components/ui/Header'
 import { projectsData } from '@/lib/static/projectData'
 import { LetterReveal } from '@/components/animations/LetterReveal'
-import Link from 'next/link'
 import { ProjectStack } from './ProjectStack'
+import Link from 'next/link'
 import Image from 'next/image'
 
 export const ProjectDetail = () => {
@@ -34,19 +34,11 @@ export const ProjectDetail = () => {
           </span>
         </div>
 
-        <div>
-          <motion.h2
-            initial={{ opacity: 0 }} // Start from the right and fully transparent
-            animate={{ opacity: 1 }} // Move to the left and fully opaque
-            transition={{ duration: 0.25, ease: 'easeIn', delay: 0.4 }} // Use the easeInOut easing function
-            className='text-center text-sm font-light text-neutral-600 dark:text-neutral-300'
-          >
-            MEDIA
-          </motion.h2>
+        <>
           <motion.div
             initial={{ opacity: 0, clipPath: 'circle(0% at 50% 50%)' }}
             animate={{ opacity: 1, clipPath: 'circle(100%)' }}
-            transition={{ delay: 0.5, duration: 1 }}
+            transition={{ delay: 0.5, duration: 1.25 }}
           >
             <Image
               priority
@@ -54,10 +46,10 @@ export const ProjectDetail = () => {
               alt={`${project?.thumbId}`}
               width={500}
               height={500}
-              className={`mx-auto rounded-xl border-[1px] border-slate-300 shadow-2xl shadow-accent-light/50 dark:shadow-accent-dark/50 `}
+              className={`mx-auto rounded-xl border-[1px] border-slate-300/50 shadow-2xl shadow-accent-light/50 dark:shadow-accent-dark/50 `}
             />
           </motion.div>
-        </div>
+        </>
 
         <div className='grid grid-cols-3 gap-5 overflow-hidden sm:grid-cols-4'>
           <div className='grid grid-flow-row grid-cols-1 gap-5 md:mx-auto'>

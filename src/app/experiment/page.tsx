@@ -3,7 +3,7 @@
 import { MarqueeText } from '@/components/animations/MarqueeText'
 import { BlurringDiv, useBlurring } from '@/components/animations/useBlurring'
 
-export default function ExperimentPage() {
+export default function Page() {
   const numberOfDivs = 3 // Change this to the desired number of divs
 
   const divs: BlurringDiv[] = [
@@ -17,7 +17,7 @@ export default function ExperimentPage() {
   return (
     <>
       <div className='px-2 py-4'>
-        <MarqueeText text='Welcome - Willkommen - 환영하다 - ようこそ - Selamat datang - 欢迎 - Bienvenidos - ' />
+        {/* <MarqueeText text='Welcome - Willkommen - 환영하다 - ようこそ - Selamat datang - 欢迎 - Bienvenidos - ' /> */}
         {/* {renderDivs(divs)} */}
         {/* <iframe
           className='scale-50 border-2 border-black'

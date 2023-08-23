@@ -11,22 +11,22 @@ export const Footer = () => {
     {
       name: 'Instagram',
       link: 'https://www.instagram.com/mfajaralfath/',
-      icon: <Instagram strokeWidth={1} />,
+      icon: <Instagram strokeWidth={2} />,
     },
     {
       name: 'Linkedin',
       link: 'https://www.linkedin.com/in/mfalfath25/',
-      icon: <Linkedin strokeWidth={1} />,
+      icon: <Linkedin strokeWidth={2} />,
     },
     {
       name: 'Github',
       link: 'https://github.com/mfalfath25',
-      icon: <Github strokeWidth={1} />,
+      icon: <Github strokeWidth={2} />,
     },
     {
       name: 'Email',
       link: 'mailto: mfalfath25@gmail.com',
-      icon: <Mails strokeWidth={1} />,
+      icon: <Mails strokeWidth={2} />,
     },
   ]
 
@@ -51,7 +51,7 @@ export const Footer = () => {
             <a
               key={item.name}
               href={item.link}
-              className='cursor-pointer opacity-60 ease-out hover:text-accent-light hover:opacity-100 hover:dark:text-accent-dark'
+              className='cursor-pointer opacity-50 ease-out hover:text-accent-light hover:opacity-100 hover:dark:text-accent-dark'
             >
               {item.icon}
             </a>

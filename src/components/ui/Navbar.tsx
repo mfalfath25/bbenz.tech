@@ -16,10 +16,10 @@ const NavMenu = [
     name: 'About',
     link: '/about',
   },
-  {
-    name: 'Blog',
-    link: '/blog',
-  },
+  // {
+  //   name: 'Blog',
+  //   link: '/blog',
+  // },
   {
     name: 'Project',
     link: '/project',
@@ -53,13 +53,13 @@ const MobileMenu: React.FC<{
         initial={initialAnimation}
         animate={menuOpen ? animateAnimation : closeAnimation}
         ref={navMenuRef}
-        className={`absolute top-0 z-20 h-screen w-[200px] border-r-[1px] border-gray-700/30 backdrop-blur-md dark:border-white/30`}
+        className={`bg-base-light dark:bg-base-dark absolute top-0 z-20 h-screen w-[200px] border-r-[1px] border-gray-700/30 backdrop-blur-lg dark:border-white/30`}
       >
         <ul className='flex flex-col'>
           {NavMenu.map((item, index) => (
             <li
               key={index}
-              className='border-b-[1px] border-gray-700/30 text-start opacity-80 backdrop-blur-sm transition-opacity ease-out hover:font-bold hover:opacity-100 dark:border-white/30'
+              className='border-b-[1px] border-gray-700/30 text-start opacity-80 transition-opacity ease-out hover:font-bold hover:text-accent-light hover:opacity-100 dark:border-white/30 hover:dark:text-accent-dark'
             >
               <Link
                 href={item.link}

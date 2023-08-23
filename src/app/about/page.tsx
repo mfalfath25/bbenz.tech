@@ -1,9 +1,11 @@
 import { About } from '@/components/section/about/About'
 
-export default function AboutPage() {
+export default async function Page() {
   return (
     <>
-      <About />
+      <div className='px-2 py-4'>
+        <About />
+      </div>
     </>
   )
 }
