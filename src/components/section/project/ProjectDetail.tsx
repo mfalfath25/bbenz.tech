@@ -43,8 +43,8 @@ export const ProjectDetail = () => {
             priority
             src={`/assets/projects/medias/media_${project?.thumbId}.jpg`}
             alt={`${project?.thumbId}`}
-            width={450}
-            height={450}
+            width={500}
+            height={500}
             className={`mx-auto rounded-xl border-[1px] border-slate-300/50 shadow-2xl shadow-accent-light/50 dark:shadow-accent-dark/50 `}
           />
         </motion.div>
@@ -55,7 +55,7 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.2 }}
+              transition={{ duration: 0.25, ease: 'easeIn', delay: 1 }}
             >
               <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 DATE
@@ -66,7 +66,7 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.2 }}
+              transition={{ duration: 0.25, ease: 'easeIn', delay: 1 }}
             >
               <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 CLIENT/ORG
@@ -79,7 +79,7 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.2 }}
+              transition={{ duration: 0.25, ease: 'easeIn', delay: 1 }}
             >
               <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 TYPE
@@ -92,7 +92,7 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.4 }}
+              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.1 }}
             >
               <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 DESCRIPTION
@@ -105,10 +105,10 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.4 }}
+              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.1 }}
             >
               <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
-                STACKS
+                STACKS / TOOLS
               </h2>
               <div className='flex flex-row flex-wrap gap-1 pt-1'>
                 {project?.stacks.map((element, idx) => (
@@ -128,7 +128,7 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.6 }}
+              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.2 }}
             >
               <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 EXTERNAL

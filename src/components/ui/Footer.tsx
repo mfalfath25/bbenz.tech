@@ -39,11 +39,14 @@ export const Footer = () => {
     >
       <div className='mx-auto grid h-[66px] min-h-max max-w-4xl grid-cols-2 items-center px-2 sm:grid-cols-3'>
         <div className='hidden flex-col sm:flex'>
-          <Link href='https://creativecommons.org/licenses/by-nc-sa/4.0/'>
-            <p className='text-sm underline opacity-60 ease-out hover:opacity-100'>
+          <span>
+            <Link
+              href='https://creativecommons.org/licenses/by-nc-sa/4.0/'
+              className='text-sm underline opacity-60 transition-opacity hover:opacity-100'
+            >
               CC BY-NC-SA 4.0
-            </p>
-          </Link>
+            </Link>
+          </span>
           <p className='text-sm opacity-60'>2023-Present © Fajar Alfath</p>
         </div>
         <div className='flex flex-grow items-center justify-start gap-4 sm:justify-self-center'>
@@ -51,7 +54,7 @@ export const Footer = () => {
             <a
               key={item.name}
               href={item.link}
-              className='cursor-pointer opacity-50 ease-out hover:text-accent-light hover:opacity-100 hover:dark:text-accent-dark'
+              className='cursor-pointer opacity-50 transition-all hover:text-accent-light hover:opacity-100 hover:dark:text-accent-dark'
             >
               {item.icon}
             </a>

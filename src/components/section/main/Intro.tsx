@@ -25,7 +25,7 @@ export const Intro = () => {
 
           <Link
             href='/about'
-            className='group rounded-lg border-[1px] px-2 py-4 backdrop-blur-sm transition-colors hover:border-neutral-300 hover:bg-neutral-100 dark:border-neutral-500 hover:dark:border-neutral-100 hover:dark:bg-neutral-800/50 sm:px-4'
+            className='group rounded-lg border-[1px] px-2 py-4 backdrop-blur-sm transition-colors hover:border-neutral-300 hover:bg-neutral-200/50 dark:border-neutral-500 hover:dark:border-neutral-100 hover:dark:bg-neutral-800/50 sm:px-4'
           >
             <h2 className='mb-3 text-2xl font-semibold'>
               Hi, I&apos;m Fajar Alfath{' '}

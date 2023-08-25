@@ -1,10 +1,7 @@
-'use client'
-
 import { Suspense } from 'react'
 import { Intro } from '@/components/section/main/Intro'
-import { MainCanvas } from '@/components/three/canvas/MainCanvas'
 import { Loader } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { PlaygroundCanvas } from '@/components/three/canvas/PlaygroundCanvas'
 
 export default function Page() {
   const SuspenseFallback = () => {
@@ -19,17 +16,12 @@ export default function Page() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className='relative h-[calc(100vh-134px)] w-full'
-      >
+      <div className='relative h-[calc(100vh-134px)] w-full'>
         <Intro />
         <Suspense fallback={<SuspenseFallback />}>
-          <MainCanvas />
+          <PlaygroundCanvas />
         </Suspense>
-      </motion.div>
+      </div>
     </>
   )
 }
