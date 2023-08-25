@@ -16,10 +16,10 @@ const NavMenu = [
     name: 'About',
     link: '/about',
   },
-  // {
-  //   name: 'Blog',
-  //   link: '/blog',
-  // },
+  {
+    name: 'Blog',
+    link: '/blog',
+  },
   {
     name: 'Project',
     link: '/project',
@@ -77,7 +77,7 @@ const MobileMenu: React.FC<{
   )
 }
 
-const Navbar = () => {
+export const Navbar = () => {
   const [mounted, setMounted] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const navMenuRef = useRef<HTMLDivElement | null>(null)
@@ -203,13 +203,13 @@ const Navbar = () => {
         </div>
       </header>
 
-      <MobileMenu
-        navMenuRef={navMenuRef}
-        menuOpen={menuOpen}
-        closeMenu={closeMenu}
-      />
+      {menuOpen && ( // Only render MobileMenu when menuOpen is true
+        <MobileMenu
+          navMenuRef={navMenuRef}
+          menuOpen={menuOpen}
+          closeMenu={closeMenu}
+        />
+      )}
     </>
   )
 }
-
-export default Navbar

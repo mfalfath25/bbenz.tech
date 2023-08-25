@@ -7,16 +7,14 @@ export default function BackButton() {
   const router = useRouter()
 
   return (
-    <div className='absolute top-0'>
-      <button
-        type='button'
-        onClick={() => router.back()}
-      >
-        <ArrowLeft
-          size={24}
-          className='opacity-60 hover:opacity-100'
-        />
-      </button>
-    </div>
+    <button
+      type='button'
+      onClick={() => router.back()}
+    >
+      <ArrowLeft
+        size={24}
+        className='opacity-60 hover:opacity-100'
+      />
+    </button>
   )
 }

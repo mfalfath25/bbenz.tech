@@ -11,9 +11,9 @@ export const Intro = () => {
         initial={{ opacity: 0, scale: 1 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        className='absolute top-0 z-10 grid h-[calc(100vh-134px)] w-full place-items-center md:absolute md:place-items-start'
+        className='absolute top-0 z-10 grid h-[calc(100vh-134px)] w-full place-items-center sm:place-items-start md:absolute'
       >
-        <div className='grid gap-5 pt-0 text-center md:pt-2 md:text-left'>
+        <div className='ml-0 mt-0 grid gap-5 text-center sm:ml-2 sm:mt-2 sm:text-left'>
           {/* <Image
             src='/assets/photo.png'
             alt='Photo'
@@ -25,7 +25,7 @@ export const Intro = () => {
 
           <Link
             href='/about'
-            className='group rounded-lg border-[1px] px-2 py-4 backdrop-blur-sm transition-colors hover:border-neutral-300 hover:bg-neutral-100 dark:border-neutral-500 hover:dark:border-neutral-100 hover:dark:bg-neutral-800/50 md:px-4'
+            className='group rounded-lg border-[1px] px-2 py-4 backdrop-blur-sm transition-colors hover:border-neutral-300 hover:bg-neutral-100 dark:border-neutral-500 hover:dark:border-neutral-100 hover:dark:bg-neutral-800/50 sm:px-4'
           >
             <h2 className='mb-3 text-2xl font-semibold'>
               Hi, I&apos;m Fajar Alfath{' '}

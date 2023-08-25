@@ -136,14 +136,14 @@ export const ProjectDetail = () => {
               {project?.source ? (
                 <Link
                   href={project?.source ? project?.source : ''}
-                  className='flex flex-row gap-2 opacity-60 ease-out hover:opacity-100'
+                  className='flex flex-row gap-2 transition-colors ease-out hover:text-accent-light dark:hover:text-accent-dark'
                 >
                   <p className='text-md underline'>Source</p>
                 </Link>
               ) : null}
               <Link
                 href={project?.link ? project?.link : ''}
-                className='flex flex-row gap-2 opacity-60 ease-out hover:opacity-100'
+                className='flex flex-row gap-2 transition-colors ease-out hover:text-accent-light dark:hover:text-accent-dark'
               >
                 <p className='text-md underline'>Link</p>
               </Link>

@@ -6,9 +6,9 @@ import { motion } from 'framer-motion'
 import { projectsData } from '@/lib/static/projectData'
 import { MarqueeText } from '@/components/animations/MarqueeText'
 
-export const Project = () => {
+export const Projects = () => {
   return (
-    <>
+    <section>
       <Header title='Projects' />
       <div className='py-3'>
         <MarqueeText text='Project - 프로젝트 - Projekt - プロジェクト - Projek - 项目 - Proyecto - Проект - ' />
@@ -28,6 +28,6 @@ export const Project = () => {
           ))}
         </motion.div>
       </div>
-    </>
+    </section>
   )
 }

@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { siteConfig } from '@/config/site'
 import { Providers } from './providers'
-import Navbar from '@/components/ui/Navbar'
+import { Navbar } from '@/components/ui/Navbar'
 import { Footer } from '@/components/ui/Footer'
 
 const inter = Inter({ subsets: ['latin', 'cyrillic'] })
@@ -25,7 +25,7 @@ export default function RootLayout({
     <html suppressHydrationWarning>
       <body className={`${inter.className} mx-auto flex h-screen flex-col`}>
         <Providers>
-          <div className='bg-graphy flex-1'>
+          <div className='flex-1 bg-graphy'>
             <Navbar />
             <main className='mx-auto min-h-[calc(100vh-134px)] max-w-4xl overflow-auto'>
               {children}

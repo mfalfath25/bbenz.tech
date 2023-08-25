@@ -1,10 +1,10 @@
-import { Project } from '@/components/section/project/Project'
+import { Projects } from '@/components/section/project/Projects'
 
 export default function Page() {
   return (
     <>
       <div className='px-2 py-4'>
-        <Project />
+        <Projects />
       </div>
     </>
   )
