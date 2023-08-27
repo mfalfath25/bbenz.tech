@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useEffect, use } from "react"
-import { ThemeProvider } from "next-themes"
+import { useState, useEffect, use } from 'react'
+import { ThemeProvider } from 'next-themes'
 
 export interface ProvidersProps {
   children: React.ReactNode
@@ -13,7 +13,10 @@ export const Providers = ({ children }: ProvidersProps) => {
   useEffect(() => setMounted(true), [])
 
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider
+      attribute='class'
+      defaultTheme='dark'
+    >
       {mounted && children}
     </ThemeProvider>
   )

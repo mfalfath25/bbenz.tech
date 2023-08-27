@@ -4,9 +4,10 @@ import { motion } from 'framer-motion'
 
 interface LetterRevealProps {
   text?: string
+  props?: any
 }
 
-export const LetterReveal = ({ text = 'sample' }: LetterRevealProps) => {
+export const LetterReveal = ({ text = 'sample', props }: LetterRevealProps) => {
   const letterVariants = {
     initial: { opacity: 0, y: 20 },
     animate: {
@@ -29,6 +30,7 @@ export const LetterReveal = ({ text = 'sample' }: LetterRevealProps) => {
       variants={letterVariants}
       initial='initial'
       animate='animate'
+      {...props}
     >
       {text.split('').map((char, index) => (
         <motion.span

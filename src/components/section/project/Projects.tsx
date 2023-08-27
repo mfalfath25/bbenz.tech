@@ -11,7 +11,7 @@ export const Projects = () => {
     <section>
       <Header title='Projects' />
       <div className='py-3'>
-        <MarqueeText text='Project - 프로젝트 - Projekt - プロジェクト - Projek - 项目 - Proyecto - Проект - ' />
+        <MarqueeText text='Project - 프로젝트 - Projekt - プロジェクト - Proyek - 项目 - Proyecto - Проект - ' />
       </div>
       <div className='grid gap-8'>
         <motion.div

@@ -1,14 +1,16 @@
 import { Suspense } from 'react'
-import { Intro } from '@/components/section/main/Intro'
 import { Loader } from 'lucide-react'
-import { PlaygroundCanvas } from '@/components/three/canvas/PlaygroundCanvas'
+import { Scene } from '@/components/three/scene/Scene'
 
 export default function Page() {
   const SuspenseFallback = () => {
     return (
       <div className='flex h-full w-full items-center justify-center'>
-        <div className='animate-spin'>
-          <Loader size={30} />
+        <div className='opacity-50'>
+          <Loader
+            size={20}
+            className='animate-ping'
+          />
         </div>
       </div>
     )
@@ -16,12 +18,11 @@ export default function Page() {
 
   return (
     <>
-      <div className='relative h-[calc(100vh-134px)] w-full'>
-        <Intro />
+      <section className='h-[calc(100vh-134px)]'>
         <Suspense fallback={<SuspenseFallback />}>
-          <PlaygroundCanvas />
+          <Scene />
         </Suspense>
-      </div>
+      </section>
     </>
   )
 }

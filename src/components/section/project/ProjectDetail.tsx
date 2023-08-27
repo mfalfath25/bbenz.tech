@@ -17,22 +17,22 @@ export const ProjectDetail = () => {
 
   return (
     <>
-      <div className='grid gap-8 overflow-hidden'>
+      <div className='relative'>
+        <span className='absolute top-20 select-none text-5xl opacity-10'>
+          {[1, 2, 3].map((index) => (
+            <LetterReveal
+              key={index}
+              text={project?.title}
+            />
+          ))}
+        </span>
+      </div>
+
+      <section className='grid gap-8 overflow-hidden'>
         <Header
           title={project?.title}
           enableBackButton
         />
-
-        <div className='relative'>
-          <span className='absolute top-0 text-4xl opacity-10'>
-            {[1, 2, 3].map((index) => (
-              <LetterReveal
-                key={index}
-                text={project?.title}
-              />
-            ))}
-          </span>
-        </div>
 
         <motion.div
           initial={{ opacity: 0, clipPath: 'circle(0% at 50% 50%)' }}
@@ -41,10 +41,13 @@ export const ProjectDetail = () => {
         >
           <Image
             priority
-            src={`/assets/projects/medias/media_${project?.thumbId}.jpg`}
+            unoptimized
+            placeholder='blur'
+            blurDataURL='/assets/graphy.png'
+            src={`/assets/projects/medias/media_${project?.thumbId}.png`}
             alt={`${project?.thumbId}`}
-            width={500}
-            height={500}
+            width={551} // 688
+            height={400} // 500
             className={`mx-auto rounded-xl border-[1px] border-slate-300/50 shadow-2xl shadow-accent-light/50 dark:shadow-accent-dark/50 `}
           />
         </motion.div>
@@ -150,7 +153,7 @@ export const ProjectDetail = () => {
             </motion.div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   )
 }
