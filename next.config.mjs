@@ -7,12 +7,14 @@ const nextConfig = {
 }
 
 import withMDX from '@next/mdx'
+import remarkGfm from 'remark-gfm'
+import rehypeHighlight from 'rehype-highlight'
 
 const mdxOptions = {
   extension: /\.(md|mdx)$/,
   options: {
-    remarkPlugins: [],
-    rehypePlugins: [],
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [rehypeHighlight],
   },
 }
 

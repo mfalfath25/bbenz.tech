@@ -14,7 +14,7 @@ export const Scene = () => {
     <>
       <Canvas
         shadows
-        dpr={[2, 2]}
+        dpr={[1, 1]}
         color='transparent'
         orthographic
         camera={{

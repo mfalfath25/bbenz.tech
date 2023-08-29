@@ -3,10 +3,10 @@ import { Header } from '@/components/ui/Header'
 import { getPostsMeta } from '@/lib/mdx/posts'
 import { PostCard } from './PostCard'
 
-export const Posts = async () => {
-  const posts = await getPostsMeta()
+export const revalidate = 1
 
-  console.log('POSTS HERE: ', posts)
+export const PostList = async () => {
+  const posts = await getPostsMeta()
 
   if (!posts) {
     return <p className='text-center'>No posts</p>

@@ -22,24 +22,24 @@
   backdrop-filter: blur(3px);
 }
 
-/* ===== Scrollbar CSS ===== */
+/* Scrollbar */
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #5834e8 #000000;
+  scrollbar-color: #595959 #363636;
 }
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-  width: 4px;
+  width: 10px;
 }
 
 *::-webkit-scrollbar-track {
-  background: #000000;
+  background: #363636;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #5834e8;
+  background-color: #595959;
   border-radius: 0px;
   border: 0px none #ffffff;
 }

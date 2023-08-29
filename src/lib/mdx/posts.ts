@@ -1,10 +1,6 @@
 import { compileMDX } from 'next-mdx-remote/rsc'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings/lib'
-import rehypeHighlight from 'rehype-highlight/lib'
-import rehypeSlug from 'rehype-slug'
-
-// import Video from '@/app/components/Video'
-// import CustomImage from '@/app/components/CustomImage'
+import remarkGfm from 'remark-gfm'
+import rehypeHighlight from 'rehype-highlight'
 
 type Filetree = {
   tree: [
@@ -17,11 +13,12 @@ type Filetree = {
 export async function getPostByName(
   fileName: string
 ): Promise<BlogPost | undefined> {
+  const timestamp = new Date().getTime()
+
   const res = await fetch(
-    `https://raw.githubusercontent.com/mfalfath25/benz-blog-mdx/main/${fileName}`,
+    `https://raw.githubusercontent.com/mfalfath25/benz-blog-mdx/main/${fileName}?timestamp=${timestamp}`,
     {
       headers: {
-        mode: 'no-cors',
         Accept: 'application/vnd.github+json',
         Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
         'X-GitHub-Api-Version': '2022-11-28',
@@ -41,23 +38,11 @@ export async function getPostByName(
     tags: string[]
   }>({
     source: rawMDX,
-    components: {
-      // Video,
-      // CustomImage,
-    },
     options: {
       parseFrontmatter: true,
       mdxOptions: {
-        rehypePlugins: [
-          rehypeHighlight,
-          rehypeSlug,
-          [
-            rehypeAutolinkHeadings,
-            {
-              behavior: 'wrap',
-            },
-          ],
-        ],
+        remarkPlugins: [remarkGfm],
+        rehypePlugins: [rehypeHighlight],
       },
     },
   })
@@ -78,11 +63,12 @@ export async function getPostByName(
 }
 
 export async function getPostsMeta(): Promise<Meta[] | undefined> {
+  const timestamp = new Date().getTime()
+
   const res = await fetch(
-    'https://api.github.com/repos/mfalfath25/benz-blog-mdx/git/trees/main?recursive=1',
+    `https://api.github.com/repos/mfalfath25/benz-blog-mdx/git/trees/main?recursive=1&timestamp=${timestamp}`,
     {
       headers: {
-        mode: 'no-cors',
         Accept: 'application/vnd.github+json',
         Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
         'X-GitHub-Api-Version': '2022-11-28',

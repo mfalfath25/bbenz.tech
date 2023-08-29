@@ -9,7 +9,7 @@ export default function Page() {
         <div className='opacity-50'>
           <Loader
             size={20}
-            className='animate-ping'
+            className='animate-spin'
           />
         </div>
       </div>
