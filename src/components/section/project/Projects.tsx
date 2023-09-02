@@ -3,7 +3,7 @@
 import { Header } from '@/components/ui/Header'
 import { ProjectCard } from './ProjectCard'
 import { motion } from 'framer-motion'
-import { projectsData } from '@/lib/static/projectData'
+import { projectsData } from '@/content/projects/projectData'
 import { MarqueeText } from '@/components/animations/MarqueeText'
 
 export const Projects = () => {

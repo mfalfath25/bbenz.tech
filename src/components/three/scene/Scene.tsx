@@ -14,7 +14,7 @@ export const Scene = () => {
     <>
       <Canvas
         shadows
-        dpr={[1, 1]}
+        dpr={[2, 2]}
         color='transparent'
         orthographic
         camera={{
@@ -28,7 +28,7 @@ export const Scene = () => {
           <div
             className={`opacity-10 ${theme === 'dark' ? 'invert filter' : ''}`}
           >
-            <XLogo />
+            <XLogo duration={1.5} />
           </div>
         </Html>
 

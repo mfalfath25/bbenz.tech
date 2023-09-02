@@ -10,7 +10,7 @@ export const projectsData = [
     date: '2023',
     medias: [],
     source: '',
-    stacks: ['Next', 'Tailwind', 'Three', 'Framer', 'TypeScript'],
+    stacks: ['Next', 'Tailwind', 'Three', 'Framer', 'TypeScript', 'MDX'],
     type: 'Website',
   },
   {

@@ -9,7 +9,7 @@ import { useRef } from 'react'
 export const ValorantModel = (props: JSX.IntrinsicElements['group']) => {
   const group = useRef<THREE.Group>(null!)
   const meshRef = useRef<THREE.Mesh>(null!)
-  const { scene } = useGLTF('/assets/valorant.glb')
+  const gltf = useGLTF('/assets/valorant.glb')
 
   useFrame(() => {
     // if (group.current) {
@@ -27,9 +27,11 @@ export const ValorantModel = (props: JSX.IntrinsicElements['group']) => {
         castShadow
       >
         <mesh ref={meshRef}>
-          <primitive object={scene} />
+          <primitive object={gltf.scene} />
         </mesh>
       </group>
     </>
   )
 }
+
+useGLTF.preload('/assets/valorant.glb')

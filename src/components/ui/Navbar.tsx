@@ -24,10 +24,10 @@ const NavMenu = [
     name: 'Project',
     link: '/project',
   },
-  {
-    name: 'Experiment',
-    link: '/experiment',
-  },
+  // {
+  //   name: 'Experiment',
+  //   link: '/experiment',
+  // },
 ]
 
 const MobileMenu: React.FC<{

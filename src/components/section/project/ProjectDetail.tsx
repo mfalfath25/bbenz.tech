@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import { Header } from '@/components/ui/Header'
-import { projectsData } from '@/lib/static/projectData'
+import { projectsData } from '@/content/projects/projectData'
 import { LetterReveal } from '@/components/animations/LetterReveal'
 import { ProjectStack } from './ProjectStack'
 import Link from 'next/link'
@@ -41,6 +41,7 @@ export const ProjectDetail = () => {
         >
           <Image
             priority
+            // quality={100}
             unoptimized
             placeholder='blur'
             blurDataURL='/assets/graphy.png'

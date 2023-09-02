@@ -1,36 +1,74 @@
 'use client'
 
-import { useTheme } from 'next-themes'
-import { Github, Instagram, Linkedin, Mails, Mouse } from 'lucide-react'
-import Image from 'next/image'
-import { Signature } from '../animations/Signature'
 import Link from 'next/link'
+import Image from 'next/image'
+import { useTheme } from 'next-themes'
+import { Instagram, LucideMailPlus } from 'lucide-react'
+import { Signature } from '../animations/Signature'
+import { Tooltip } from './Tooltip'
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 
 export const Footer = () => {
+  const { theme } = useTheme()
+
   const icons = [
     {
       name: 'Instagram',
       link: 'https://www.instagram.com/mfajaralfath/',
-      icon: <Instagram strokeWidth={2} />,
+      icon: (
+        <Instagram
+          strokeWidth={2}
+          size={24}
+        />
+      ),
     },
     {
-      name: 'Linkedin',
+      name: 'X',
+      link: 'https://twitter.com/_benzwrld',
+      icon: (
+        <Image
+          src='/assets/x.svg'
+          alt='X'
+          width={22}
+          height={22}
+          className={`m-[2px] transition-all ${
+            theme === 'dark' ? 'invert filter' : ''
+          }`}
+        />
+      ),
+    },
+    {
+      name: 'LinkedinIn',
       link: 'https://www.linkedin.com/in/mfalfath25/',
-      icon: <Linkedin strokeWidth={2} />,
+      icon: (
+        <FaLinkedinIn
+          strokeWidth={1}
+          size={24}
+        />
+      ),
     },
     {
       name: 'Github',
       link: 'https://github.com/mfalfath25',
-      icon: <Github strokeWidth={2} />,
+      icon: (
+        <FaGithub
+          strokeWidth={2}
+          size={24}
+        />
+      ),
     },
     {
       name: 'Email',
       link: 'mailto: mfalfath25@gmail.com',
-      icon: <Mails strokeWidth={2} />,
+      icon: (
+        <LucideMailPlus
+          strokeWidth={2}
+          size={24}
+        />
+      ),
     },
   ]
 
-  const { theme } = useTheme()
   return (
     <footer
       className={`${
@@ -52,11 +90,16 @@ export const Footer = () => {
         <div className='flex flex-grow items-center justify-start gap-4 sm:justify-self-center'>
           {icons.map((item, index) => (
             <a
-              key={item.name}
+              key={index}
               href={item.link}
               className='cursor-pointer opacity-50 transition-all hover:text-accent-light hover:opacity-100 hover:dark:text-accent-dark'
             >
-              {item.icon}
+              <Tooltip
+                text={item.name}
+                key={index}
+              >
+                {item.icon}
+              </Tooltip>
             </a>
           ))}
         </div>

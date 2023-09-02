@@ -3,11 +3,16 @@ import React from 'react'
 import { FaFigma, FaNodeJs, FaReact, FaVuejs } from 'react-icons/fa'
 import { TbBrandNextjs, TbBrandSolidjs } from 'react-icons/tb'
 import {
+  SiAstro,
   SiFramer,
+  SiGraphql,
   SiJavascript,
+  SiMdx,
   SiMongodb,
   SiMysql,
   SiPostgresql,
+  SiReactquery,
+  SiRedux,
   SiStyledcomponents,
   SiSvelte,
   SiTailwindcss,
@@ -25,6 +30,8 @@ export const ProjectStack = ({ stack }: ProjectStackProps) => {
   const size = 20
 
   switch (stack) {
+    case 'Astro':
+      return <SiAstro size={size} />
     case 'Solid':
       return <TbBrandSolidjs size={size} />
     case 'Svelte':
@@ -43,10 +50,18 @@ export const ProjectStack = ({ stack }: ProjectStackProps) => {
       return <SiMysql size={size} />
     case 'PostgreSQL':
       return <SiPostgresql size={size} />
+    case 'GraphQL':
+      return <SiGraphql size={size} />
     case 'TypeScript':
       return <SiTypescript size={size} />
     case 'JavaScript':
       return <SiJavascript size={size} />
+    case 'MDX':
+      return <SiMdx size={size} />
+    case 'React Query':
+      return <SiReactquery size={size} />
+    case 'Redux':
+      return <SiRedux size={size} />
     case 'Three':
       return <SiThreedotjs size={size} />
     case 'Framer':

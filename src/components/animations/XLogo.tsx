@@ -2,8 +2,12 @@
 
 import { motion } from 'framer-motion'
 
-export const XLogo = () => {
-  const transition = { duration: 1.5, yoyo: Infinity, ease: 'easeInOut' }
+interface XLogoProps {
+  duration?: number
+}
+
+export const XLogo = ({ duration }: XLogoProps) => {
+  const transition = { duration: duration, ease: 'easeInOut' }
   return (
     <div className='max-h-sm max-w-sm'>
       <svg
