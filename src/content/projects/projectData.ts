@@ -27,10 +27,12 @@ export const projectsData = [
     stacks: [
       'React',
       'NodeJS',
-      'Tailwind',
+      'MongoDB',
       'TypeScript',
       'JavaScript',
-      'MongoDB',
+      'Zustand',
+      'React Query',
+      'Daisy UI',
     ],
     type: 'PWA',
   },
@@ -45,7 +47,7 @@ export const projectsData = [
     date: '2023',
     medias: [],
     source: '',
-    stacks: ['Next', 'Tailwind', 'TypeScript'],
+    stacks: ['Next', 'TypeScript', 'Daisy UI'],
     type: 'Website',
   },
   {
@@ -60,7 +62,7 @@ export const projectsData = [
     date: '2021-2022',
     medias: [],
     source: '',
-    stacks: ['React', 'Styled Components', 'JavaScript'],
+    stacks: ['React', 'JavaScript', 'Styled Components'],
     type: 'PWA, Website',
   },
   {

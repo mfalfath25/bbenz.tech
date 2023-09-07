@@ -27,8 +27,8 @@ export const About = () => {
             blurDataURL='/assets/graphy.png'
             src='/assets/photo.png'
             alt='Photo'
-            width={250}
-            height={250}
+            width={200}
+            height={200}
             className='mx-auto max-w-[50%] rounded-full border-2 border-gray-700 ring-2 ring-accent-light backdrop-blur-sm dark:ring-accent-dark sm:max-w-full'
           />
           <p className='pt-2 text-center text-neutral-400 dark:text-neutral-500'>

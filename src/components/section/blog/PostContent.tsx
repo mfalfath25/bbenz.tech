@@ -58,7 +58,7 @@ export const PostContent = async ({ params: { postId } }: Props) => {
           {meta.tags.map((tag, i) => (
             <div
               key={i}
-              className='dark:border-white-main flex flex-row gap-1 rounded-md border border-black/50 px-1 py-[1px] text-sm opacity-50 dark:border-neutral-200/50'
+              className='dark:border-white-main flex flex-row gap-1 rounded-md border-[1px] border-black/50 px-1 py-[1px] text-sm opacity-50 dark:border-neutral-200/50'
             >
               <span key={i}>{tag}</span>
             </div>

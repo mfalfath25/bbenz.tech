@@ -1,9 +1,15 @@
 import React from 'react'
 
 import { FaFigma, FaNodeJs, FaReact, FaVuejs } from 'react-icons/fa'
-import { TbBrandNextjs, TbBrandSolidjs } from 'react-icons/tb'
+import {
+  TbBrandNextjs,
+  TbBrandSolidjs,
+  TbBrandTypescript,
+  TbSquareLetterZ,
+} from 'react-icons/tb'
 import {
   SiAstro,
+  SiDaisyui,
   SiFramer,
   SiGraphql,
   SiJavascript,
@@ -21,6 +27,7 @@ import {
 } from 'react-icons/si'
 import { GrGrommet } from 'react-icons/gr'
 import { HelpCircle } from 'lucide-react'
+import { BiLogoJavascript, BiLogoTypescript } from 'react-icons/bi'
 
 interface ProjectStackProps {
   stack: string
@@ -53,13 +60,15 @@ export const ProjectStack = ({ stack }: ProjectStackProps) => {
     case 'GraphQL':
       return <SiGraphql size={size} />
     case 'TypeScript':
-      return <SiTypescript size={size} />
+      return <BiLogoTypescript size={size} />
     case 'JavaScript':
-      return <SiJavascript size={size} />
+      return <BiLogoJavascript size={size} />
     case 'MDX':
       return <SiMdx size={size} />
     case 'React Query':
       return <SiReactquery size={size} />
+    case 'Zustand':
+      return <TbSquareLetterZ size={size} />
     case 'Redux':
       return <SiRedux size={size} />
     case 'Three':
@@ -68,6 +77,8 @@ export const ProjectStack = ({ stack }: ProjectStackProps) => {
       return <SiFramer size={size} />
     case 'Tailwind':
       return <SiTailwindcss size={size} />
+    case 'Daisy UI':
+      return <SiDaisyui size={size} />
     case 'Grommet UI':
       return <GrGrommet size={size} />
     case 'Styled Components':

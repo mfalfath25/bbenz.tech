@@ -3,10 +3,16 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useTheme } from 'next-themes'
-import { Instagram, LucideMailPlus } from 'lucide-react'
+import {
+  Instagram,
+  LucideGithub,
+  LucideLinkedin,
+  LucideMail,
+  Twitter,
+} from 'lucide-react'
 import { Signature } from '../animations/Signature'
 import { Tooltip } from './Tooltip'
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
+import { FaLinkedinIn } from 'react-icons/fa'
 
 export const Footer = () => {
   const { theme } = useTheme()
@@ -23,26 +29,28 @@ export const Footer = () => {
       ),
     },
     {
-      name: 'X',
+      name: 'Twitter',
       link: 'https://twitter.com/_benzwrld',
       icon: (
-        <Image
-          src='/assets/x.svg'
-          alt='X'
-          width={22}
-          height={22}
-          className={`m-[2px] transition-all ${
-            theme === 'dark' ? 'invert filter' : ''
-          }`}
+        <Twitter
+          strokeWidth={2}
+          size={24}
         />
+        // <Image
+        //   src='/assets/x.svg'
+        //   alt='X'
+        //   width={24}
+        //   height={24}
+        //   className={`p-[2px] ${theme === 'dark' ? 'invert filter' : ''}`}
+        // />
       ),
     },
     {
-      name: 'LinkedinIn',
+      name: 'LinkedIn',
       link: 'https://www.linkedin.com/in/mfalfath25/',
       icon: (
-        <FaLinkedinIn
-          strokeWidth={1}
+        <LucideLinkedin
+          strokeWidth={2}
           size={24}
         />
       ),
@@ -51,7 +59,7 @@ export const Footer = () => {
       name: 'Github',
       link: 'https://github.com/mfalfath25',
       icon: (
-        <FaGithub
+        <LucideGithub
           strokeWidth={2}
           size={24}
         />
@@ -61,7 +69,7 @@ export const Footer = () => {
       name: 'Email',
       link: 'mailto: mfalfath25@gmail.com',
       icon: (
-        <LucideMailPlus
+        <LucideMail
           strokeWidth={2}
           size={24}
         />
@@ -87,12 +95,12 @@ export const Footer = () => {
           </span>
           <p className='text-sm opacity-60'>2023-Present © Fajar Alfath</p>
         </div>
-        <div className='flex flex-grow items-center justify-start gap-4 sm:justify-self-center'>
+        <div className='flex flex-grow items-center justify-start gap-3 sm:justify-self-center'>
           {icons.map((item, index) => (
             <a
               key={index}
               href={item.link}
-              className='cursor-pointer opacity-50 transition-all hover:text-accent-light hover:opacity-100 hover:dark:text-accent-dark'
+              className='cursor-pointer opacity-50 hover:text-accent-light hover:opacity-100 hover:dark:text-accent-dark'
             >
               <Tooltip
                 text={item.name}

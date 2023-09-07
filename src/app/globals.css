@@ -12,14 +12,14 @@
 .effect-dotted {
   background-image: radial-gradient(rgba(0, 0, 0, 0) 1px, #ffffff 1px);
   background-size: 4px 4px;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(4px);
 }
 
 /* Dark mode */
 .effect-dotted-dark {
   background-image: radial-gradient(rgba(0, 0, 0, 0) 1px, #121212 1px);
   background-size: 4px 4px;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(4px);
 }
 
 /* Scrollbar */
