@@ -5,6 +5,8 @@ import { siteConfig } from '@/config/site'
 import { Providers } from './providers'
 import { Navbar } from '@/components/ui/Navbar'
 import { Footer } from '@/components/ui/Footer'
+import { Suspense } from 'react'
+import Loading from './loading'
 
 const inter = Inter({ subsets: ['latin', 'cyrillic'] })
 
@@ -29,9 +31,11 @@ export default function RootLayout({
         <Providers>
           <div className='flex-1 bg-graphy'>
             <Navbar />
-            <main className='mx-auto min-h-[calc(100vh-134px)] max-w-4xl overflow-auto'>
-              {children}
-            </main>
+            <Suspense fallback={<Loading />}>
+              <main className='mx-auto min-h-[calc(100vh-134px)] max-w-4xl overflow-auto'>
+                {children}
+              </main>
+            </Suspense>
             <Footer />
           </div>
         </Providers>
