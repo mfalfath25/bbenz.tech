@@ -7,6 +7,10 @@
   src: url('../../public/assets/fonts/Respira.ttf');
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Dotted blur effect */
 /* Light mode */
 .effect-dotted {

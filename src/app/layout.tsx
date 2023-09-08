@@ -29,7 +29,10 @@ export default function RootLayout({
         className={`${inter.className} mx-auto flex h-screen flex-col transition-all ease-linear`}
       >
         <Providers>
-          <div className='flex-1 bg-graphy'>
+          <div
+            className='flex-1'
+            // className='flex-1 bg-graphy'
+          >
             <Navbar />
             <Suspense fallback={<Loading />}>
               <main className='mx-auto min-h-[calc(100vh-134px)] max-w-4xl overflow-auto'>

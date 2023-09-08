@@ -6,6 +6,9 @@ import { Canvas } from '@react-three/fiber'
 import { ValorantModel } from '../model/ValorantModel'
 import { LetterReveal } from '../../animations/LetterReveal'
 import { XLogo } from '@/components/animations/XLogo'
+import { Bloom, EffectComposer, Noise } from '@react-three/postprocessing'
+import { BlendFunction } from 'postprocessing'
+import { Stars } from '../model/Stars'
 
 export const Scene = () => {
   const { theme } = useTheme()
@@ -62,6 +65,15 @@ export const Scene = () => {
         >
           <ValorantModel position={[0, -1.5, 0]} />
         </Stage>
+
+        {/* <EffectComposer>
+          <Noise
+            premultiply // enables or disables noise premultiplication
+            blendFunction={
+              BlendFunction.ADD // blend mode, defaults to ADD. see BlendFunction for alternatives
+            } // blend mode
+          />
+        </EffectComposer> */}
       </Canvas>
     </>
   )
