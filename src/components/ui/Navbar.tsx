@@ -59,7 +59,7 @@ const MobileMenu: React.FC<{
           {NavMenu.map((item, index) => (
             <li
               key={index}
-              className='border-b-[1px] border-gray-700/30 text-start opacity-80 transition-opacity hover:font-bold hover:text-accent-light hover:opacity-100 dark:border-white/30 hover:dark:text-accent-dark'
+              className='border-b-[1px] border-gray-700/30 text-start opacity-60 transition-opacity hover:font-bold hover:text-accent-light hover:opacity-100 dark:border-white/30 hover:dark:text-accent-dark'
             >
               <Link
                 href={item.link}
@@ -135,10 +135,10 @@ export const Navbar = () => {
                 height={0}
                 className={`${
                   theme === 'dark' ? 'invert filter' : ''
-                } hidden h-[34px] w-full cursor-pointer hover:opacity-80 sm:block`}
+                } hidden h-[34px] w-full cursor-pointer hover:opacity-90 sm:block`}
               />
             </Link>
-            <div className='cursor-pointer opacity-80 hover:opacity-100 sm:hidden'>
+            <div className='cursor-pointer opacity-60 hover:opacity-100 sm:hidden'>
               {menuOpen ? (
                 <X
                   size={24}
@@ -155,10 +155,10 @@ export const Navbar = () => {
               {NavMenu.map((item, index) => (
                 <li
                   key={index}
-                  className={`hover:opacity-100 ${
+                  className={`transition-all hover:opacity-100 ${
                     pathname.includes(item.link)
-                      ? 'font-bold opacity-100'
-                      : 'opacity-80'
+                      ? 'font-semibold opacity-100'
+                      : 'opacity-60'
                   }`}
                 >
                   <Link href={item.link}>
@@ -185,7 +185,7 @@ export const Navbar = () => {
             />
           </Link>
 
-          <div className='order-2 opacity-60 hover:opacity-100'>
+          <div className='order-2 opacity-60 transition-all hover:opacity-100'>
             {theme === 'dark' ? (
               <Sun
                 size={24}

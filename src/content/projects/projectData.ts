@@ -4,7 +4,7 @@ export const projectsData = [
     desc: 'Basically, this website',
     longDesc:
       'A personal website to showcase my works and projects. Also trying to implement 3D elements using (React Three Fiber) and subtle animations with (Framer Motion).',
-    link: '',
+    link: 'https://benzworld.vercel.app/',
     thumbId: 'benz',
     client: 'Personal',
     date: '2023',

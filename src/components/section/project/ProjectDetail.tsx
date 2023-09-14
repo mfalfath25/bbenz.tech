@@ -15,6 +15,20 @@ export const ProjectDetail = () => {
     (project) => project.thumbId === pathname.split('/').pop()
   )
 
+  if (!project) {
+    return (
+      <div className='flex h-[calc(100vh-134px)] flex-col items-center justify-center'>
+        <p>Sorry, the requested project does not exist.</p>
+        <Link
+          href='/'
+          className='mt-2 rounded-md border-[1px] border-neutral-300 px-2 hover:border-neutral-600 hover:bg-neutral-100 dark:border-neutral-500 dark:border-white/30 hover:dark:border-base-light hover:dark:bg-neutral-800'
+        >
+          Home
+        </Link>
+      </div>
+    )
+  }
+
   return (
     <>
       <div className='relative'>
@@ -37,7 +51,7 @@ export const ProjectDetail = () => {
         <motion.div
           initial={{ opacity: 0, clipPath: 'circle(0% at 50% 50%)' }}
           animate={{ opacity: 1, clipPath: 'circle(100%)' }}
-          transition={{ delay: 0.5, duration: 1.25 }}
+          transition={{ delay: 0.5, duration: 1.2 }}
         >
           <Image
             priority
@@ -47,7 +61,7 @@ export const ProjectDetail = () => {
             blurDataURL='/assets/graphy.png'
             src={`/assets/projects/medias/media_${project?.thumbId}.png`}
             alt={`${project?.thumbId}`}
-            width={551} // 688
+            width={450} // 688
             height={400} // 500
             className={`mx-auto rounded-xl border-[1px] border-neutral-300/50 shadow-2xl shadow-accent-light/50 dark:shadow-accent-dark/50 `}
           />
@@ -140,14 +154,14 @@ export const ProjectDetail = () => {
               {project?.source ? (
                 <Link
                   href={project?.source ? project?.source : ''}
-                  className='flex flex-row gap-2 hover:text-accent-light dark:hover:text-accent-dark'
+                  className='flex flex-row gap-2 transition-all hover:text-accent-light dark:hover:text-accent-dark'
                 >
                   <p className='text-md underline'>Source</p>
                 </Link>
               ) : null}
               <Link
                 href={project?.link ? project?.link : ''}
-                className='flex flex-row gap-2 hover:text-accent-light dark:hover:text-accent-dark'
+                className='flex flex-row gap-2 transition-all hover:text-accent-light dark:hover:text-accent-dark'
               >
                 <p className='text-md underline'>Link</p>
               </Link>

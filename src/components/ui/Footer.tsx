@@ -100,7 +100,7 @@ export const Footer = () => {
             <a
               key={index}
               href={item.link}
-              className='cursor-pointer opacity-50 hover:text-accent-light hover:opacity-100 hover:dark:text-accent-dark'
+              className='cursor-pointer opacity-50 transition-all hover:text-accent-light hover:opacity-100 hover:dark:text-accent-dark'
             >
               <Tooltip
                 text={item.name}

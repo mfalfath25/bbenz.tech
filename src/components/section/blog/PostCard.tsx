@@ -10,7 +10,7 @@ export const PostCard = ({ post }: PostCardProps) => {
   const formattedDate = getFormattedDate(date)
 
   return (
-    <li className='mb-4 mt-2 text-xl opacity-80 hover:text-accent-light hover:opacity-100 dark:hover:text-accent-dark'>
+    <li className='mb-4 mt-2 text-xl opacity-80 transition-all hover:text-accent-light hover:opacity-100 dark:hover:text-accent-dark'>
       <Link href={`/blog/${id}`}>
         {title}
         <br />

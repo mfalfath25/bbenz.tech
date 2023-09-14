@@ -22,7 +22,7 @@ export const ProjectCard = ({ projects }: ProjectCardProps) => {
         href={`/project/${projects.thumbId}`}
         className='flex max-w-sm flex-grow'
       >
-        <div className='group flex flex-grow flex-row gap-4 rounded-lg border-[1px] border-neutral-300 p-4 hover:border-neutral-600 hover:bg-neutral-100 dark:border-neutral-500 dark:border-white/30 hover:dark:border-base-light hover:dark:bg-neutral-800'>
+        <div className='group flex flex-grow flex-row gap-4 rounded-lg border-[1px] border-neutral-300 p-4 transition-all hover:border-neutral-600 hover:bg-neutral-100 dark:border-neutral-500 dark:border-white/30 hover:dark:border-base-light hover:dark:bg-neutral-800'>
           <Image
             src={`/assets/projects/logos/${projects.thumbId}.svg`}
             alt={`${projects.thumbId}`}

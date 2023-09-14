@@ -16,6 +16,17 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  verification: {
+    google: siteConfig.googleVerification,
+  },
+  robots: {
+    index: true,
+  },
+  icons: {
+    icon: '/favicon-16x16.png',
+    shortcut: '/favicon-32x32.png',
+    apple: '/apple-touch-icon.png',
+  },
 }
 
 export default function RootLayout({
@@ -30,8 +41,8 @@ export default function RootLayout({
       >
         <Providers>
           <div
-            className='flex-1'
-            // className='flex-1 bg-graphy'
+            // className='flex-1'
+            className='flex-1 bg-graphy'
           >
             <Navbar />
             <Suspense fallback={<Loading />}>
