@@ -13,14 +13,14 @@ const inter = Inter({ subsets: ['latin', 'cyrillic'] })
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
+    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  authors: {
+    name: siteConfig.author,
+  },
   verification: {
     google: siteConfig.googleVerification,
-  },
-  robots: {
-    index: true,
   },
   icons: {
     icon: '/favicon-16x16.png',

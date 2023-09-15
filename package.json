@@ -29,7 +29,7 @@
     "leva": "^0.9.35",
     "lucide-react": "^0.264.0",
     "maath": "^0.7.0",
-    "next": "13.4.12",
+    "next": "^13.4.19",
     "next-mdx-remote": "^4.4.1",
     "next-themes": "^0.2.1",
     "postcss": "8.4.27",

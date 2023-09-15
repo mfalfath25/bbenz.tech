@@ -1,8 +1,9 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: '_benzworld',
+  name: 'benzwrld',
   description: 'Fajar Alfath digital space',
+  author: 'Fajar Alfath',
   googleVerification: 'XSeHJYSwFk2Q21IyoclMJh5KwBE0psF9IP2S1mM_2uo',
   navItems: [
     {

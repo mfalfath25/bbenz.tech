@@ -1,4 +1,11 @@
 import { Projects } from '@/components/section/project/Projects'
+import { Metadata } from 'next'
+
+export const generateMetadata = (): Metadata => {
+  return {
+    title: `Projects`,
+  }
+}
 
 export default function Page() {
   return (

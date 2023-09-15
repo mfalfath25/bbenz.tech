@@ -1,4 +1,11 @@
 import { About } from '@/components/section/about/About'
+import { Metadata } from 'next'
+
+export const generateMetadata = (): Metadata => {
+  return {
+    title: `About`,
+  }
+}
 
 export default async function Page() {
   return (
