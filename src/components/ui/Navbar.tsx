@@ -24,10 +24,10 @@ const NavMenu = [
     name: 'Project',
     link: '/project',
   },
-  // {
-  //   name: 'Experiment',
-  //   link: '/experiment',
-  // },
+  {
+    name: 'Experiment',
+    link: '/experiment',
+  },
 ]
 
 const MobileMenu: React.FC<{
@@ -203,7 +203,7 @@ export const Navbar = () => {
         </div>
       </header>
 
-      {menuOpen && ( // Only render MobileMenu when menuOpen is true
+      {menuOpen && (
         <MobileMenu
           navMenuRef={navMenuRef}
           menuOpen={menuOpen}

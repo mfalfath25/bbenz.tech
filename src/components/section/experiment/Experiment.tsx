@@ -1,19 +1,48 @@
 'use client'
 
 import { MarqueeText } from '@/components/animations/MarqueeText'
-import { BlurringDiv, useBlurring } from '@/components/animations/useBlurring'
+import { BlurElement, useBlurring } from '@/components/animations/useBlurring'
 import { Header } from '@/components/ui/Header'
+import { Clock } from './blocks/Clock'
 
 export const Experiment = () => {
-  const numberOfDivs = 3 // Change this to the desired number of divs
-
-  const divs: BlurringDiv[] = [
-    { classes: 'bg-red-300 w-40' },
-    { classes: 'bg-blue-300 w-60' },
-    { classes: 'bg-green-300 w-80' },
+  // Interactive blur
+  const { renderDivs } = useBlurring()
+  const divs: BlurElement[] = [
+    {
+      element: {
+        classes: 'md:col-span-4 rounded-lg bg-neutral-500 w-full h-[200px]',
+      },
+    },
+    {
+      element: {
+        classes:
+          'md:col-span-2 rounded-lg bg-slate-500 w-full h-[200px] hover:bg-blue-500',
+      },
+    },
+    {
+      element: {
+        classes:
+          'md:col-span-2 rounded-lg flex h-full items-center justify-center bg-transparent border-[1px] h-[200px] border-gray-700/30 backdrop-blur-sm dark:border-white/30',
+        content: <Clock />,
+      },
+    },
+    {
+      element: {
+        classes: 'md:col-span-2 rounded-lg bg-slate-500 w-full h-[200px]',
+      },
+    },
+    {
+      element: {
+        classes: 'md:col-span-2 rounded-lg bg-neutral-500 w-full h-[200px]',
+      },
+    },
+    {
+      element: {
+        classes: 'rounded-lg bg-slate-500 w-full h-[200px]',
+      },
+    },
   ]
-
-  const { renderDivs } = useBlurring(numberOfDivs)
 
   return (
     <>
@@ -21,21 +50,12 @@ export const Experiment = () => {
       <div className='py-3'>
         <MarqueeText text='Experiment - 실험 - Experimente - 実験 - Eksperimen - 实验 - Experimentos - Эксперимент - ' />
       </div>
-      {/* <MarqueeText text='Welcome - Willkommen - 환영하다 - ようこそ - Selamat datang - 欢迎 - Bienvenidos - ' /> */}
-      {/* {renderDivs(divs)} */}
-      {/* <iframe
-          className='scale-50 border-2 border-black'
-          width='400px'
-          height='600px'
-          src='https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FW8sk5jZeS6J78p8NvezMUZ%2FSIASAT---Interaction-UI%3Ftype%3Ddesign%26node-id%3D137-2290%26t%3DH9RU1P64XA2XGc99-1%26scaling%3Dmin-zoom%26page-id%3D0%253A1%26starting-point-node-id%3D228%253A896%26mode%3Ddesign'
-        ></iframe> */}
 
-      {/* <iframe
-          className='scale-50 border-2 border-black'
-          width='400px'
-          height='600px'
-          src='https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FJ3FQHEmHQEH55dteDUK7z4%2FStudy.Live%3Ftype%3Ddesign%26node-id%3D1-213%26t%3Dl8lxREZZbNPwi8BZ-1%26scaling%3Dmin-zoom%26page-id%3D0%253A1%26mode%3Ddesign'
-        ></iframe> */}
+      <div className='xs:grid-cols-2 xs:gap-4 grid grid-cols-1 gap-x-0 gap-y-4 sm:grid-cols-3 md:grid-cols-8'>
+        {renderDivs(divs)}
+      </div>
+
+      {/* <Clock /> */}
     </>
   )
 }

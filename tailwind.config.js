@@ -18,6 +18,9 @@ module.exports = {
       },
       backgroundImage: {
         'graphy': "url('/assets/graphy.png')"
+      },
+      screens: {
+        'xs': '480px',
       }
     },
   },

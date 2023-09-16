@@ -2,36 +2,34 @@
 
 import { useState } from 'react'
 
-export interface BlurringDiv {
-  classes?: string
-  content?: React.ReactNode
+export interface BlurElement {
+  element?: {
+    classes?: string
+    content?: React.ReactNode
+  }
 }
 
-interface BlurringDivsHook {
-  renderDivs: (divs: BlurringDiv[]) => JSX.Element[]
-}
-
-export const useBlurring = (numberOfDivs: number): BlurringDivsHook => {
+export const useBlurring = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   const handleHover = (index: number | null) => {
     setHoveredIndex(index)
   }
 
-  const renderDivs = (divs: BlurringDiv[]) => {
+  const renderDivs = (divs: BlurElement[]) => {
     return divs.map((div, index) => (
       <div
         key={index}
-        className={`m-2 p-6 ${
-          div.classes +
+        className={`transition-all ${
+          div.element?.classes +
           (hoveredIndex !== null && hoveredIndex !== index
-            ? ' blur-lg filter'
+            ? ' opacity-80 blur-sm filter'
             : '')
         }`}
         onMouseEnter={() => handleHover(index)}
         onMouseLeave={() => handleHover(null)}
       >
-        {div.content}
+        {div.element?.content}
       </div>
     ))
   }
