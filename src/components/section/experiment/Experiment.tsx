@@ -5,6 +5,9 @@ import { BlurElement, useBlurring } from '@/components/animations/useBlurring'
 import { Header } from '@/components/ui/Header'
 import { Clock } from './blocks/Clock'
 import { Oooscillate } from './blocks/Oooscillate'
+import { QrCode } from './blocks/QrCode'
+import { Exp1 } from './blocks/Exp1'
+import { Soundcloud } from './blocks/Soundcloud'
 
 export const Experiment = () => {
   // Interactive blur
@@ -13,35 +16,37 @@ export const Experiment = () => {
     {
       element: {
         classes: 'md:col-span-4 rounded-2xl bg-neutral-500 w-full h-[200px]',
+        content: <Exp1 />,
       },
     },
     {
       element: {
-        classes:
-          'md:col-span-2 rounded-2xl border-[1px] border-gray-700/30 backdrop-blur-sm dark:border-white/30 w-full h-[200px] overflow-clip',
+        classes: 'md:col-span-2 rounded-2xl w-full h-[200px] overflow-clip',
         content: <Oooscillate />,
       },
     },
     {
       element: {
         classes:
-          'md:col-span-2 rounded-2xl flex h-full items-center justify-center bg-transparent border-[1px] h-[200px] border-gray-700/30 backdrop-blur-sm dark:border-white/30',
+          'md:col-span-2 rounded-2xl border-[1px] h-[200px] border-gray-700/30 backdrop-blur-sm dark:border-white/30',
+        content: <QrCode />,
+      },
+    },
+    {
+      element: {
+        classes: 'md:col-span-3 rounded-2xl bg-slate-500 w-full h-[200px]',
+      },
+    },
+    {
+      element: {
+        classes: 'md:col-span-2 rounded-2xl w-full h-[200px]',
         content: <Clock />,
       },
     },
     {
       element: {
         classes: 'md:col-span-3 rounded-2xl bg-slate-500 w-full h-[200px]',
-      },
-    },
-    {
-      element: {
-        classes: 'md:col-span-2 rounded-2xl bg-neutral-500 w-full h-[200px]',
-      },
-    },
-    {
-      element: {
-        classes: 'md:col-span-3 rounded-2xl bg-slate-500 w-full h-[200px]',
+        content: <Soundcloud />,
       },
     },
   ]
@@ -53,7 +58,7 @@ export const Experiment = () => {
         <MarqueeText text='Experiment - 실험 - Experimente - 実験 - Eksperimen - 实验 - Experimentos - Эксперимент - ' />
       </div>
 
-      <div className='grid grid-cols-1 gap-x-0 gap-y-4 xs:grid-cols-2 xs:gap-4 sm:grid-cols-3 md:grid-cols-8'>
+      <div className='grid grid-cols-1 gap-x-0 gap-y-4 xs:grid-cols-2 xs:gap-6 sm:grid-cols-3 md:grid-cols-8'>
         {renderDivs(divs)}
       </div>
     </>

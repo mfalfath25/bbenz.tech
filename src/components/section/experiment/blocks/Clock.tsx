@@ -29,9 +29,13 @@ export const Clock = () => {
 
   return (
     <>
-      <div className='curved-glass flex h-24 w-32 flex-col items-center justify-center rounded-2xl border-4 border-double border-neutral-600 shadow-md shadow-accent-light dark:shadow-accent-dark'>
-        <p className='text-lg font-semibold'>{currentTime}</p>
-        <p className='text-accent-light dark:text-accent-dark'>{currentDate}</p>
+      <div className='mx-auto flex h-full items-center justify-center'>
+        <div className='flex h-24 w-32 flex-col items-center justify-center rounded-2xl border-4 border-double border-neutral-600 shadow-md shadow-accent-light dark:shadow-accent-dark'>
+          <p className='text-lg font-semibold'>{currentTime}</p>
+          <p className='text-accent-light dark:text-accent-dark'>
+            {currentDate}
+          </p>
+        </div>
       </div>
     </>
   )

@@ -7,6 +7,9 @@
   src: url('../../public/assets/fonts/Respira.ttf');
 }
 
+--accent-color-light: #5834e8;
+--accent-color-dark: #a7cb17;
+
 html {
   scroll-behavior: smooth;
 }
@@ -48,5 +51,12 @@ html {
   border: 0px none #ffffff;
 }
 
-.curved-glass {
+.shadow-glow-light {
+  border: 2px solid #5834e8;
+  box-shadow: 0px 0px 10px 0px #5834e8;
+}
+
+.shadow-glow-dark {
+  border: 2px solid #a7cb17;
+  box-shadow: 0px 0px 10px 0px #a7cb17;
 }
