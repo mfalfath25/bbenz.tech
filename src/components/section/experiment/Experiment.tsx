@@ -8,6 +8,7 @@ import { Oooscillate } from './blocks/Oooscillate'
 import { QrCode } from './blocks/QrCode'
 import { Exp1 } from './blocks/Exp1'
 import { Soundcloud } from './blocks/Soundcloud'
+import { Doodles } from './blocks/Doodles'
 
 export const Experiment = () => {
   // Interactive blur
@@ -15,13 +16,14 @@ export const Experiment = () => {
   const divs: BlurElement[] = [
     {
       element: {
-        classes: 'md:col-span-4 rounded-2xl bg-neutral-500 w-full h-[200px]',
-        content: <Exp1 />,
+        classes:
+          'md:col-span-4 rounded-2xl w-full h-[200px] flex items-center justify-center',
+        content: <Doodles />,
       },
     },
     {
       element: {
-        classes: 'md:col-span-2 rounded-2xl w-full h-[200px] overflow-clip',
+        classes: 'md:col-span-2 rounded-2xl w-full h-[200px]',
         content: <Oooscillate />,
       },
     },
@@ -34,7 +36,7 @@ export const Experiment = () => {
     },
     {
       element: {
-        classes: 'md:col-span-3 rounded-2xl bg-slate-500 w-full h-[200px]',
+        classes: 'md:col-span-3 rounded-2xl w-full h-[200px]',
       },
     },
     {
@@ -61,6 +63,8 @@ export const Experiment = () => {
       <div className='grid grid-cols-1 gap-x-0 gap-y-4 xs:grid-cols-2 xs:gap-6 sm:grid-cols-3 md:grid-cols-8'>
         {renderDivs(divs)}
       </div>
+
+      {/* <Exp1 /> */}
     </>
   )
 }
