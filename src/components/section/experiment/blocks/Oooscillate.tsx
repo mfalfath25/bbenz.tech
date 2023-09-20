@@ -1,42 +1,35 @@
 'use client'
 
-import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
 export const Oooscillate = () => {
-  // create a function to generate a random number between 0 and 1
   const random = () => Math.random()
-  const initial = { pathLength: 0, pathSpacing: 0.1 }
-  const animate = { pathLength: 0.5, pathSpacing: 0.5 }
-
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 800 800'
     >
-      <defs>
-        <linearGradient
-          id='oooscillate-grad'
-          x1='50%'
-          x2='50%'
-          y1='0%'
-          y2='100%'
-        >
-          <stop
-            offset='0%'
-            stopColor='hsl(206, 75%, 49%)'
-          ></stop>
-          <stop
-            offset='100%'
-            stopColor='hsl(331, 90%, 56%)'
-          ></stop>
-        </linearGradient>
-      </defs>
+      <linearGradient
+        id='oooscillate-grad'
+        x1='50%'
+        x2='50%'
+        y1='0%'
+        y2='100%'
+      >
+        <stop
+          offset='0%'
+          stopColor='hsl(206, 75%, 49%)'
+        ></stop>
+        <stop
+          offset='100%'
+          stopColor='hsl(331, 90%, 56%)'
+        ></stop>
+      </linearGradient>
       <g
         fill='none'
         stroke='url(#oooscillate-grad)'
         strokeLinecap='round'
-        strokeWidth='3'
+        strokeWidth='5'
       >
         <motion.path
           strokeDasharray='26 35'
@@ -66,7 +59,7 @@ export const Oooscillate = () => {
           strokeDasharray='55 31'
           d='M0 594Q200 95 400 400t400 194'
           opacity='0.93'
-          initial={{ pathLength: 1, pathSpacing: 0.2 }}
+          initial={{ pathLength: 0, pathSpacing: 0.2 }}
           animate={{ pathLength: random() }}
           transition={{
             repeat: Infinity,
@@ -78,7 +71,7 @@ export const Oooscillate = () => {
           strokeDasharray='44 35'
           d='M0 572Q200 95 400 400t400 172'
           opacity='0.9'
-          initial={{ pathLength: 1, pathSpacing: 0.2 }}
+          initial={{ pathLength: 0, pathSpacing: 0.2 }}
           animate={{ pathLength: random() }}
           transition={{
             repeat: Infinity,
@@ -90,7 +83,7 @@ export const Oooscillate = () => {
           strokeDasharray='56 77'
           d='M0 550Q200 95 400 400t400 150'
           opacity='0.86'
-          initial={{ pathLength: 1, pathSpacing: 0.2 }}
+          initial={{ pathLength: 0, pathSpacing: 0.2 }}
           animate={{ pathLength: random() }}
           transition={{
             repeat: Infinity,
@@ -102,7 +95,7 @@ export const Oooscillate = () => {
           strokeDasharray='100 26'
           d='M0 528Q200 95 400 400t400 128'
           opacity='0.83'
-          initial={{ pathLength: 1, pathSpacing: 0.2 }}
+          initial={{ pathLength: 0, pathSpacing: 0.2 }}
           animate={{ pathLength: random() }}
           transition={{
             repeat: Infinity,

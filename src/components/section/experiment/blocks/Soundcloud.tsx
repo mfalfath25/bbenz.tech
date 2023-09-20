@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import { Suspense } from 'react'
 import SoundCloudPlayer from 'react-player/soundcloud'
 
 export const Soundcloud = () => {

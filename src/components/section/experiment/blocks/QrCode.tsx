@@ -1,6 +1,9 @@
+'use client'
+
 import Image from 'next/image'
 import React from 'react'
 import { useTheme } from 'next-themes'
+import { motion } from 'framer-motion'
 
 type Props = {}
 
@@ -9,7 +12,12 @@ export const QrCode = (props: Props) => {
 
   return (
     <>
-      <div className='flex h-full items-center justify-center'>
+      <motion.div
+        className='flex h-full items-center justify-center'
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5, duration: 1 }}
+      >
         <Image
           priority
           quality={100}
@@ -21,7 +29,7 @@ export const QrCode = (props: Props) => {
           height={180}
           className={`${theme === 'dark' ? 'invert' : ''} rounded-xl`}
         />
-      </div>
+      </motion.div>
     </>
   )
 }
