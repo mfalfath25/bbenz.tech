@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 
-interface LetterRevealProps {
+type LetterRevealProps = {
   text?: string
   props?: any
 }

@@ -29,7 +29,7 @@ import { GrGrommet } from 'react-icons/gr'
 import { HelpCircle } from 'lucide-react'
 import { BiLogoJavascript, BiLogoTypescript } from 'react-icons/bi'
 
-interface ProjectStackProps {
+type ProjectStackProps = {
   stack: string
 }
 

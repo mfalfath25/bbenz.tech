@@ -3,13 +3,13 @@ import { GlitchText } from '@/components/animations/GlitchText'
 import Image from 'next/image'
 import { useTheme } from 'next-themes'
 
+const phrases = ['Explorative', 'Typographic', 'Experiment']
+
 export const Typographic = () => {
   const { theme } = useTheme()
   // const n = 10
   // const p = 3
   // const q = n * p
-
-  const phrases = ['Explorative', 'Typographic', 'Experiment']
 
   return (
     // <div className='bars'>

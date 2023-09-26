@@ -24,9 +24,7 @@ import { BlendFunction, Resizer, KernelSize } from 'postprocessing'
 import * as THREE from 'three'
 import { ValorantModel } from '../model/ValorantModel'
 
-type Props = {}
-
-export const AltScene = (props: Props) => {
+export const AltScene = () => {
   const { theme } = useTheme()
   return (
     <>

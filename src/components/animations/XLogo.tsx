@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 
-interface XLogoProps {
+type XLogoProps = {
   duration?: number
 }
 

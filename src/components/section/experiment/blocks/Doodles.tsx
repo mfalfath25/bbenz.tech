@@ -4,9 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { useTheme } from 'next-themes'
 
-type Props = {}
-
-export const Doodles = (props: Props) => {
+export const Doodles = () => {
   const { theme } = useTheme()
   return (
     <>

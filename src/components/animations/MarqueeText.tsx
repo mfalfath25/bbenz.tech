@@ -1,7 +1,7 @@
 'use client'
 
 import Marquee from 'react-fast-marquee'
-interface MarqueeProps {
+type MarqueeProps = {
   text: string
 }
 

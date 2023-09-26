@@ -3,7 +3,7 @@
 import GlitchedWriter, { presets } from 'glitched-writer'
 import { useEffect } from 'react'
 
-interface GlitchTextProps {
+type GlitchTextProps = {
   phrases: string[]
   queueInterval?: number
   loop?: boolean

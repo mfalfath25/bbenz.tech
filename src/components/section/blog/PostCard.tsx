@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import getFormattedDate from '@/lib/getFormattedDate'
 
-interface PostCardProps {
+type PostCardProps = {
   post: Meta
 }
 

@@ -5,9 +5,7 @@ import React from 'react'
 import { useTheme } from 'next-themes'
 import { motion } from 'framer-motion'
 
-type Props = {}
-
-export const QrCode = (props: Props) => {
+export const QrCode = () => {
   const { theme } = useTheme()
 
   return (

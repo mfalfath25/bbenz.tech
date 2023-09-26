@@ -4,7 +4,7 @@ import { getPostsMeta, getPostByName } from '@/lib/mdx/posts'
 import { notFound } from 'next/navigation'
 import 'highlight.js/styles/github-dark.css'
 
-export const revalidate = 1
+export const revalidate = 10
 
 type Props = {
   params: {

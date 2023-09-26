@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 
-interface ShuffleTextProps {
+type ShuffleTextProps = {
   text: string
   shuffleIterations: number
 }

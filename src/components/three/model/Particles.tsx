@@ -5,12 +5,10 @@ import React, { useRef, useState } from 'react'
 import * as THREE from 'three'
 import { Points } from '@react-three/drei'
 
-type Props = {}
-
 const rotationAxis = new THREE.Vector3(0, 1, 0).normalize()
 const q = new THREE.Quaternion()
 
-export const Particles = (props: Props) => {
+export const Particles = () => {
   const particlesRef = useRef<THREE.Points>(null!)
 
   const particlesGeometry = new THREE.SphereGeometry(2, 32, 32)

@@ -3,7 +3,7 @@
 import { useState, useEffect, use } from 'react'
 import { ThemeProvider } from 'next-themes'
 
-export interface ProvidersProps {
+export type ProvidersProps = {
   children: React.ReactNode
 }
 

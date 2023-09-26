@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import BackButton from './BackButton'
 
-interface HeaderProps {
+type HeaderProps = {
   title?: string
   enableBackButton?: boolean
 }

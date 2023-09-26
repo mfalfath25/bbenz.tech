@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-export interface BlurElement {
+export type BlurElement = {
   element?: {
     classes?: string
     content?: React.ReactNode

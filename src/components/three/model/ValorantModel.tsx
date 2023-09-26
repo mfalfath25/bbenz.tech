@@ -4,12 +4,10 @@ import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { useRef } from 'react'
 
-// Model author: Casttelan2 (https://sketchfab.com/Casttelan2)
-
 export const ValorantModel = (props: JSX.IntrinsicElements['group']) => {
   const group = useRef<THREE.Group>(null!)
   const meshRef = useRef<THREE.Mesh>(null!)
-  const gltf = useGLTF('/assets/valorant.glb')
+  const gltf = useGLTF('/assets/valorant.glb') // Model author: Casttelan2 (https://sketchfab.com/Casttelan2)
 
   useFrame(() => {
     // if (group.current) {

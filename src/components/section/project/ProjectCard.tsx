@@ -4,7 +4,7 @@ import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import Link from 'next/link'
 
-interface ProjectCardProps {
+type ProjectCardProps = {
   projects: {
     title: string
     desc: string

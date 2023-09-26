@@ -3,7 +3,7 @@ import { Header } from '@/components/ui/Header'
 import { getPostsMeta } from '@/lib/mdx/posts'
 import { PostCard } from './PostCard'
 
-export const revalidate = 1
+export const revalidate = 10
 
 export const PostList = async () => {
   const posts = await getPostsMeta()
