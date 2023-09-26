@@ -1,12 +1,13 @@
 export const projectsData = [
   {
+    slug: 'benzworld',
     title: '_benzworld',
     desc: 'Basically, this website',
     longDesc:
       'A personal website to showcase my works and projects. Also trying to implement 3D elements using (React Three Fiber) and subtle animations with (Framer Motion).',
     link: 'https://benzworld.vercel.app/',
     thumbId: 'benz',
-    client: 'Personal',
+    client: 'Personal work',
     date: '2023',
     medias: [],
     source: '',
@@ -14,13 +15,14 @@ export const projectsData = [
     type: 'Website',
   },
   {
-    title: 'Speed Reader App',
+    slug: 'speed-reader',
+    title: 'Speed Reader',
     desc: 'Meta guided speed reading app for L2 learners',
     longDesc:
       'Initially created to fulfill my thesis research. Speed Reader is an app to help L2 learners to read faster and more efficiently. The app will guide the user to read faster by using meta guiding technique.',
     link: 'https://speed-reader-vite.vercel.app/',
     thumbId: 'sr',
-    client: 'Personal',
+    client: 'Personal work',
     date: '2023',
     medias: [],
     source: 'https://github.com/mfalfath25/sr-vite',
@@ -37,13 +39,14 @@ export const projectsData = [
     type: 'PWA',
   },
   {
+    slug: 'ufc-stats-tracker',
     title: 'UFC Stats Tracker',
     desc: "UFC fighter's stats, division rankings and season info tracker app",
     longDesc:
       'As a fan of UFC, sometimes I just want to pull up some stats and rankings of my favorite fighters. So I created this app to do just that. The data comes from the MMAv2 API.',
     link: 'https://next-ufc.vercel.app/',
     thumbId: 'ufc',
-    client: 'Personal',
+    client: 'Personal work',
     date: '2023',
     medias: [],
     source: '',
@@ -51,14 +54,15 @@ export const projectsData = [
     type: 'Website',
   },
   {
-    title: 'Kawanbantu App',
+    slug: 'kawanbantu-app',
+    title: 'KawanBantu App',
     desc: 'Donation Platform for social campaigns',
     longDesc:
-      'A PWA and landing page for Kawanbantu, a startup focused on social campaigns and donation platform.',
+      'A PWA and landing page for KawanBantu, a startup focused on social campaigns and donation platform.',
     link: 'https://www.kawanbantu.com/',
     link2: 'https://app.kawanbantu.com/',
     thumbId: 'kb',
-    client: 'Kawanbantu',
+    client: 'KawanBantu',
     date: '2021-2022',
     medias: [],
     source: '',
@@ -66,6 +70,7 @@ export const projectsData = [
     type: 'PWA, Website',
   },
   {
+    slug: 'bem-filkom-ub',
     title: 'BEM Filkom UB',
     desc: "Students' representative council of Faculty of Computer Science UB Landing",
     longDesc:
@@ -80,13 +85,14 @@ export const projectsData = [
     type: 'Website',
   },
   {
+    slug: 'siasat-design',
     title: 'Siasat',
     desc: 'A Student management app',
     longDesc:
       "Basically a management app designed for students. The app supposed to be connected with the university's academic administration system where students can consult, check their attendance, class schedule, and other academic-related stuff.",
     link: 'https://www.figma.com/proto/W8sk5jZeS6J78p8NvezMUZ/SIASAT---Interaction-UI?node-id=228-896&starting-point-node-id=228%3A896',
     thumbId: 'siasat',
-    client: 'Personal',
+    client: 'Personal work',
     date: '2020',
     medias: [],
     source: '',
@@ -94,13 +100,14 @@ export const projectsData = [
     type: 'UI Design',
   },
   {
+    slug: 'study-live-design',
     title: 'Study.Live',
     desc: 'A Study mentorship platform',
     longDesc:
       'A platform to connect students with mentors to help them study a certain topic that they need help with.',
     link: 'https://www.figma.com/proto/J3FQHEmHQEH55dteDUK7z4/Study.Live?node-id=1-1532',
     thumbId: 'sl',
-    client: 'Personal',
+    client: 'Personal work',
     date: '2020',
     medias: [],
     source: '',

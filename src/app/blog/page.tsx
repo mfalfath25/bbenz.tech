@@ -1,7 +1,7 @@
 import { PostList } from '@/components/section/blog/PostList'
 import { Metadata } from 'next'
 
-export const generateMetadata = (): Metadata => {
+export function generateMetadata(): Metadata {
   return {
     title: `Blog`,
   }

@@ -1,7 +1,7 @@
 import { Experiment } from '@/components/section/experiment/Experiment'
 import { Metadata } from 'next'
 
-export const generateMetadata = (): Metadata => {
+export function generateMetadata(): Metadata {
   return {
     title: `Experiment`,
   }

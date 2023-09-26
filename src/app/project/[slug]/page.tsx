@@ -6,14 +6,24 @@ type Props = {
   params: { slug: string }
 }
 
-export const generateMetadata = ({ params }: Props): Metadata => {
-  const dynamicTitle = projectsData.find(
-    (project) => project.thumbId === params.slug
-  )
-
-  return {
-    title: `${dynamicTitle?.title}`,
+export async function generateMetadata({
+  params: { slug },
+}: Props): Promise<Metadata> {
+  const project = projectsData.find((project) => project.slug === slug)
+  if (!project) {
+    return {
+      title: 'Project Not Found',
+    }
   }
+  return {
+    title: project.title,
+  }
+}
+
+export async function generateStaticParams() {
+  return projectsData.map((project) => ({
+    params: { slug: project.slug },
+  }))
 }
 
 export default function Page() {

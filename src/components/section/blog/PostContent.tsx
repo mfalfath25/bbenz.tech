@@ -1,6 +1,6 @@
 import { Header } from '@/components/ui/Header'
 import getFormattedDate from '@/lib/getFormattedDate'
-import { getPostsMeta, getPostByName } from '@/lib/mdx/posts'
+import { getPostByName } from '@/lib/mdx/posts'
 import { notFound } from 'next/navigation'
 import 'highlight.js/styles/github-dark.css'
 
@@ -12,37 +12,11 @@ type Props = {
   }
 }
 
-export async function generateStaticParams() {
-  const posts = await getPostsMeta()
-
-  if (!posts) return []
-
-  return posts.map((post) => ({
-    postId: post.id,
-  }))
-}
-
-export async function generateMetadata({ params: { postId } }: Props) {
-  const post = await getPostByName(`${postId}.mdx`)
-
-  if (!post) {
-    return {
-      title: 'Post Not Found',
-    }
-  }
-
-  return {
-    title: post.meta.title,
-  }
-}
-
 export const PostContent = async ({ params: { postId } }: Props) => {
   const post = await getPostByName(`${postId}.mdx`)
-
   if (!post) notFound()
 
   const { meta, content } = post
-
   const pubDate = getFormattedDate(meta.date)
 
   return (

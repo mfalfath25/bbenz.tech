@@ -6,6 +6,7 @@ import Link from 'next/link'
 
 type ProjectCardProps = {
   projects: {
+    slug: string
     title: string
     desc: string
     link: string
@@ -19,7 +20,7 @@ export const ProjectCard = ({ projects }: ProjectCardProps) => {
   return (
     <>
       <Link
-        href={`/project/${projects.thumbId}`}
+        href={`/project/${projects.slug}`}
         className='flex max-w-sm flex-grow'
       >
         <div className='group flex flex-grow flex-row gap-4 rounded-lg border-[1px] border-neutral-300 p-4 transition-all hover:border-neutral-600 hover:bg-neutral-100 dark:border-neutral-500 dark:border-white/30 hover:dark:border-base-light hover:dark:bg-neutral-800'>

@@ -1,7 +1,7 @@
 import { About } from '@/components/section/about/About'
 import { Metadata } from 'next'
 
-export const generateMetadata = (): Metadata => {
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: `About`,
   }

@@ -11,9 +11,8 @@ import Image from 'next/image'
 
 export const ProjectDetail = () => {
   const pathname = usePathname()
-  const project = projectsData.find(
-    (project) => project.thumbId === pathname.split('/').pop()
-  )
+  const slug = pathname.replace('/project/', '')
+  const project = projectsData.find((project) => project.slug === slug)
 
   if (!project) {
     return (
@@ -51,7 +50,7 @@ export const ProjectDetail = () => {
         <motion.div
           initial={{ opacity: 0, clipPath: 'circle(0% at 50% 50%)' }}
           animate={{ opacity: 1, clipPath: 'circle(100%)' }}
-          transition={{ delay: 0.5, duration: 1.2 }}
+          transition={{ delay: 0.5, duration: 1 }}
         >
           <Image
             priority

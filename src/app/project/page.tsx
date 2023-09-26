@@ -1,7 +1,7 @@
 import { Projects } from '@/components/section/project/Projects'
 import { Metadata } from 'next'
 
-export const generateMetadata = (): Metadata => {
+export function generateMetadata(): Metadata {
   return {
     title: `Projects`,
   }
