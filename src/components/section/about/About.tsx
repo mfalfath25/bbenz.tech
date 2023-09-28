@@ -1,10 +1,10 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import { MarqueeText } from '@/components/animations/MarqueeText'
 import { Header } from '@/components/ui/Header'
-import Content from '@/content/about/about.mdx'
-import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Content from '@/content/about/about.mdx'
 
 export const About = () => {
   return (
@@ -17,27 +17,31 @@ export const About = () => {
       <motion.div
         initial={{ opacity: 0, clipPath: 'circle(0% at 50% 50%)' }}
         animate={{ opacity: 1, clipPath: 'circle(100%)' }}
-        transition={{ duration: 1, ease: 'easeInOut' }}
-        className='grid grid-cols-1 gap-2'
+        transition={{ delay: 0.25, duration: 1, ease: 'easeInOut' }}
+        className='grid grid-cols-1 gap-1 pt-3'
       >
-        <div className='flex flex-col items-center justify-center pt-2'>
-          <Image
-            priority
-            placeholder='blur'
-            blurDataURL='/assets/graphy.png'
-            src='/assets/photo.png'
-            alt='Photo'
-            width={200}
-            height={200}
-            className='mx-auto max-w-[50%] rounded-full border-2 border-gray-700 ring-2 ring-accent-light backdrop-blur-sm dark:ring-accent-dark sm:max-w-full'
-          />
-          <p className='pt-2 text-center text-neutral-400 dark:text-neutral-500'>
-            AI generated photo of me
-          </p>
-        </div>
+        <Image
+          priority
+          placeholder='blur'
+          blurDataURL='/assets/graphy.png'
+          src='/assets/photo.png'
+          alt='Fajar Alfath Photo'
+          width={200}
+          height={200}
+          className='shadow-glow-sm mx-auto max-w-[50%] rounded-full border-2 border-gray-700 shadow-accent-light ring-2 ring-accent-light drop-shadow-2xl backdrop-blur-sm dark:shadow-accent-dark dark:ring-accent-dark sm:max-w-full'
+        />
 
         <div className='prose prose-sm mx-auto dark:prose-invert sm:prose-base lg:prose-lg'>
           <Content />
+        </div>
+
+        <div className='text-center'>
+          <a
+            href='mailto:mfalfath25@gmail.com'
+            className='rounded-md border-[1px] border-gray-700/30 p-1 px-2 text-center transition-colors hover:bg-base-light hover:text-accent-light dark:border-white/30 dark:hover:bg-base-dark dark:hover:text-accent-dark'
+          >
+            Contact 📩
+          </a>
         </div>
       </motion.div>
     </>

@@ -74,7 +74,7 @@ export const Stars = (props: any) => {
         {...props}
       >
         <pointsMaterial
-          size={0.1}
+          size={0.01}
           sizeAttenuation={true}
           color={theme === 'dark' ? '#ffffff' : `#000000`}
         />

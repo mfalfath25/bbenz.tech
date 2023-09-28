@@ -25,7 +25,9 @@ export const QrCode = () => {
           alt='QR'
           width={180}
           height={180}
-          className={`${theme === 'dark' ? 'invert' : ''} rounded-xl`}
+          className={`${
+            theme === 'dark' ? 'invert' : ''
+          } rounded-xl transition-all`}
         />
       </motion.div>
     </>

@@ -1,15 +1,13 @@
 'use client'
 
+import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import { useTheme } from 'next-themes'
 import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
-
-import Link from 'next/link'
-
 import { Menu, Moon, Sun, X } from 'lucide-react'
-import Image from 'next/image'
-import ShuffleTextAnimation from '@/components/animations/ShuffleTextAnimation'
+import { ShuffleTextAnimation } from '@/components/animations/ShuffleTextAnimation'
 
 const NavMenu = [
   {
@@ -30,28 +28,30 @@ const NavMenu = [
   },
 ]
 
-const MobileMenu: React.FC<{
+type MobileMenuProps = {
   navMenuRef: React.RefObject<HTMLDivElement>
   menuOpen: boolean
   closeMenu: () => void
-}> = ({ navMenuRef, menuOpen, closeMenu }) => {
-  const initialAnimation = { x: -10, opacity: 0 }
-  const animateAnimation = {
-    x: 0,
-    opacity: 1,
-    transition: { duration: 0.25, ease: 'easeIn' },
-  }
-  const closeAnimation = {
-    x: -10,
-    opacity: 0,
-    transition: { duration: 0.25, ease: 'easeOut' },
-  }
+}
+
+const MobileMenu = ({ navMenuRef, menuOpen, closeMenu }: MobileMenuProps) => {
+  const initial = menuOpen ? { x: -10, opacity: 0 } : { x: 0, opacity: 1 }
+  const animate = menuOpen
+    ? {
+        x: 0,
+        opacity: 1,
+      }
+    : {
+        x: -10,
+        opacity: 0,
+      }
 
   return (
     <div className={`top-17 fixed left-0 z-20 w-full sm:hidden`}>
       <motion.div
-        initial={initialAnimation}
-        animate={menuOpen ? animateAnimation : closeAnimation}
+        initial={initial}
+        animate={animate}
+        transition={{ duration: 0.25, ease: 'easeInOut' }}
         ref={navMenuRef}
         className={`absolute top-0 z-20 h-screen w-[200px] border-r-[1px] border-gray-700/30 bg-base-light backdrop-blur-lg dark:border-white/30 dark:bg-base-dark`}
       >

@@ -28,7 +28,7 @@ export const GlitchText = ({
     //   steps: 5,
     // })
 
-    const writer = new GlitchedWriter('#phrases')
+    const writer = new GlitchedWriter('#phrases', 'neo')
     writer.queueWrite(phrases, queueInterval, loop)
   }, [phrases, queueInterval, loop])
 

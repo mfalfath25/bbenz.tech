@@ -1,34 +1,34 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 type ShuffleTextProps = {
   text: string
   shuffleIterations: number
 }
 
-const ShuffleTextAnimation: React.FC<ShuffleTextProps> = ({
+const shuffleText = (text: string) => {
+  let shuffledText = text
+
+  const textArray = shuffledText.split('')
+
+  for (let i = textArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[textArray[i], textArray[j]] = [textArray[j], textArray[i]]
+  }
+
+  shuffledText = textArray.join('')
+
+  return shuffledText
+}
+
+export const ShuffleTextAnimation = ({
   text,
   shuffleIterations,
-}) => {
+}: ShuffleTextProps) => {
   const [shuffledText, setShuffledText] = useState(text)
   const [isHovered, setIsHovered] = useState(false)
   const [shuffleCount, setShuffleCount] = useState(0)
-
-  const shuffleText = (text: string) => {
-    let shuffledText = text
-
-    const textArray = shuffledText.split('')
-
-    for (let i = textArray.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1))
-      ;[textArray[i], textArray[j]] = [textArray[j], textArray[i]]
-    }
-
-    shuffledText = textArray.join('')
-
-    return shuffledText
-  }
 
   useEffect(() => {
     let interval: NodeJS.Timeout | null = null
@@ -65,7 +65,6 @@ const ShuffleTextAnimation: React.FC<ShuffleTextProps> = ({
 
   return (
     <span
-      className='shuffle-text'
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -73,5 +72,3 @@ const ShuffleTextAnimation: React.FC<ShuffleTextProps> = ({
     </span>
   )
 }
-
-export default ShuffleTextAnimation

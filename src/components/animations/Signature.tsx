@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 
 export const Signature = () => {
-  const transition = { duration: 1.5, yoyo: Infinity, ease: 'easeInOut' }
+  const transition = { duration: 1.5, ease: 'easeOut' }
   return (
     <div className='max-h-sm max-w-sm'>
       <svg

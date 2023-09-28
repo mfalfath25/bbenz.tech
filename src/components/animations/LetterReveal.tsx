@@ -4,24 +4,45 @@ import { motion } from 'framer-motion'
 
 type LetterRevealProps = {
   text?: string
+  staggerSpeed?: number
+  delay?: number
+  repeat?: number | typeof Infinity
   props?: any
 }
 
-export const LetterReveal = ({ text = 'sample', props }: LetterRevealProps) => {
+export const LetterReveal = ({
+  text = 'sample',
+  staggerSpeed = 0.05,
+  delay = 0,
+  repeat = 0,
+  props,
+}: LetterRevealProps) => {
   const letterVariants = {
-    initial: { opacity: 0, y: 20 },
+    initial: { opacity: 0, y: 0 },
     animate: {
       opacity: 1,
       y: 0,
       transition: {
-        staggerChildren: 0.05, // Adjust this value to control the letter stagger
+        delayChildren: delay,
+        staggerChildren: staggerSpeed, // Adjust this value to control the letter stagger (0 - 1)
+        // repeat: repeat,
+        // repeatDelay: 3,
       },
     },
   }
 
   const letterItemVariants = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
+    initial: { opacity: 0, y: 0 },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delayChildren: delay,
+        staggerChildren: staggerSpeed, // Adjust this value to control the letter stagger (0 - 1)
+        repeat: repeat,
+        repeatDelay: 3,
+      },
+    },
   }
 
   return (

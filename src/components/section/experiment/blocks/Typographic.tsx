@@ -1,7 +1,9 @@
-import Marquee from 'react-fast-marquee'
-import { GlitchText } from '@/components/animations/GlitchText'
+'use client'
+
 import Image from 'next/image'
+import Marquee from 'react-fast-marquee'
 import { useTheme } from 'next-themes'
+import { GlitchText } from '@/components/animations/GlitchText'
 
 const phrases = ['Explorative', 'Typographic', 'Experiment']
 
@@ -33,15 +35,17 @@ export const Typographic = () => {
     // </div>
     <>
       <div className='relative flex h-full flex-col items-center justify-center gap-2 overflow-hidden text-2xl font-extrabold md:text-3xl'>
-        <GlitchText
-          phrases={phrases}
-          queueInterval={500}
-          loop
-          className='bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent'
-        />
+        <div>
+          <GlitchText
+            phrases={phrases}
+            queueInterval={1000}
+            loop
+            className='bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent'
+          />
+        </div>
         <Marquee
           gradient={true}
-          gradientColor={theme === 'dark' ? [18, 18, 18] : [255, 255, 255]}
+          gradientColor={theme === 'dark' ? [27, 27, 27] : [251, 251, 251]}
           gradientWidth={100}
           speed={50}
           autoFill
@@ -51,9 +55,10 @@ export const Typographic = () => {
             priority
             quality={100}
             src='/assets/blocks/memoji.png'
-            alt='QR'
-            width={200}
-            height={200}
+            alt='Memoji'
+            width={300}
+            height={300}
+            className='h-auto w-auto'
           />
         </Marquee>
       </div>

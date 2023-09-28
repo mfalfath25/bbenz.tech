@@ -1,8 +1,8 @@
 'use client'
 
-import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 type ProjectCardProps = {
   projects: {
@@ -15,15 +15,18 @@ type ProjectCardProps = {
 }
 
 export const ProjectCard = ({ projects }: ProjectCardProps) => {
-  const { theme } = useTheme()
-
   return (
     <>
       <Link
         href={`/project/${projects.slug}`}
         className='flex max-w-sm flex-grow'
       >
-        <div className='group flex flex-grow flex-row gap-4 rounded-lg border-[1px] border-neutral-300 p-4 transition-all hover:border-neutral-600 hover:bg-neutral-100 dark:border-neutral-500 dark:border-white/30 hover:dark:border-base-light hover:dark:bg-neutral-800'>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.25, duration: 1, ease: 'easeInOut' }}
+          className='group flex flex-grow flex-row gap-4 rounded-lg border-[1px] border-neutral-300 p-4 transition-all hover:border-neutral-600 hover:bg-neutral-100 dark:border-neutral-500 dark:border-white/30 hover:dark:border-base-light hover:dark:bg-neutral-800'
+        >
           <Image
             src={`/assets/projects/logos/${projects.thumbId}.svg`}
             alt={`${projects.thumbId}`}
@@ -40,7 +43,7 @@ export const ProjectCard = ({ projects }: ProjectCardProps) => {
             </h2>
             <p className='text-left text-sm opacity-70'>{projects.desc}</p>
           </div>
-        </div>
+        </motion.div>
       </Link>
     </>
   )

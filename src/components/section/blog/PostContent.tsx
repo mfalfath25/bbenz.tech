@@ -24,6 +24,7 @@ export const PostContent = async ({ params: { postId } }: Props) => {
       <Header
         title={meta.title}
         enableBackButton
+        animation='fade'
       />
 
       <section className='flex flex-col flex-wrap items-center justify-center gap-2 py-3'>

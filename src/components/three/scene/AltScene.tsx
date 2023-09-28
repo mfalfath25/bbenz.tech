@@ -1,15 +1,10 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import { Canvas } from '@react-three/fiber'
-import { Particles } from '../model/Particles'
 import { useTheme } from 'next-themes'
 import { Stars } from '../model/Stars'
-import {
-  ArcballControls,
-  AsciiRenderer,
-  OrbitControls,
-  PerspectiveCamera,
-} from '@react-three/drei'
+import { Html, PerspectiveCamera, Text } from '@react-three/drei'
 import { Icosahedron } from '../model/Icosahedron'
 import {
   Bloom,
@@ -20,89 +15,111 @@ import {
   Noise,
   Outline,
 } from '@react-three/postprocessing'
-import { BlendFunction, Resizer, KernelSize } from 'postprocessing'
-import * as THREE from 'three'
-import { ValorantModel } from '../model/ValorantModel'
+import { BlendFunction, KernelSize, Resolution } from 'postprocessing'
+import { LetterReveal } from '@/components/animations/LetterReveal'
+import { XLogo } from '@/components/animations/XLogo'
+
+const phrases = ["benz's", 'digital', 'space']
 
 export const AltScene = () => {
   const { theme } = useTheme()
   return (
     <>
-      <Canvas
-        shadows
-        dpr={[2, 2]}
-        color='transparent'
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.25, duration: 0.5, ease: 'easeInOut' }}
+        className='h-full'
       >
-        {/* <OrbitControls
-          enableRotate={false}
-          enableZoom={false}
-          enablePan={true}
-          panSpeed={0.5}
-          mouseButtons={{ LEFT: 2, MIDDLE: 0, RIGHT: 0 }}
-        /> */}
-        <PerspectiveCamera
-          makeDefault
-          position={[0, 0, 5]}
-        />
-        <ambientLight intensity={0.5} />
-        <pointLight
-          position={[1.5, 1, 0]}
-          intensity={20}
-          color={'white'}
-          castShadow
-        />
-        <pointLight
-          position={[-1.5, -1, 0]}
-          intensity={20}
-          color={'white'}
-          castShadow
-        />
-
-        {theme === 'dark' ? (
+        <Canvas
+          shadows
+          dpr={[1, 1]}
+          color='transparent'
+        >
+          <PerspectiveCamera
+            makeDefault
+            position={[0, 0, 5]}
+          />
+          <ambientLight intensity={0.1} />
+          <pointLight
+            position={[2, 1.5, 1]}
+            intensity={20}
+            color={'white'}
+            castShadow
+          />
+          <pointLight
+            position={[-2, -1.5, 1]}
+            intensity={20}
+            color={'white'}
+            castShadow
+          />
+          {/* {theme === 'dark' ? (
           <>
-            {/* <AsciiRenderer
+            <AsciiRenderer
               fgColor='white'
               bgColor='transparent'
             />
             <color
               attach='background'
               args={['black']}
-            /> */}
+            />
           </>
         ) : (
           <>{null}</>
-        )}
+        )} */}
+          <Html position={[-2.25, 0.25, 0]}>
+            <div
+              className={`opacity-5 ${theme === 'dark' ? 'invert filter' : ''}`}
+            >
+              <XLogo duration={2} />
+            </div>
+          </Html>
+          <Html position={[1, 0.5, 0]}>
+            <div className='relative'>
+              <span className='absolute top-20 -z-20 select-none text-6xl opacity-5'>
+                {phrases.map((phrase, index) => (
+                  <LetterReveal
+                    key={index}
+                    text={phrase}
+                    staggerSpeed={0.1}
+                    delay={0.5}
+                    repeat={Infinity}
+                  />
+                ))}
+              </span>
+            </div>
+          </Html>
+          <Text
+            position={[0, 1.5, 0]}
+            fontSize={0.5}
+            receiveShadow
+            font='/assets/fonts/Respira.ttf'
+            color={theme === 'dark' ? 'white' : 'black'}
+          >
+            -BENZ-
+          </Text>
+          <Stars position={[0, 0, 3]} />
+          <Icosahedron position={[0, 0, 0]} />
 
-        <Stars position={[0, 0, 3]} />
-        <Icosahedron
-          castShadow
-          position={[0, 0, 0]}
-        />
-
-        {/* <ValorantModel /> */}
-
-        {/* <EffectComposer>
-          <Noise
-            premultiply // enables or disables noise premultiplication
-            blendFunction={
-              BlendFunction.ADD // blend mode, defaults to ADD. see BlendFunction for alternatives
-            } // blend mode
-          />
-          <Bloom
-            mipmapBlur
-            luminanceThreshold={1}
-            dithering
-          />
-        </EffectComposer> */}
-      </Canvas>
-      {/* // <Canvas camera={{ position: [0, 0, 5] }}>
-    //   <pointLight
-    //     position={[2, 2, 2]}
-    //     intensity={1}
-    //   />
-    //   <ambientLight intensity={0.5} />
-    //   <Particles />
-    // </Canvas> */}
+          <EffectComposer>
+            <Noise
+              premultiply // enables or disables noise premultiplication
+              blendFunction={
+                BlendFunction.ADD // blend mode, defaults to ADD. see BlendFunction for alternatives
+              } // blend mode
+            />
+            <Bloom
+              intensity={0.2}
+              // mipmapBlur
+              kernelSize={KernelSize.MEDIUM}
+              luminanceThreshold={0.25}
+              luminanceSmoothing={0.025}
+              resolutionX={Resolution.AUTO_SIZE} // The horizontal resolution.
+              resolutionY={Resolution.AUTO_SIZE} // The vertical resolution.
+            />
+          </EffectComposer>
+        </Canvas>
+      </motion.div>
     </>
   )
 }

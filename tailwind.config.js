@@ -21,6 +21,13 @@ module.exports = {
       },
       screens: {
         'xs': '480px',
+      },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+        'pulse-fast': 'pulse 1s ease-in-out infinite',
+      },
+      boxShadow: {
+        'glow-sm': '0px 0px 24px 0px #59B7D6'
       }
     },
   },

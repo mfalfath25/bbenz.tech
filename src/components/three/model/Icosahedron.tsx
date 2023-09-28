@@ -12,7 +12,7 @@ export const Icosahedron = (props: ThreeElements['mesh']) => {
 
   useFrame((state, delta) => {
     meshRef.current.rotation.x += delta
-    // meshRef.current.rotation.y += delta
+    meshRef.current.rotation.y += delta
     meshRef.current.rotation.z += delta
   })
 
@@ -32,10 +32,14 @@ export const Icosahedron = (props: ThreeElements['mesh']) => {
         color={theme === 'dark' ? '#ffffff' : `#000000`}
       />
 
-      {/* <meshStandardMaterial emissive="black" emissiveIntensity={1} toneMapped={false} /> */}
+      {/* <meshStandardMaterial
+        emissive='black'
+        emissiveIntensity={1}
+        toneMapped={false}
+      /> */}
       <Edges
-        // scale={1.5}
-        color={theme === 'dark' ? '#000000' : `#ffffff`}
+        scale={1.2}
+        color={theme === 'dark' ? '#ffffff' : `#000000`}
       />
     </mesh>
   )

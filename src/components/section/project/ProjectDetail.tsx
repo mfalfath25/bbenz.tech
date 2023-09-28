@@ -45,6 +45,7 @@ export const ProjectDetail = () => {
         <Header
           title={project?.title}
           enableBackButton
+          animation='fade'
         />
 
         <motion.div
@@ -55,13 +56,14 @@ export const ProjectDetail = () => {
           <Image
             priority
             quality={100}
-            unoptimized
+            // unoptimized
+            // loading='lazy'
             placeholder='blur'
             blurDataURL='/assets/graphy.png'
             src={`/assets/projects/medias/media_${project?.thumbId}.png`}
             alt={`${project?.thumbId}`}
             width={450} // 688
-            height={400} // 500
+            height={327} // 500
             className={`mx-auto rounded-xl border-[1px] border-neutral-300/50 shadow-2xl shadow-accent-light/50 dark:shadow-accent-dark/50 `}
           />
         </motion.div>
@@ -72,7 +74,7 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.25, ease: 'easeIn', delay: 1 }}
+              transition={{ duration: 0.5, ease: 'circIn', delay: 1 }}
             >
               <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 DATE
@@ -83,7 +85,7 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.25, ease: 'easeIn', delay: 1 }}
+              transition={{ duration: 0.5, ease: 'circIn', delay: 1 }}
             >
               <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 CLIENT/ORG
@@ -96,7 +98,7 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.25, ease: 'easeIn', delay: 1 }}
+              transition={{ duration: 0.5, ease: 'circIn', delay: 1 }}
             >
               <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 TYPE
@@ -109,7 +111,7 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.1 }}
+              transition={{ duration: 0.5, ease: 'circIn', delay: 1.15 }}
             >
               <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 DESCRIPTION
@@ -122,7 +124,7 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.1 }}
+              transition={{ duration: 0.5, ease: 'circIn', delay: 1.15 }}
             >
               <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 STACKS / TOOLS / LIBS
@@ -145,7 +147,7 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.25, ease: 'easeIn', delay: 1.2 }}
+              transition={{ duration: 0.5, ease: 'circIn', delay: 1.3 }}
             >
               <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 EXTERNAL
