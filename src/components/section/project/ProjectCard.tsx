@@ -18,7 +18,7 @@ export const ProjectCard = ({ projects }: ProjectCardProps) => {
   return (
     <>
       <Link
-        href={`/project/${projects.slug}`}
+        href={`/projects/${projects.slug}`}
         className='flex max-w-sm flex-grow'
       >
         <motion.div

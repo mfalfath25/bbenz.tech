@@ -50,3 +50,34 @@ html {
   border-radius: 0px;
   border: 0px none #ffffff;
 }
+
+/* ImageGallery */
+.gallery-container {
+  display: flex;
+  justify-content: space-between; /* Initially, distribute space between children */
+  width: 100%;
+  align-items: stretch; /* Make children stretch to fill the parent vertically */
+}
+
+.gallery-item {
+  flex: 1; /* Allow children to grow and evenly distribute space */
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: flex 0.5s cubic-bezier(0.5, 0.25, 0.5, 1); /* Transition the flex property */
+}
+
+.gallery-container:hover {
+  justify-content: flex-start; /* When the container is hovered, stack children on the left */
+}
+
+.gallery-item:hover {
+  flex: 10; /* Expand the hovered item to take more space */
+}
+
+.gallery-container:hover .gallery-item:not(:hover) {
+  transition-property: all;
+  filter: blur(1px);
+  flex: 1; /* Make non-hovered items smaller */
+}

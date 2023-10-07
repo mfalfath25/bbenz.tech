@@ -19,8 +19,8 @@ const NavMenu = [
     link: '/blog',
   },
   {
-    name: 'Project',
-    link: '/project',
+    name: 'Projects',
+    link: '/projects',
   },
   {
     name: 'Experiment',

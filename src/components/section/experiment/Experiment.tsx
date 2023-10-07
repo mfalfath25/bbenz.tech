@@ -7,34 +7,41 @@ import { Oooscillate } from '@/components/section/experiment/blocks/Oooscillate'
 import { Soundcloud } from '@/components/section/experiment/blocks/Soundcloud'
 import { Typographic } from '@/components/section/experiment/blocks/Typographic'
 import { Blocks, BlocksProps } from './Blocks'
+import { Dots } from './blocks/Dots'
+import { Gallery } from './blocks/Gallery'
+import ImageGallery from './blocks/ImageGallery'
 
 export const Experiment = () => {
   const blocks: BlocksProps[] = [
     {
       classes:
-        'md:col-span-4 rounded-2xl w-full h-[200px] flex items-center justify-center',
-      content: <Doodles />,
+        'md:col-span-4 rounded-xl w-full h-[200px] flex items-center justify-center',
+      content: <ImageGallery />,
     },
     {
-      classes: 'md:col-span-2 rounded-2xl w-full h-[200px]',
+      classes:
+        'md:col-span-2 rounded-xl w-full h-[200px] flex items-center justify-center',
       content: <QrCode />,
     },
     {
       classes:
-        'md:col-span-2 rounded-2xl border-[1px] h-[200px] border-gray-700/30 backdrop-blur-sm dark:border-white/30',
-      content: <Oooscillate />,
+        'md:col-span-2 rounded-xl w-full h-[200px] flex items-center justify-center',
+      content: <Dots />,
     },
     {
-      classes: 'md:col-span-3 rounded-2xl w-full h-[200px]',
+      classes: 'md:col-span-3 rounded-xl w-full h-[200px]',
       content: <Typographic />,
     },
     {
-      classes: 'md:col-span-2 rounded-2xl w-full h-[200px]',
+      classes: 'md:col-span-2 rounded-xl w-full h-[200px]',
       content: <Clock />,
     },
     {
-      classes: 'md:col-span-3 rounded-2xl w-full h-[200px]',
+      classes:
+        'md:col-span-3 rounded-xl w-full h-[200px] flex items-center justify-center',
       content: <Soundcloud />,
+      // content: <Doodles />,
+      // content: <Oooscillate />,
     },
   ]
 
@@ -44,7 +51,6 @@ export const Experiment = () => {
       <div className='py-3'>
         <MarqueeText text='Experiment - 실험 - Experimente - 実験 - Eksperimen - 实验 - Experimentos - Эксперимент - ' />
       </div>
-
       <div className='grid grid-cols-1 gap-x-0 gap-y-4 xs:grid-cols-2 xs:gap-6 sm:grid-cols-3 md:grid-cols-8'>
         {blocks.map((block, index) => (
           <Blocks
@@ -54,6 +60,7 @@ export const Experiment = () => {
           />
         ))}
       </div>
+      {/* <ImageGallery /> */}
     </>
   )
 }

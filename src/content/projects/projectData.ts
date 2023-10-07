@@ -49,7 +49,7 @@ export const projectsData = [
     client: 'Personal work',
     date: '2023',
     medias: [],
-    source: '',
+    source: 'https://github.com/mfalfath25/ufc-stats-tracker',
     stacks: ['Next', 'TypeScript', 'Daisy UI'],
     type: 'Website',
   },

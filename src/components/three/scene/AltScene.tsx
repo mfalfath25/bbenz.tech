@@ -33,7 +33,7 @@ export const AltScene = () => {
       >
         <Canvas
           shadows
-          dpr={[1, 1]}
+          dpr={[1, 2]}
           color='transparent'
         >
           <PerspectiveCamera
