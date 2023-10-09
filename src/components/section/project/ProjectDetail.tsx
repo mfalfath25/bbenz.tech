@@ -51,7 +51,7 @@ export const ProjectDetail = () => {
         <motion.div
           initial={{ opacity: 0, clipPath: 'circle(0% at 50% 50%)' }}
           animate={{ opacity: 1, clipPath: 'circle(100%)' }}
-          transition={{ delay: 0.5, duration: 1.2, ease: 'easeInOut' }}
+          transition={{ delay: 0.5, duration: 1, ease: 'easeInOut' }}
         >
           <Image
             priority

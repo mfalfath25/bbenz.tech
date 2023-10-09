@@ -8,7 +8,6 @@ import { Soundcloud } from '@/components/section/experiment/blocks/Soundcloud'
 import { Typographic } from '@/components/section/experiment/blocks/Typographic'
 import { Blocks, BlocksProps } from './Blocks'
 import { Dots } from './blocks/Dots'
-import { Gallery } from './blocks/Gallery'
 import ImageGallery from './blocks/ImageGallery'
 
 export const Experiment = () => {
@@ -40,8 +39,6 @@ export const Experiment = () => {
       classes:
         'md:col-span-3 rounded-xl w-full h-[200px] flex items-center justify-center',
       content: <Soundcloud />,
-      // content: <Doodles />,
-      // content: <Oooscillate />,
     },
   ]
 
@@ -51,7 +48,7 @@ export const Experiment = () => {
       <div className='py-3'>
         <MarqueeText text='Experiment - 실험 - Experimente - 実験 - Eksperimen - 实验 - Experimentos - Эксперимент - ' />
       </div>
-      <div className='grid grid-cols-1 gap-x-0 gap-y-4 xs:grid-cols-2 xs:gap-6 sm:grid-cols-3 md:grid-cols-8'>
+      <div className='grid grid-cols-1 gap-x-0 gap-y-2 xs:grid-cols-2 xs:gap-2 sm:grid-cols-3 md:grid-cols-8 md:gap-6'>
         {blocks.map((block, index) => (
           <Blocks
             key={index}
@@ -60,7 +57,6 @@ export const Experiment = () => {
           />
         ))}
       </div>
-      {/* <ImageGallery /> */}
     </>
   )
 }

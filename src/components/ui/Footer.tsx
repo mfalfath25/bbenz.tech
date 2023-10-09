@@ -28,23 +28,23 @@ export const Footer = () => {
         />
       ),
     },
-    {
-      name: 'Twitter',
-      link: 'https://twitter.com/_benzwrld',
-      icon: (
-        <Twitter
-          strokeWidth={2}
-          size={24}
-        />
-        // <Image
-        //   src='/assets/x.svg'
-        //   alt='X'
-        //   width={24}
-        //   height={24}
-        //   className={`p-[2px] ${theme === 'dark' ? 'invert filter' : ''}`}
-        // />
-      ),
-    },
+    // {
+    // name: 'Twitter',
+    // link: 'https://twitter.com/_benzwrld',
+    // icon: (
+    //   <Twitter
+    //     strokeWidth={2}
+    //     size={24}
+    //   />
+    // <Image
+    //   src='/assets/x.svg'
+    //   alt='X'
+    //   width={24}
+    //   height={24}
+    //   className={`p-[2px] ${theme === 'dark' ? 'invert filter' : ''}`}
+    // />
+    // ),
+    // },
     {
       name: 'LinkedIn',
       link: 'https://www.linkedin.com/in/mfalfath25/',

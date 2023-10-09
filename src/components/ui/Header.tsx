@@ -7,12 +7,14 @@ type HeaderProps = {
   title?: string
   enableBackButton?: boolean
   animation?: 'fade' | 'slide'
+  font?: 'respira' | 'inter'
 }
 
 export const Header = ({
   title,
   enableBackButton,
   animation = 'slide',
+  font = 'respira',
 }: HeaderProps) => {
   const initial =
     animation === 'fade' ? { opacity: 0 } : { opacity: 0, y: '100%' }
@@ -42,8 +44,12 @@ export const Header = ({
               </div>
             </div>
           )}
-          <div className='flex-1 text-center'>
-            <h2 className='font-respira text-2xl font-extrabold tracking-tight sm:text-4xl'>
+          <div className='flex-1 px-6 text-center'>
+            <h2
+              className={`${
+                font === 'respira' ? 'font-respira' : 'font-inter'
+              } text-2xl font-semibold tracking-tight sm:text-4xl`}
+            >
               {title}
             </h2>
           </div>

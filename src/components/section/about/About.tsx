@@ -17,21 +17,19 @@ export const About = () => {
       <motion.div
         initial={{ opacity: 0, clipPath: 'circle(0% at 50% 50%)' }}
         animate={{ opacity: 1, clipPath: 'circle(100%)' }}
-        transition={{ delay: 0.25, duration: 1, ease: 'easeInOut' }}
+        transition={{ delay: 0.25, duration: 0.75, ease: 'easeInOut' }}
         className='grid grid-cols-1 gap-1 pt-3'
       >
         <Image
           priority
-          placeholder='blur'
-          blurDataURL='/assets/graphy.png'
           src='/assets/photo.png'
           alt='Fajar Alfath Photo'
           width={200}
           height={200}
-          className='shadow-glow-sm mx-auto max-w-[50%] rounded-full border-2 border-gray-700 shadow-accent-light ring-2 ring-accent-light drop-shadow-2xl backdrop-blur-sm dark:shadow-accent-dark dark:ring-accent-dark sm:max-w-full'
+          className='mx-auto max-w-[50%] rounded-full border-2 border-gray-700 shadow-glow-sm shadow-accent-light ring-2 ring-accent-light drop-shadow-2xl backdrop-blur-sm dark:shadow-accent-dark dark:ring-accent-dark sm:max-w-full'
         />
 
-        <div className='prose prose-sm mx-auto dark:prose-invert sm:prose-base lg:prose-lg'>
+        <div className='prose prose-sm mx-auto dark:prose-invert sm:prose-base'>
           <Content />
         </div>
 

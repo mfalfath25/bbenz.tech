@@ -67,28 +67,27 @@ const GalleryItem = ({ imageData }: galleryItemProps) => {
         opacity: 0,
         // WebkitMaskImage: hiddenMask,
         // maskImage: hiddenMask,
-        WebkitClipPath: 'polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)',
-        clipPath: 'polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)',
+        // WebkitClipPath: 'polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)',
+        // clipPath: 'polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)',
       }}
       animate={{
         opacity: 1,
         // WebkitMaskImage: visibleMask,
         // maskImage: visibleMask,
-        WebkitClipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
-        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+        // WebkitClipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+        // clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
       }}
-      transition={{ delay: 0.5, duration: 0.5, ease: 'easeInOut' }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <Image
         priority
-        quality={100}
+        // quality={100}
         src={imageData.src}
         alt={imageData.alt}
-        width={300}
-        height={400}
-        className='h-full w-full object-cover saturate-50 transition-all hover:saturate-100'
+        fill
+        sizes='(max-width: 768px) 100vw, 50vw'
+        className='object-cover saturate-50 transition-all hover:saturate-100'
       ></Image>
       {isHovered && (
         <motion.span

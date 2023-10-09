@@ -92,7 +92,6 @@ export const AltScene = () => {
           <Text
             position={[0, 1.5, 0]}
             fontSize={0.5}
-            receiveShadow
             font='/assets/fonts/Respira.ttf'
             color={theme === 'dark' ? 'white' : 'black'}
           >
@@ -102,20 +101,20 @@ export const AltScene = () => {
           <Icosahedron position={[0, 0, 0]} />
 
           <EffectComposer>
-            <Noise
+            {/* <Noise
               premultiply // enables or disables noise premultiplication
               blendFunction={
                 BlendFunction.ADD // blend mode, defaults to ADD. see BlendFunction for alternatives
               } // blend mode
-            />
+            /> */}
             <Bloom
               intensity={0.2}
               // mipmapBlur
-              kernelSize={KernelSize.MEDIUM}
+              kernelSize={KernelSize.SMALL}
               luminanceThreshold={0.25}
               luminanceSmoothing={0.025}
-              resolutionX={Resolution.AUTO_SIZE} // The horizontal resolution.
-              resolutionY={Resolution.AUTO_SIZE} // The vertical resolution.
+              // resolutionX={Resolution.AUTO_SIZE} // The horizontal resolution.
+              // resolutionY={Resolution.AUTO_SIZE} // The vertical resolution.
             />
           </EffectComposer>
         </Canvas>

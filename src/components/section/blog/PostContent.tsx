@@ -2,7 +2,7 @@ import { Header } from '@/components/ui/Header'
 import getFormattedDate from '@/lib/getFormattedDate'
 import { getPostByName } from '@/lib/mdx/posts'
 import { notFound } from 'next/navigation'
-import 'highlight.js/styles/github-dark.css'
+import 'highlight.js/styles/github-dark-dimmed.css'
 
 export const revalidate = 10
 
@@ -25,6 +25,7 @@ export const PostContent = async ({ params: { postId } }: Props) => {
         title={meta.title}
         enableBackButton
         animation='fade'
+        font='inter'
       />
 
       <section className='flex flex-col flex-wrap items-center justify-center gap-2 py-3'>
@@ -41,7 +42,7 @@ export const PostContent = async ({ params: { postId } }: Props) => {
         </div>
       </section>
 
-      <article className='prose mx-auto no-underline dark:prose-invert'>
+      <article className='prose prose-sm mx-auto no-underline dark:prose-invert sm:prose-base hover:prose-a:text-accent-light dark:hover:prose-a:text-accent-dark'>
         {content}
       </article>
     </>
