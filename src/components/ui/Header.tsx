@@ -48,7 +48,7 @@ export const Header = ({
             <h2
               className={`${
                 font === 'respira' ? 'font-respira' : 'font-inter'
-              } text-2xl font-semibold tracking-tight sm:text-4xl`}
+              } px-2 text-2xl font-semibold tracking-tight sm:text-4xl`}
             >
               {title}
             </h2>

@@ -1,7 +1,7 @@
 export const projectsData = [
   {
     slug: 'benzworld',
-    title: '_benzworld',
+    title: 'Benzworld',
     desc: 'Basically, this website',
     longDesc:
       'A personal website to showcase my works and projects. Also trying to implement 3D elements using (React Three Fiber) and subtle animations with (Framer Motion).',
@@ -25,7 +25,7 @@ export const projectsData = [
     client: 'Personal work',
     date: '2023',
     medias: [],
-    source: 'https://github.com/mfalfath25/sr-vite',
+    source: 'https://github.com/mfalfath25/sr-frontend',
     stacks: [
       'React',
       'NodeJS',

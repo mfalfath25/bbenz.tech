@@ -13,8 +13,9 @@ export default function BackButton() {
     >
       <ArrowLeft
         size={24}
-        className='opacity-60 hover:opacity-100'
+        className='opacity-60 transition-opacity hover:opacity-100'
       />
+      <span className='sr-only'>Back</span>
     </button>
   )
 }

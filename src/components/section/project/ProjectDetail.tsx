@@ -36,6 +36,7 @@ export const ProjectDetail = () => {
             <LetterReveal
               key={index}
               text={project?.title}
+              staggerSpeed={0.1}
             />
           ))}
         </span>
@@ -51,10 +52,10 @@ export const ProjectDetail = () => {
         <motion.div
           initial={{ opacity: 0, clipPath: 'circle(0% at 50% 50%)' }}
           animate={{ opacity: 1, clipPath: 'circle(100%)' }}
-          transition={{ delay: 0.5, duration: 1, ease: 'easeInOut' }}
+          transition={{ delay: 0.25, duration: 1, ease: 'easeInOut' }}
         >
           <Image
-            priority
+            // priority
             quality={100}
             // unoptimized
             // loading='lazy'
@@ -64,7 +65,7 @@ export const ProjectDetail = () => {
             alt={`${project?.thumbId}`}
             width={450} // 688
             height={327} // 500
-            className={`mx-auto rounded-xl border-[1px] border-neutral-300/50 shadow-2xl shadow-accent-light/50 dark:shadow-accent-dark/50 `}
+            className={`mx-auto rounded-xl border-[1px] border-neutral-300/50 shadow-2xl shadow-accent-light/50 dark:shadow-accent-dark/50`}
           />
         </motion.div>
 
@@ -74,23 +75,23 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: 'circIn', delay: 1 }}
+              transition={{ duration: 0.5, ease: 'circIn', delay: 0.5 }}
             >
-              <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
+              <span className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 DATE
-              </h2>
-              <p className='text-md'>{project?.date}</p>
+              </span>
+              <p className='sm:text-md text-sm'>{project?.date}</p>
             </motion.div>
             <motion.div
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: 'circIn', delay: 1 }}
+              transition={{ duration: 0.5, ease: 'circIn', delay: 0.5 }}
             >
-              <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
+              <span className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 CLIENT/ORG
-              </h2>
-              <p className='text-md'>
+              </span>
+              <p className='sm:text-md text-sm'>
                 {project?.client ? project?.client : null}
               </p>
             </motion.div>
@@ -98,12 +99,14 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: 'circIn', delay: 1 }}
+              transition={{ duration: 0.5, ease: 'circIn', delay: 0.5 }}
             >
-              <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
+              <span className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 TYPE
-              </h2>
-              <p className='text-md'>{project?.type ? project?.type : null}</p>
+              </span>
+              <p className='sm:text-md text-sm'>
+                {project?.type ? project?.type : null}
+              </p>
             </motion.div>
           </div>
           <div className='col-span-2 grid grid-flow-row grid-cols-1 gap-5'>
@@ -111,12 +114,12 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: 'circIn', delay: 1.15 }}
+              transition={{ duration: 0.5, ease: 'circIn', delay: 0.7 }}
             >
-              <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
+              <span className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 DESCRIPTION
-              </h2>
-              <p className='text-md'>
+              </span>
+              <p className='sm:text-md text-sm'>
                 {project?.longDesc ? project?.longDesc : null}
               </p>
             </motion.div>
@@ -124,11 +127,11 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: 'circIn', delay: 1.15 }}
+              transition={{ duration: 0.5, ease: 'circIn', delay: 0.7 }}
             >
-              <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
+              <span className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 STACKS / TOOLS / LIBS
-              </h2>
+              </span>
               <div className='flex flex-row flex-wrap gap-1 pt-1'>
                 {project?.stacks.map((element, idx) => (
                   <div
@@ -147,17 +150,17 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: 'circIn', delay: 1.3 }}
+              transition={{ duration: 0.5, ease: 'circIn', delay: 0.9 }}
             >
-              <h2 className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
+              <span className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 EXTERNAL
-              </h2>
+              </span>
               {project?.source ? (
                 <Link
                   href={project?.source ? project?.source : ''}
                   className='flex flex-row gap-2 transition-all hover:text-accent-light dark:hover:text-accent-dark'
                 >
-                  <p className='text-md underline'>Source</p>
+                  <p className='sm:text-md text-sm underline'>Source</p>
                 </Link>
               ) : null}
               <Link

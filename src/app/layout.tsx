@@ -50,7 +50,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning>
       <body
-        className={`${inter.className} mx-auto flex h-screen flex-col transition-all ease-linear`}
+        className={`${inter.className} mx-auto flex h-[100dvh] flex-col transition-all ease-linear`}
       >
         <Providers>
           <div className='flex-1 bg-graphy'>

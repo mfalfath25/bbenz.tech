@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 @font-face {
+  font-display: swap;
+  font-style: normal;
   font-family: 'Respira';
   src: url('../../public/assets/fonts/Respira.ttf');
 }
