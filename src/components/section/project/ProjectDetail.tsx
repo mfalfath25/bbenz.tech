@@ -42,10 +42,11 @@ export const ProjectDetail = () => {
         </span>
       </div>
 
-      <section className='grid gap-8 overflow-hidden'>
+      <section className='grid gap-4 overflow-hidden sm:gap-8'>
         <Header
           title={project?.title}
           enableBackButton
+          font='inter'
           animation='fade'
         />
 
@@ -75,7 +76,7 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: 'circIn', delay: 0.5 }}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: 0.5 }}
             >
               <span className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 DATE
@@ -86,7 +87,7 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: 'circIn', delay: 0.5 }}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: 0.5 }}
             >
               <span className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 CLIENT/ORG
@@ -99,7 +100,7 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: 'circIn', delay: 0.5 }}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: 0.5 }}
             >
               <span className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 TYPE
@@ -114,7 +115,7 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: 'circIn', delay: 0.7 }}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: 0.7 }}
             >
               <span className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 DESCRIPTION
@@ -127,7 +128,7 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: 'circIn', delay: 0.7 }}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: 0.7 }}
             >
               <span className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 STACKS / TOOLS / LIBS
@@ -150,7 +151,7 @@ export const ProjectDetail = () => {
               className=''
               initial={{ x: '10', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: 'circIn', delay: 0.9 }}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: 0.9 }}
             >
               <span className='text-sm font-light text-neutral-600 dark:text-neutral-300'>
                 EXTERNAL

@@ -20,7 +20,7 @@ export const PostList = async () => {
       </div>
 
       <div className='flex flex-col items-center'>
-        <ul>
+        <ul className='grid grid-cols-1 gap-2 sm:gap-4'>
           {posts.map((post) => (
             <PostCard
               key={post.id}

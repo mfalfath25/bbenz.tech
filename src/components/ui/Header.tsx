@@ -23,7 +23,7 @@ export const Header = ({
     animation === 'fade'
       ? { duration: 1 }
       : {
-          delay: 0.5,
+          delay: 0.25,
           duration: 0.5,
           ease: 'anticipate',
         }
@@ -45,13 +45,15 @@ export const Header = ({
             </div>
           )}
           <div className='flex-1 px-6 text-center'>
-            <h2
+            <h1
               className={`${
-                font === 'respira' ? 'font-respira' : 'font-inter'
-              } px-2 text-2xl font-semibold tracking-tight sm:text-4xl`}
+                font === 'respira'
+                  ? 'font-respira text-3xl'
+                  : 'font-inter text-2xl xs:text-3xl'
+              } px-2 font-semibold tracking-tight sm:text-4xl`}
             >
               {title}
-            </h2>
+            </h1>
           </div>
         </motion.div>
       </div>

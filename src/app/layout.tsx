@@ -11,15 +11,15 @@ const inter = Inter({ subsets: ['latin', 'cyrillic'] })
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`,
+    template: `%s ⋄ ${siteConfig.name}`,
   },
   description: siteConfig.description,
   authors: {
     name: siteConfig.author,
   },
-  verification: {
-    google: siteConfig.googleVerification,
-  },
+  // verification: {
+  //   google: siteConfig.googleVerification,
+  // },
   icons: {
     icon: '/favicon-16x16.png',
     shortcut: '/favicon-32x32.png',
@@ -55,7 +55,7 @@ export default function RootLayout({
         <Providers>
           <div className='flex-1 bg-graphy'>
             <Navbar />
-            <main className='mx-auto min-h-[calc(100vh-134px)] max-w-4xl overflow-auto'>
+            <main className='mx-auto min-h-[calc(100dvh-134px)] max-w-4xl overflow-auto'>
               {children}
             </main>
             <Footer />

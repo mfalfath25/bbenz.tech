@@ -17,11 +17,16 @@ export const PostCard = ({ post }: PostCardProps) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.5, duration: 0.25, ease: 'easeInOut' }}
-      className='mb-4 mt-2 text-xl opacity-80 transition-all hover:text-accent-light hover:opacity-100 dark:hover:text-accent-dark'
+      className='group text-xl transition-all hover:text-accent-light hover:opacity-100 dark:hover:text-accent-dark'
     >
       <Link href={`/blog/${id}`}>
-        <h1 className='text-sm sm:text-xl'>{title}</h1>
-        <p className='mt-1 text-sm opacity-50'>{formattedDate}</p>
+        <h2 className='inline text-base sm:text-lg md:text-xl'>{title} </h2>
+        <span className='inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none'>
+          -&gt;
+        </span>
+        <p className='text-sm text-neutral-600 group-hover:text-black dark:text-neutral-300 dark:group-hover:text-white'>
+          {formattedDate}
+        </p>
       </Link>
     </motion.li>
   )

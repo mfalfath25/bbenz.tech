@@ -24,9 +24,11 @@ export const About = () => {
           priority
           src='/assets/photo.png'
           alt='Fajar Alfath Photo'
+          placeholder='blur'
+          blurDataURL='/assets/graphy.png'
           width={200}
           height={200}
-          className='mx-auto max-w-[50%] rounded-full border-2 border-gray-700 shadow-glow-sm shadow-accent-light ring-2 ring-accent-light drop-shadow-2xl backdrop-blur-sm dark:shadow-accent-dark dark:ring-accent-dark sm:max-w-full'
+          className='mx-auto max-w-[50%] scale-90 rounded-full border-2 border-gray-700 shadow-glow-sm shadow-accent-light ring-2 ring-accent-light drop-shadow-2xl backdrop-blur-sm dark:shadow-accent-dark dark:ring-accent-dark sm:max-w-full sm:scale-100'
         />
 
         <div className='prose prose-sm mx-auto dark:prose-invert sm:prose-base'>
@@ -38,7 +40,7 @@ export const About = () => {
             href='mailto:mfalfath25@gmail.com'
             className='rounded-md border-[1px] border-gray-700/30 p-1 px-2 text-center transition-colors hover:bg-base-light hover:text-accent-light dark:border-white/30 dark:hover:bg-base-dark dark:hover:text-accent-dark'
           >
-            Contact 📩
+            Contact me here 📩
           </a>
         </div>
       </motion.div>
