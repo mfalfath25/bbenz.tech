@@ -4,6 +4,7 @@ import { Metadata } from 'next'
 export function generateMetadata(): Metadata {
   return {
     title: `Experiment`,
+    description: `Random stuff I'm playing around with.`,
   }
 }
 

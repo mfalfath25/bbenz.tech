@@ -3,7 +3,8 @@ import { Metadata } from 'next'
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: `About`,
+    title: 'About',
+    description: 'UX Engineer | Frontend Developer | Digital Artist',
   }
 }
 

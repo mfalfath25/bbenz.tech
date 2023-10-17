@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   authors: {
     name: siteConfig.author,
   },
+  alternates: {
+    canonical: siteConfig.url,
+  },
   // verification: {
   //   google: siteConfig.googleVerification,
   // },

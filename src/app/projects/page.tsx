@@ -4,6 +4,7 @@ import { Metadata } from 'next'
 export function generateMetadata(): Metadata {
   return {
     title: `Projects`,
+    description: `A collection of my previous works.`,
   }
 }
 

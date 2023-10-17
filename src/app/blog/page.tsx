@@ -1,9 +1,10 @@
 import { PostList } from '@/components/section/blog/PostList'
 import { Metadata } from 'next'
 
-export function generateMetadata(): Metadata {
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: `Blog`,
+    description: `My writings about thoughts, ideas, and experiences.`,
   }
 }
 
