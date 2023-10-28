@@ -1,21 +1,21 @@
-# \_benzworld
+<img src="https://i.ibb.co/bJTh6HP/Group-3930.jpg"  width="20%" height="10%">
 
-<img src="https://i.ibb.co/hZBKw8g/Vector-125.png"  width="20%" height="10%">
+# bbenz.tech
 
-## The vision?
+---
 
-Design and develop a website at the level of a super eye-catching design agency. The website should be performant, smooth, and flow seamlessly. Its purpose is to showcase my projects in the best possible way.
+## The vision
 
-## What actually happen?
+Develop a personal website with the style level of that a creative developer/design agency. The website should be performant, flows, and animates smoothly. Hopefully showcases my past works and projects.
 
-Messing around for days with **R3F** and **Typescript** while having zero knowledge about the basics concepts of the 3Dfl[] world **ThreeJS** itself. What&#39;s a scene? a camera? a mesh? gltf model? and so on..
+## What actually happen
 
-I also happen to not create the basic wireframe for how the page layout should be, basically just design it on the go, bad strategy.
+Messing around for days with **R3F** and **Typescript** while having zero knowledge about basics 3D concepts in **ThreeJS** itself. Also going for the code first, design later approach.
 
-## Stacks used
+## Stacks
 
-- Next 13 (App directory)
+- Next 13
 - Tailwind
 - React Three Fiber
-- React Three Drei
 - Framer motion
+- MDX
