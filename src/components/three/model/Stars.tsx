@@ -14,7 +14,7 @@ export const Stars = (props: any) => {
   const { theme } = useTheme()
   const starsRef = useRef<Pts>(null!)
   const [spheres] = useState(() =>
-    random.inSphere(new Float32Array(201), { radius: 1 })
+    random.inSphere(new Float32Array(201), { radius: 2 })
   )
 
   // const [{ box, sphere, final }] = useState(() => {
@@ -74,9 +74,10 @@ export const Stars = (props: any) => {
         {...props}
       >
         <pointsMaterial
-          size={0.01}
+          size={0.1}
           sizeAttenuation={true}
           color={theme === 'dark' ? '#ffffff' : `#000000`}
+          toneMapped={false}
         />
       </Points>
     </group>

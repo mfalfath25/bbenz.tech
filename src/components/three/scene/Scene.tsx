@@ -1,9 +1,10 @@
 'use client'
 
 import { useTheme } from 'next-themes'
-import { Html, Stage, Text } from '@react-three/drei'
+import { Html, Stage, Text, Environment } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { ValorantModel } from '../model/ValorantModel'
+import { useState, useEffect } from 'react'
 import { LetterReveal } from '../../animations/LetterReveal'
 import { XLogo } from '@/components/animations/XLogo'
 import { Bloom, EffectComposer, Noise } from '@react-three/postprocessing'
@@ -12,12 +13,27 @@ import { Stars } from '../model/Stars'
 
 export const Scene = () => {
   const { theme } = useTheme()
+  const [scale, setScale] = useState(0.8)
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setScale(0.5)
+      } else {
+        setScale(0.8)
+      }
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   return (
     <>
       <Canvas
         shadows
-        dpr={[2, 2]}
+        dpr={[1, 2]}
         color='transparent'
         orthographic
         camera={{
@@ -37,7 +53,7 @@ export const Scene = () => {
 
         <Html position={[0.1, 1, 0]}>
           <div className='relative'>
-            <span className='absolute top-20 -z-20 select-none text-6xl opacity-10'>
+            <span className='absolute top-20 -z-20 text-6xl opacity-10 select-none'>
               {[1, 2, 3].map((index) => (
                 <LetterReveal
                   key={index}
@@ -48,32 +64,44 @@ export const Scene = () => {
           </div>
         </Html>
 
-        <Text
+        {/* <Text
           position={[0, 0, -1]}
           fontSize={0.5}
           receiveShadow
           font='/assets/fonts/Respira.ttf'
         >
           -BENZ-
-        </Text>
+        </Text> */}
 
-        <Stage
-          position={[0, 0, 0]}
-          environment={theme === 'dark' ? 'sunset' : 'dawn'}
-          preset={'soft'}
-          intensity={2}
-        >
-          <ValorantModel position={[0, -1.5, 0]} />
-        </Stage>
+        <Environment preset={theme === 'dark' ? 'apartment' : 'warehouse'} />
+        <ambientLight intensity={0.5} />
+        <spotLight
+          position={[10, 10, 10]}
+          angle={0.15}
+          penumbra={1}
+        />
+        <pointLight
+          position={[-10, -10, -10]}
+          intensity={0.5}
+        />
 
-        {/* <EffectComposer>
-          <Noise
-            premultiply // enables or disables noise premultiplication
-            blendFunction={
-              BlendFunction.ADD // blend mode, defaults to ADD. see BlendFunction for alternatives
-            } // blend mode
+        <ValorantModel
+          position={[0, -0.9, 0]}
+          scale={scale}
+        />
+        <Stars />
+
+        <EffectComposer>
+          <Bloom
+            luminanceThreshold={0.5}
+            luminanceSmoothing={0.9}
+            height={200}
           />
-        </EffectComposer> */}
+          <Noise
+            premultiply
+            blendFunction={BlendFunction.ADD}
+          />
+        </EffectComposer>
       </Canvas>
     </>
   )

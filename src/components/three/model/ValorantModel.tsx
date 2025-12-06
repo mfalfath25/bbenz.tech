@@ -13,7 +13,7 @@ export const ValorantModel = (props: JSX.IntrinsicElements['group']) => {
     // if (group.current) {
     //   group.current.rotation.y = Math.PI / 2 // Rotate by 90 degrees (π/2 radians)
     // }
-    meshRef.current.rotation.y += 0.005
+    meshRef.current.rotation.y += 0.003
   })
 
   return (

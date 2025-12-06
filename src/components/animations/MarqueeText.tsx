@@ -20,7 +20,7 @@ export const MarqueeText = ({ text }: MarqueeProps) => {
       >
         <Marquee
           gradient
-          gradientColor={theme === 'dark' ? [27, 27, 27] : [251, 251, 251]}
+          gradientColor={theme === 'dark' ? '#1b1b1b' : '#f1f1f1'}
           speed={100}
           autoFill
           className='whitespace-pre'
