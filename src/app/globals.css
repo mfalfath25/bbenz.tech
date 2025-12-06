@@ -1,11 +1,11 @@
-@import "tailwindcss";
-@plugin "@tailwindcss/typography";
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
 @theme {
   /* Colors */
-  --color-accent-light: #5834E8;
-  --color-accent-dark: #A7CB17;
-  --color-base-light: #FFFFFF;
+  --color-accent-light: #5834e8;
+  --color-accent-dark: #a7cb17;
+  --color-base-light: #ffffff;
   --color-base-dark: #121212;
 
   /* Fonts */
@@ -22,15 +22,15 @@
   --animate-pulse-fast: pulse 1s ease-in-out infinite;
 
   /* Box Shadows */
-  --shadow-glow-sm: 0px 0px 24px 0px #59B7D6;
-  --shadow-glow-accent-light: 0px 0px 24px 0px #5834E8;
-  --shadow-glow-accent-dark: 0px 0px 24px 0px #A7CB17;
+  --shadow-glow-sm: 0px 0px 24px 0px #59b7d6;
+  --shadow-glow-accent-light: 0px 0px 24px 0px #5834e8;
+  --shadow-glow-accent-dark: 0px 0px 24px 0px #a7cb17;
 
   /* Drop Shadows */
-  --drop-shadow-glow-accent-light: 0 1.5px 1.5px rgba(88,52,232,1);
-  --drop-shadow-glow-accent-dark: 0 1.5px 1.5px rgba(167,203,23,1);
+  --drop-shadow-glow-accent-light: 0 1.5px 1.5px rgba(88, 52, 232, 1);
+  --drop-shadow-glow-accent-dark: 0 1.5px 1.5px rgba(167, 203, 23, 1);
   --drop-shadow-glow-dark: 0 1.5px 1.5px #121212;
-  --drop-shadow-glow-light: 0 1.5px 1.5px #FFFFFF;
+  --drop-shadow-glow-light: 0 1.5px 1.5px #ffffff;
 }
 
 /* Custom Variant for Dark Mode (Class Strategy) */
@@ -43,8 +43,10 @@
   src: url('../../public/assets/fonts/Respira.ttf');
 }
 
---accent-color-light: #5834e8;
---accent-color-dark: #a7cb17;
+:root {
+  --accent-color-light: #5834e8;
+  --accent-color-dark: #a7cb17;
+}
 
 html {
   scroll-behavior: smooth;

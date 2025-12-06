@@ -4,6 +4,7 @@ const nextConfig = {
   //   mdxRs: true,
   // },
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  turbopack: {},
 }
 
 import withMDX from '@next/mdx'

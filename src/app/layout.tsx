@@ -9,6 +9,7 @@ import { Footer } from '@/components/ui/Footer'
 const inter = Inter({ subsets: ['latin', 'cyrillic'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.name,
     template: `%s ⋄ ${siteConfig.name}`,
@@ -56,7 +57,7 @@ export default function RootLayout({
         className={`${inter.className} mx-auto flex h-[100dvh] flex-col transition-all ease-linear`}
       >
         <Providers>
-          <div className='flex-1 bg-graphy'>
+          <div className='bg-graphy flex-1'>
             <Navbar />
             <main className='mx-auto min-h-[calc(100dvh-134px)] max-w-4xl overflow-auto'>
               {children}
