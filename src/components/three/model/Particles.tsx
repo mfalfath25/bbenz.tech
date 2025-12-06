@@ -11,24 +11,21 @@ const q = new THREE.Quaternion()
 export const Particles = () => {
   const particlesRef = useRef<THREE.Points>(null!)
 
-  const particlesGeometry = new THREE.SphereGeometry(2, 32, 32)
-  const particlesMaterial = new THREE.PointsMaterial({
-    color: 'white',
-    size: 0.02,
-  })
-
-  useFrame(() => {
+  useFrame((state, delta) => {
     if (particlesRef.current) {
-      particlesRef.current.rotation.x += 0.01
+      particlesRef.current.rotation.x += delta * 0.5
+      particlesRef.current.rotation.y += delta * 0.2
     }
   })
 
   return (
-    <points
-      ref={particlesRef}
-      geometry={particlesGeometry}
-      material={particlesMaterial}
-    ></points>
+    <points ref={particlesRef}>
+      <sphereGeometry args={[2, 32, 32]} />
+      <pointsMaterial
+        color='white'
+        size={0.02}
+      />
+    </points>
   )
 }
 
