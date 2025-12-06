@@ -1,6 +1,40 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Colors */
+  --color-accent-light: #5834E8;
+  --color-accent-dark: #A7CB17;
+  --color-base-light: #FFFFFF;
+  --color-base-dark: #121212;
+
+  /* Fonts */
+  --font-respira: 'Respira', sans-serif;
+
+  /* Background Image */
+  --background-image-graphy: url('/assets/graphy.png');
+
+  /* Screens */
+  --breakpoint-xs: 480px;
+
+  /* Animation */
+  --animate-spin-slow: spin 3s linear infinite;
+  --animate-pulse-fast: pulse 1s ease-in-out infinite;
+
+  /* Box Shadows */
+  --shadow-glow-sm: 0px 0px 24px 0px #59B7D6;
+  --shadow-glow-accent-light: 0px 0px 24px 0px #5834E8;
+  --shadow-glow-accent-dark: 0px 0px 24px 0px #A7CB17;
+
+  /* Drop Shadows */
+  --drop-shadow-glow-accent-light: 0 1.5px 1.5px rgba(88,52,232,1);
+  --drop-shadow-glow-accent-dark: 0 1.5px 1.5px rgba(167,203,23,1);
+  --drop-shadow-glow-dark: 0 1.5px 1.5px #121212;
+  --drop-shadow-glow-light: 0 1.5px 1.5px #FFFFFF;
+}
+
+/* Custom Variant for Dark Mode (Class Strategy) */
+@custom-variant dark (&:where(.dark, .dark *));
 
 @font-face {
   font-display: swap;
