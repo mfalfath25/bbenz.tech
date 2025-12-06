@@ -10,7 +10,7 @@ const Sketch = dynamic(() => import('react-p5'), {
   ssr: false,
 })
 
-const num = 2222
+const num = 1000
 const noiseScale = 100
 const noiseStrength = 1
 
@@ -101,13 +101,16 @@ export const CosmicSands: React.FC = () => {
   const draw = (p: p5Types) => {
     const isDark = theme === 'dark'
 
-    // Theme-aware background fade
+    // // Theme-aware background fade
     if (isDark) {
       p.fill(0, 10) // Dark background
     } else {
       p.fill(255, 10) // Light background
     }
     p.rect(0, 0, p.width, p.height)
+
+    // // Transparent background
+    // p.clear()
 
     for (let i = 0; i < particlesRef.current.length; i++) {
       particlesRef.current[i].run()
@@ -117,6 +120,16 @@ export const CosmicSands: React.FC = () => {
 
   const windowResized = (p: p5Types) => {
     p.resizeCanvas(p.windowWidth, p.windowHeight)
+
+    // Reset animation by reinitializing particles
+    particlesRef.current = []
+    for (let i = 0; i < num; i++) {
+      const loc = p.createVector(p.random(p.width * 1.2), p.random(p.height), 2)
+      const angle = 0
+      const dir = p.createVector(p.cos(angle), p.sin(angle))
+      const speed = p.random(5, p.map(p.mouseX, 0, p.width, 5, 20))
+      particlesRef.current[i] = new Particle(p, loc, dir, speed)
+    }
   }
 
   return (
