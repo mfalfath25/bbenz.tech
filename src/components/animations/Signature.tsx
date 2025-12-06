@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 
 export const Signature = () => {
-  const transition = { duration: 1.5, ease: 'easeOut' }
   return (
     <div className='max-h-sm max-w-sm'>
       <svg
@@ -20,7 +19,7 @@ export const Signature = () => {
           strokeLinecap='round'
           initial={{ pathLength: 0 }}
           animate={{ pathLength: 1 }}
-          transition={transition}
+          transition={{ duration: 1.5, ease: 'easeOut' }}
         />
       </svg>
     </div>
