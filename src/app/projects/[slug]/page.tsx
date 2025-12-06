@@ -3,12 +3,11 @@ import { projectsData } from '@/content/projects/projectData'
 import { Metadata } from 'next'
 
 type Props = {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
-export async function generateMetadata({
-  params: { slug },
-}: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params
   const project = projectsData.find((project) => project.slug === slug)
   if (!project) {
     return {

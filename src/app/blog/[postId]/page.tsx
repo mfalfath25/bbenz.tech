@@ -3,14 +3,13 @@ import { getPostByName, getPostsMeta } from '@/lib/mdx/posts'
 import { Metadata } from 'next'
 
 type Props = {
-  params: {
+  params: Promise<{
     postId: string
-  }
+  }>
 }
 
-export async function generateMetadata({
-  params: { postId },
-}: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { postId } = await params
   const post = await getPostByName(`${postId}.mdx`)
   if (!post) {
     return {
@@ -30,7 +29,8 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function Page({ params: { postId } }: Props) {
+export default async function Page({ params }: Props) {
+  const { postId } = await params
   return (
     <>
       <div className='px-2 py-4'>
