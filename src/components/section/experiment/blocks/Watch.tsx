@@ -35,10 +35,9 @@ export const Watch = () => {
   // Timer specific states
   const [timerDuration, setTimerDuration] = useState<number>(600) // 10 minutes in seconds
   const [timerRemaining, setTimerRemaining] = useState<number>(600)
-  const [timerInterval, setTimerInterval] = useState<NodeJS.Timer | null>(null)
 
   useEffect(() => {
-    let interval: NodeJS.Timer
+    let interval: NodeJS.Timeout
 
     if (mode === 'clock') {
       interval = setInterval(() => {
@@ -58,12 +57,11 @@ export const Watch = () => {
         }, 1000)
       } else if (timerRemaining === 0) {
         setTimerRunning(false)
-        clearInterval(timerInterval!)
       }
     }
 
     return () => clearInterval(interval)
-  }, [mode, stopwatchRunning, timerRunning, timerRemaining, timerInterval])
+  }, [mode, stopwatchRunning, timerRunning, timerRemaining])
 
   const startStopTimer = () => {
     if (mode === 'stopwatch' || mode === 'timer') {
@@ -82,7 +80,6 @@ export const Watch = () => {
       // Implement timer reset logic here
       setTimerRunning(false)
       setTimerRemaining(timerDuration)
-      clearInterval(timerInterval!)
     }
   }
 
@@ -138,8 +135,8 @@ export const Watch = () => {
             {mode === 'stopwatch'
               ? formatStopwatchTime(stopwatchTime)
               : mode === 'timer'
-              ? formatTimerRemaining(timerRemaining)
-              : clock}
+                ? formatTimerRemaining(timerRemaining)
+                : clock}
 
             {mode === 'clock' && (
               <p className='text-center text-sm font-light'>

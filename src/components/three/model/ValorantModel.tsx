@@ -1,10 +1,11 @@
 'use client'
 
 import { useGLTF } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
+import { ThreeElements, useFrame } from '@react-three/fiber'
 import { useRef } from 'react'
+import * as THREE from 'three'
 
-export const ValorantModel = (props: JSX.IntrinsicElements['group']) => {
+export const ValorantModel = (props: ThreeElements['group']) => {
   const group = useRef<THREE.Group>(null!)
   const meshRef = useRef<THREE.Mesh>(null!)
   const gltf = useGLTF('/assets/valorant.glb') // Model author: Casttelan2 (https://sketchfab.com/Casttelan2)

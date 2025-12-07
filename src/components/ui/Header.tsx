@@ -25,7 +25,7 @@ export const Header = ({
       : {
           delay: 0.25,
           duration: 0.5,
-          ease: 'anticipate',
+          ease: 'anticipate' as const,
         }
 
   return (
@@ -49,7 +49,7 @@ export const Header = ({
               className={`${
                 font === 'respira'
                   ? 'font-respira text-3xl'
-                  : 'font-inter text-2xl xs:text-3xl'
+                  : 'font-inter xs:text-3xl text-2xl'
               } px-2 font-semibold tracking-tight sm:text-4xl`}
             >
               {title}

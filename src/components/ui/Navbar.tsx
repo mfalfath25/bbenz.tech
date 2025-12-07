@@ -29,7 +29,7 @@ const NavMenu = [
 ]
 
 type MobileMenuProps = {
-  navMenuRef: React.RefObject<HTMLDivElement>
+  navMenuRef: React.RefObject<HTMLDivElement | null>
   menuOpen: boolean
   closeMenu: () => void
 }
@@ -47,19 +47,19 @@ const MobileMenu = ({ navMenuRef, menuOpen, closeMenu }: MobileMenuProps) => {
       }
 
   return (
-    <div className={`top-17 fixed left-0 z-20 w-full sm:hidden`}>
+    <div className={`fixed top-17 left-0 z-20 w-full sm:hidden`}>
       <motion.div
         initial={initial}
         animate={animate}
         transition={{ duration: 0.25, ease: 'easeInOut' }}
         ref={navMenuRef}
-        className={`absolute top-0 z-20 h-screen w-[200px] border-r-[1px] border-gray-700/30 bg-base-light backdrop-blur-lg dark:border-white/30 dark:bg-base-dark`}
+        className={`bg-base-light dark:bg-base-dark absolute top-0 z-20 h-screen w-[200px] border-r-[1px] border-gray-700/30 backdrop-blur-lg dark:border-white/30`}
       >
         <ul className='flex flex-col'>
           {NavMenu.map((item, index) => (
             <li
               key={index}
-              className='border-b-[1px] border-gray-700/30 text-start opacity-60 transition-opacity hover:font-bold hover:text-accent-light hover:opacity-100 dark:border-white/30 hover:dark:text-accent-dark'
+              className='hover:text-accent-light hover:dark:text-accent-dark border-b-[1px] border-gray-700/30 text-start opacity-60 transition-opacity hover:font-bold hover:opacity-100 dark:border-white/30'
             >
               <Link
                 href={item.link}
